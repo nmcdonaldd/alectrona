@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		486E53E90906DABD58DFAEF7 /* Pods_Alectrona.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922B08E465C063D61DFFBEFA /* Pods_Alectrona.framework */; };
+		AC65D0BA25955822008C6C5C /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC65D0B925955822008C6C5C /* StatusBar.swift */; };
+		AC65D0BF259559F6008C6C5C /* StatusBarTickerDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC65D0BE259559F6008C6C5C /* StatusBarTickerDisplay.swift */; };
+		AC65D0C425955A38008C6C5C /* StatusBarTickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC65D0C325955A38008C6C5C /* StatusBarTickerData.swift */; };
 		AC92B47E2589F4B9002826F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92B47D2589F4B9002826F8 /* AppDelegate.swift */; };
 		AC92B4802589F4B9002826F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92B47F2589F4B9002826F8 /* ContentView.swift */; };
 		AC92B4822589F4BA002826F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC92B4812589F4BA002826F8 /* Assets.xcassets */; };
@@ -14,6 +18,10 @@
 		AC92B4882589F4BA002826F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC92B4862589F4BA002826F8 /* Main.storyboard */; };
 		AC92B4942589F4BA002826F8 /* AlectronaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92B4932589F4BA002826F8 /* AlectronaTests.swift */; };
 		AC92B49F2589F4BA002826F8 /* AlectronaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92B49E2589F4BA002826F8 /* AlectronaUITests.swift */; };
+		ACE5EA6125980A3400485626 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5EA6025980A3400485626 /* Ticker.swift */; };
+		ACE5EA812599058900485626 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5EA802599058900485626 /* Extensions.swift */; };
+		AD70A8D0F14679867CDD22AF /* Pods_Alectrona_AlectronaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 154C042B8E71643B3982C387 /* Pods_Alectrona_AlectronaUITests.framework */; };
+		E3374D5BA3650C86B2D83EFD /* Pods_AlectronaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8E4440523D00ED7EB9AA7A /* Pods_AlectronaTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +42,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		045919F85AF78EC531A95F80 /* Pods-AlectronaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlectronaTests.release.xcconfig"; path = "Target Support Files/Pods-AlectronaTests/Pods-AlectronaTests.release.xcconfig"; sourceTree = "<group>"; };
+		154C042B8E71643B3982C387 /* Pods_Alectrona_AlectronaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alectrona_AlectronaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24104C673B21AFEE38C88673 /* Pods-Alectrona-AlectronaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alectrona-AlectronaUITests.release.xcconfig"; path = "Target Support Files/Pods-Alectrona-AlectronaUITests/Pods-Alectrona-AlectronaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2F8E4440523D00ED7EB9AA7A /* Pods_AlectronaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlectronaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63804F299E522A6611217C04 /* Pods-Alectrona.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alectrona.release.xcconfig"; path = "Target Support Files/Pods-Alectrona/Pods-Alectrona.release.xcconfig"; sourceTree = "<group>"; };
+		922B08E465C063D61DFFBEFA /* Pods_Alectrona.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alectrona.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC65D0B925955822008C6C5C /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
+		AC65D0BE259559F6008C6C5C /* StatusBarTickerDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarTickerDisplay.swift; sourceTree = "<group>"; };
+		AC65D0C325955A38008C6C5C /* StatusBarTickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarTickerData.swift; sourceTree = "<group>"; };
 		AC92B47A2589F4B9002826F8 /* Alectrona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alectrona.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC92B47D2589F4B9002826F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC92B47F2589F4B9002826F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +65,11 @@
 		AC92B49A2589F4BA002826F8 /* AlectronaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlectronaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC92B49E2589F4BA002826F8 /* AlectronaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlectronaUITests.swift; sourceTree = "<group>"; };
 		AC92B4A02589F4BA002826F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACE5EA6025980A3400485626 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
+		ACE5EA802599058900485626 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B59F1F743562E437462B3ADF /* Pods-AlectronaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlectronaTests.debug.xcconfig"; path = "Target Support Files/Pods-AlectronaTests/Pods-AlectronaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B9E7D0A7940B6CA59BFE161D /* Pods-Alectrona-AlectronaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alectrona-AlectronaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Alectrona-AlectronaUITests/Pods-Alectrona-AlectronaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FCB00CD0B972088CC587E992 /* Pods-Alectrona.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alectrona.debug.xcconfig"; path = "Target Support Files/Pods-Alectrona/Pods-Alectrona.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				486E53E90906DABD58DFAEF7 /* Pods_Alectrona.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3374D5BA3650C86B2D83EFD /* Pods_AlectronaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,12 +93,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD70A8D0F14679867CDD22AF /* Pods_Alectrona_AlectronaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		990E071C8003CFC59A232571 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FCB00CD0B972088CC587E992 /* Pods-Alectrona.debug.xcconfig */,
+				63804F299E522A6611217C04 /* Pods-Alectrona.release.xcconfig */,
+				B9E7D0A7940B6CA59BFE161D /* Pods-Alectrona-AlectronaUITests.debug.xcconfig */,
+				24104C673B21AFEE38C88673 /* Pods-Alectrona-AlectronaUITests.release.xcconfig */,
+				B59F1F743562E437462B3ADF /* Pods-AlectronaTests.debug.xcconfig */,
+				045919F85AF78EC531A95F80 /* Pods-AlectronaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AC5C9C9E2591C1AA004CC724 /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				AC65D0B925955822008C6C5C /* StatusBar.swift */,
+				AC65D0BE259559F6008C6C5C /* StatusBarTickerDisplay.swift */,
+				AC65D0C325955A38008C6C5C /* StatusBarTickerData.swift */,
+			);
+			path = VIews;
+			sourceTree = "<group>";
+		};
 		AC92B4712589F4B9002826F8 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +130,8 @@
 				AC92B4922589F4BA002826F8 /* AlectronaTests */,
 				AC92B49D2589F4BA002826F8 /* AlectronaUITests */,
 				AC92B47B2589F4B9002826F8 /* Products */,
+				ACC5A18A258A852400411F3B /* Frameworks */,
+				990E071C8003CFC59A232571 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +148,9 @@
 		AC92B47C2589F4B9002826F8 /* Alectrona */ = {
 			isa = PBXGroup;
 			children = (
+				ACE5EA7F2599057A00485626 /* Util */,
+				ACE5EA7A259810CE00485626 /* API */,
+				AC5C9C9E2591C1AA004CC724 /* VIews */,
 				AC92B47D2589F4B9002826F8 /* AppDelegate.swift */,
 				AC92B47F2589F4B9002826F8 /* ContentView.swift */,
 				AC92B4812589F4BA002826F8 /* Assets.xcassets */,
@@ -105,6 +158,7 @@
 				AC92B4892589F4BA002826F8 /* Info.plist */,
 				AC92B48A2589F4BA002826F8 /* Alectrona.entitlements */,
 				AC92B4832589F4BA002826F8 /* Preview Content */,
+				ACE5EA6025980A3400485626 /* Ticker.swift */,
 			);
 			path = Alectrona;
 			sourceTree = "<group>";
@@ -135,6 +189,31 @@
 			path = AlectronaUITests;
 			sourceTree = "<group>";
 		};
+		ACC5A18A258A852400411F3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				922B08E465C063D61DFFBEFA /* Pods_Alectrona.framework */,
+				154C042B8E71643B3982C387 /* Pods_Alectrona_AlectronaUITests.framework */,
+				2F8E4440523D00ED7EB9AA7A /* Pods_AlectronaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ACE5EA7A259810CE00485626 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		ACE5EA7F2599057A00485626 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				ACE5EA802599058900485626 /* Extensions.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,9 +221,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC92B4A32589F4BA002826F8 /* Build configuration list for PBXNativeTarget "Alectrona" */;
 			buildPhases = (
+				5B36E6E2F653531A29D8812B /* [CP] Check Pods Manifest.lock */,
 				AC92B4762589F4B9002826F8 /* Sources */,
 				AC92B4772589F4B9002826F8 /* Frameworks */,
 				AC92B4782589F4B9002826F8 /* Resources */,
+				6762BF54ED74AC51D46E1BC0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,6 +240,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC92B4A62589F4BA002826F8 /* Build configuration list for PBXNativeTarget "AlectronaTests" */;
 			buildPhases = (
+				E9020003F97523C618CAC409 /* [CP] Check Pods Manifest.lock */,
 				AC92B48B2589F4BA002826F8 /* Sources */,
 				AC92B48C2589F4BA002826F8 /* Frameworks */,
 				AC92B48D2589F4BA002826F8 /* Resources */,
@@ -177,9 +259,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC92B4A92589F4BA002826F8 /* Build configuration list for PBXNativeTarget "AlectronaUITests" */;
 			buildPhases = (
+				DD62BA8F01CB75CED48EB9FE /* [CP] Check Pods Manifest.lock */,
 				AC92B4962589F4BA002826F8 /* Sources */,
 				AC92B4972589F4BA002826F8 /* Frameworks */,
 				AC92B4982589F4BA002826F8 /* Resources */,
+				E4F023F7B32EC0AD37EDF5D6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -222,6 +306,9 @@
 				Base,
 			);
 			mainGroup = AC92B4712589F4B9002826F8;
+			packageReferences = (
+				AC92B4AF258A8319002826F8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = AC92B47B2589F4B9002826F8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -260,13 +347,121 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5B36E6E2F653531A29D8812B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Alectrona-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6762BF54ED74AC51D46E1BC0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Alectrona/Pods-Alectrona-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Alectrona/Pods-Alectrona-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Alectrona/Pods-Alectrona-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD62BA8F01CB75CED48EB9FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Alectrona-AlectronaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4F023F7B32EC0AD37EDF5D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Alectrona-AlectronaUITests/Pods-Alectrona-AlectronaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Alectrona-AlectronaUITests/Pods-Alectrona-AlectronaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Alectrona-AlectronaUITests/Pods-Alectrona-AlectronaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9020003F97523C618CAC409 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlectronaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AC92B4762589F4B9002826F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC65D0BF259559F6008C6C5C /* StatusBarTickerDisplay.swift in Sources */,
+				ACE5EA6125980A3400485626 /* Ticker.swift in Sources */,
+				AC65D0BA25955822008C6C5C /* StatusBar.swift in Sources */,
 				AC92B4802589F4B9002826F8 /* ContentView.swift in Sources */,
+				AC65D0C425955A38008C6C5C /* StatusBarTickerData.swift in Sources */,
 				AC92B47E2589F4B9002826F8 /* AppDelegate.swift in Sources */,
+				ACE5EA812599058900485626 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +625,7 @@
 		};
 		AC92B4A42589F4BA002826F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCB00CD0B972088CC587E992 /* Pods-Alectrona.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -443,7 +639,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = nickdonald.Alectrona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -452,6 +649,7 @@
 		};
 		AC92B4A52589F4BA002826F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63804F299E522A6611217C04 /* Pods-Alectrona.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -465,7 +663,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = nickdonald.Alectrona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -474,6 +673,7 @@
 		};
 		AC92B4A72589F4BA002826F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B59F1F743562E437462B3ADF /* Pods-AlectronaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -495,6 +695,7 @@
 		};
 		AC92B4A82589F4BA002826F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 045919F85AF78EC531A95F80 /* Pods-AlectronaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -516,6 +717,7 @@
 		};
 		AC92B4AA2589F4BA002826F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9E7D0A7940B6CA59BFE161D /* Pods-Alectrona-AlectronaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +737,7 @@
 		};
 		AC92B4AB2589F4BA002826F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24104C673B21AFEE38C88673 /* Pods-Alectrona-AlectronaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -592,6 +795,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AC92B4AF258A8319002826F8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = AC92B4722589F4B9002826F8 /* Project object */;
 }
