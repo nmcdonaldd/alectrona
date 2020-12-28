@@ -7,6 +7,7 @@ target 'Alectrona' do
 
   # Pods for Alectrona
   pod 'Alamofire'
+  pod 'SwiftyJSON'
 
   target 'AlectronaTests' do
     inherit! :search_paths

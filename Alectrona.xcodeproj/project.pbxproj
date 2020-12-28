@@ -12,14 +12,16 @@
 		AC65D0BF259559F6008C6C5C /* StatusBarTickerDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC65D0BE259559F6008C6C5C /* StatusBarTickerDisplay.swift */; };
 		AC65D0C425955A38008C6C5C /* StatusBarTickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC65D0C325955A38008C6C5C /* StatusBarTickerData.swift */; };
 		AC92B47E2589F4B9002826F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92B47D2589F4B9002826F8 /* AppDelegate.swift */; };
-		AC92B4802589F4B9002826F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92B47F2589F4B9002826F8 /* ContentView.swift */; };
 		AC92B4822589F4BA002826F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC92B4812589F4BA002826F8 /* Assets.xcassets */; };
 		AC92B4852589F4BA002826F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC92B4842589F4BA002826F8 /* Preview Assets.xcassets */; };
 		AC92B4882589F4BA002826F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC92B4862589F4BA002826F8 /* Main.storyboard */; };
 		AC92B4942589F4BA002826F8 /* AlectronaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92B4932589F4BA002826F8 /* AlectronaTests.swift */; };
 		AC92B49F2589F4BA002826F8 /* AlectronaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92B49E2589F4BA002826F8 /* AlectronaUITests.swift */; };
-		ACE5EA6125980A3400485626 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5EA6025980A3400485626 /* Ticker.swift */; };
+		ACE5EA6125980A3400485626 /* QuoteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5EA6025980A3400485626 /* QuoteLoader.swift */; };
 		ACE5EA812599058900485626 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5EA802599058900485626 /* Extensions.swift */; };
+		ACE5EAAC2599388500485626 /* LiveQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5EAAB2599388500485626 /* LiveQuote.swift */; };
+		ACE5EABA25993AFB00485626 /* LiveQuoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5EAB925993AFB00485626 /* LiveQuoteStore.swift */; };
+		ACE5EAC0259A581700485626 /* QuoteRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5EABF259A581700485626 /* QuoteRunner.swift */; };
 		AD70A8D0F14679867CDD22AF /* Pods_Alectrona_AlectronaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 154C042B8E71643B3982C387 /* Pods_Alectrona_AlectronaUITests.framework */; };
 		E3374D5BA3650C86B2D83EFD /* Pods_AlectronaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8E4440523D00ED7EB9AA7A /* Pods_AlectronaTests.framework */; };
 /* End PBXBuildFile section */
@@ -53,7 +55,6 @@
 		AC65D0C325955A38008C6C5C /* StatusBarTickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarTickerData.swift; sourceTree = "<group>"; };
 		AC92B47A2589F4B9002826F8 /* Alectrona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alectrona.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC92B47D2589F4B9002826F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AC92B47F2589F4B9002826F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AC92B4812589F4BA002826F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC92B4842589F4BA002826F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AC92B4872589F4BA002826F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,8 +66,11 @@
 		AC92B49A2589F4BA002826F8 /* AlectronaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlectronaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC92B49E2589F4BA002826F8 /* AlectronaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlectronaUITests.swift; sourceTree = "<group>"; };
 		AC92B4A02589F4BA002826F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACE5EA6025980A3400485626 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
+		ACE5EA6025980A3400485626 /* QuoteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteLoader.swift; sourceTree = "<group>"; };
 		ACE5EA802599058900485626 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ACE5EAAB2599388500485626 /* LiveQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuote.swift; sourceTree = "<group>"; };
+		ACE5EAB925993AFB00485626 /* LiveQuoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuoteStore.swift; sourceTree = "<group>"; };
+		ACE5EABF259A581700485626 /* QuoteRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRunner.swift; sourceTree = "<group>"; };
 		B59F1F743562E437462B3ADF /* Pods-AlectronaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlectronaTests.debug.xcconfig"; path = "Target Support Files/Pods-AlectronaTests/Pods-AlectronaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B9E7D0A7940B6CA59BFE161D /* Pods-Alectrona-AlectronaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alectrona-AlectronaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Alectrona-AlectronaUITests/Pods-Alectrona-AlectronaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FCB00CD0B972088CC587E992 /* Pods-Alectrona.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alectrona.debug.xcconfig"; path = "Target Support Files/Pods-Alectrona/Pods-Alectrona.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,17 +152,17 @@
 		AC92B47C2589F4B9002826F8 /* Alectrona */ = {
 			isa = PBXGroup;
 			children = (
+				ACE5EAA72599385D00485626 /* Model */,
 				ACE5EA7F2599057A00485626 /* Util */,
 				ACE5EA7A259810CE00485626 /* API */,
 				AC5C9C9E2591C1AA004CC724 /* VIews */,
 				AC92B47D2589F4B9002826F8 /* AppDelegate.swift */,
-				AC92B47F2589F4B9002826F8 /* ContentView.swift */,
 				AC92B4812589F4BA002826F8 /* Assets.xcassets */,
 				AC92B4862589F4BA002826F8 /* Main.storyboard */,
 				AC92B4892589F4BA002826F8 /* Info.plist */,
 				AC92B48A2589F4BA002826F8 /* Alectrona.entitlements */,
 				AC92B4832589F4BA002826F8 /* Preview Content */,
-				ACE5EA6025980A3400485626 /* Ticker.swift */,
+				ACE5EABF259A581700485626 /* QuoteRunner.swift */,
 			);
 			path = Alectrona;
 			sourceTree = "<group>";
@@ -202,6 +206,7 @@
 		ACE5EA7A259810CE00485626 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				ACE5EA6025980A3400485626 /* QuoteLoader.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -212,6 +217,15 @@
 				ACE5EA802599058900485626 /* Extensions.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		ACE5EAA72599385D00485626 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ACE5EAAB2599388500485626 /* LiveQuote.swift */,
+				ACE5EAB925993AFB00485626 /* LiveQuoteStore.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,11 +470,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC65D0BF259559F6008C6C5C /* StatusBarTickerDisplay.swift in Sources */,
-				ACE5EA6125980A3400485626 /* Ticker.swift in Sources */,
+				ACE5EAAC2599388500485626 /* LiveQuote.swift in Sources */,
+				ACE5EA6125980A3400485626 /* QuoteLoader.swift in Sources */,
 				AC65D0BA25955822008C6C5C /* StatusBar.swift in Sources */,
-				AC92B4802589F4B9002826F8 /* ContentView.swift in Sources */,
 				AC65D0C425955A38008C6C5C /* StatusBarTickerData.swift in Sources */,
+				ACE5EABA25993AFB00485626 /* LiveQuoteStore.swift in Sources */,
 				AC92B47E2589F4B9002826F8 /* AppDelegate.swift in Sources */,
+				ACE5EAC0259A581700485626 /* QuoteRunner.swift in Sources */,
 				ACE5EA812599058900485626 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
