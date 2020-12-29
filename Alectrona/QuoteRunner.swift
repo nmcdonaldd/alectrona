@@ -7,7 +7,13 @@
 
 import Foundation
 
+protocol LiveQuoteDelegate {
+    func onLiveQuoteLoaded(_ quote: Quote, forTicker ticker: String)
+}
+
 class LiveQuoteRunner {
+    
+    var delegate: LiveQuoteDelegate?
     
     func beginRepeatedWork() {
         let tickers = getTickers()
@@ -33,11 +39,7 @@ class LiveQuoteRunner {
                     return
                 }
                 
-                print("Received data for \(ticker): \(quote.price)")
-                
-                let liveQuote = LiveQuoteStore.shared.getLiveQuoteByTicker(ticker)
-                liveQuote.setMarketPrice(quote.price)
-                liveQuote.setpercentageGain(strongSelf.calculatePercentageGain(price: quote.price, previousClose: quote.previousClose))
+                strongSelf.delegate?.onLiveQuoteLoaded(quote, forTicker: ticker)
                 group.leave()
             })
         }
@@ -45,12 +47,6 @@ class LiveQuoteRunner {
         group.notify(queue: .main) {
             callback()
         }
-    }
-    
-    private func calculatePercentageGain(price: Double, previousClose: Double) -> Double {
-        let difference = price - previousClose
-        print("Calculated difference: \(difference/previousClose)")
-        return difference / previousClose
     }
     
     private func getReloadOffset() -> DispatchTime {
@@ -66,5 +62,4 @@ class LiveQuoteRunner {
             strongSelf.beginRepeatedWork()
         }
     }
-    
 }

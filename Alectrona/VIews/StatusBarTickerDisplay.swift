@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StatusBarPreferenceKey: PreferenceKey {
+private struct StatusBarPreferenceKey: PreferenceKey {
     static var defaultValue: CGSize = CGSize.zero
     
     static func reduce(value: inout CGSize, nextValue: () -> CGSize) {

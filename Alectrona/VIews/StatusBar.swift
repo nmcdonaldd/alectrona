@@ -42,7 +42,5 @@ class StatusBar {
         let container = statusBarDisplayByTicker[tickerSize.ticker]
         container?.hostingView.setFrameSize(NSSize(width: tickerSize.size.width, height: NSStatusBar.system.thickness))
         container?.statusBarItem.length = tickerSize.size.width
-        print("Width change!! \(tickerSize.ticker)")
-        print(tickerSize.size.width)
     }
 }

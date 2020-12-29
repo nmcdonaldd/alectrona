@@ -8,15 +8,10 @@
 import Foundation
 
 class LiveQuoteStore {
-    private var liveQuoteByTicker = [String: LiveQuote]()
+    fileprivate var liveQuoteByTicker = [String: LiveQuote]()
     
     static let shared = LiveQuoteStore()
     private init() { }
-    
-    func updateQuoteForTicker(_ ticker: String, price: Double, percentageGain: Double) {
-        liveQuoteByTicker[ticker]?.setMarketPrice(price)
-        liveQuoteByTicker[ticker]?.setpercentageGain(percentageGain)
-    }
     
     func getLiveQuoteByTicker(_ ticker: String) -> LiveQuote {
         if(liveQuoteByTicker[ticker] == nil) {
@@ -24,5 +19,18 @@ class LiveQuoteStore {
         }
         
         return liveQuoteByTicker[ticker]!
+    }
+}
+
+extension LiveQuoteStore: LiveQuoteDelegate {
+    func onLiveQuoteLoaded(_ quote: Quote, forTicker ticker: String) {
+        let liveQuote = getLiveQuoteByTicker(ticker)
+        liveQuote.fairMarketPrice = quote.price
+        liveQuote.percentageGain = LiveQuoteStore.calculatePercentageGain(price: quote.price, previousClose: quote.previousClose)
+    }
+    
+    private class func calculatePercentageGain(price: Double, previousClose: Double) -> Double {
+        let difference = price - previousClose
+        return difference / previousClose
     }
 }

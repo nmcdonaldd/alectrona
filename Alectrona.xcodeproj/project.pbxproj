@@ -10,7 +10,6 @@
 		486E53E90906DABD58DFAEF7 /* Pods_Alectrona.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922B08E465C063D61DFFBEFA /* Pods_Alectrona.framework */; };
 		AC65D0BA25955822008C6C5C /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC65D0B925955822008C6C5C /* StatusBar.swift */; };
 		AC65D0BF259559F6008C6C5C /* StatusBarTickerDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC65D0BE259559F6008C6C5C /* StatusBarTickerDisplay.swift */; };
-		AC65D0C425955A38008C6C5C /* StatusBarTickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC65D0C325955A38008C6C5C /* StatusBarTickerData.swift */; };
 		AC92B47E2589F4B9002826F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92B47D2589F4B9002826F8 /* AppDelegate.swift */; };
 		AC92B4822589F4BA002826F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC92B4812589F4BA002826F8 /* Assets.xcassets */; };
 		AC92B4852589F4BA002826F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC92B4842589F4BA002826F8 /* Preview Assets.xcassets */; };
@@ -52,7 +51,6 @@
 		922B08E465C063D61DFFBEFA /* Pods_Alectrona.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alectrona.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC65D0B925955822008C6C5C /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		AC65D0BE259559F6008C6C5C /* StatusBarTickerDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarTickerDisplay.swift; sourceTree = "<group>"; };
-		AC65D0C325955A38008C6C5C /* StatusBarTickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarTickerData.swift; sourceTree = "<group>"; };
 		AC92B47A2589F4B9002826F8 /* Alectrona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alectrona.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC92B47D2589F4B9002826F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC92B4812589F4BA002826F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 			children = (
 				AC65D0B925955822008C6C5C /* StatusBar.swift */,
 				AC65D0BE259559F6008C6C5C /* StatusBarTickerDisplay.swift */,
-				AC65D0C325955A38008C6C5C /* StatusBarTickerData.swift */,
 			);
 			path = VIews;
 			sourceTree = "<group>";
@@ -473,7 +470,6 @@
 				ACE5EAAC2599388500485626 /* LiveQuote.swift in Sources */,
 				ACE5EA6125980A3400485626 /* QuoteLoader.swift in Sources */,
 				AC65D0BA25955822008C6C5C /* StatusBar.swift in Sources */,
-				AC65D0C425955A38008C6C5C /* StatusBarTickerData.swift in Sources */,
 				ACE5EABA25993AFB00485626 /* LiveQuoteStore.swift in Sources */,
 				AC92B47E2589F4B9002826F8 /* AppDelegate.swift in Sources */,
 				ACE5EAC0259A581700485626 /* QuoteRunner.swift in Sources */,
