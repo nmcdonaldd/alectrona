@@ -15,7 +15,8 @@ class LiveQuote: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     private var quoteController = QuoteController()
     
-    @Published var quote: Quote = BASE_QUOTE
+    @Published var percentageGain: Double = 0.0
+    @Published var regularMarketPrice: Double = 0.0
     
     private var repeatedWorkPublisher: AnyPublisher<Timer.TimerPublisher.Output, Timer.TimerPublisher.Failure> {
         Timer.publish(every: 5.0, on: .main, in: .default)
@@ -23,14 +24,13 @@ class LiveQuote: ObservableObject {
             .eraseToAnyPublisher()
     }
     
-    private var quotePublisher: AnyPublisher<Quote, Error> {
+    private lazy var quotePublisher: AnyPublisher<Quote, Error> = {
         repeatedWorkPublisher
             .receive(on: RunLoop.main)
-            .flatMap({ [unowned self] (_) in
-                return self.quoteController.getQuote(forSymbol: symbol)
-            })
+            .flatMap({ _ in self.quoteController.getQuote(forSymbol: self.symbol) })
+            .share()
             .eraseToAnyPublisher()
-    }
+    }()
     
     init(symbol: String) {
         self.symbol = symbol
@@ -38,7 +38,15 @@ class LiveQuote: ObservableObject {
         quotePublisher
             .receive(on: RunLoop.main)
             .replaceError(with: LiveQuote.BASE_QUOTE)
-            .assign(to: \.quote, on: self)
+            .map { $0.percentageGain }
+            .assign(to: \.percentageGain, on: self)
+            .store(in: &cancellables)
+        
+        quotePublisher
+            .receive(on: RunLoop.main)
+            .replaceError(with: LiveQuote.BASE_QUOTE)
+            .map { $0.regularMarketPrice }
+            .assign(to: \.regularMarketPrice, on: self)
             .store(in: &cancellables)
     }
 }

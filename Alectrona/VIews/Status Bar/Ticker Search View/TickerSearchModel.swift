@@ -44,11 +44,7 @@ class TickerSearchModel: ObservableObject {
             .store(in: &cancellableSet)
     }
     
-    private func cancelAll() {
-        cancellableSet.forEach({ $0.cancel() })
-    }
-    
     deinit {
-        cancelAll()
+        cancellableSet.forEach({ $0.cancel() })
     }
 }

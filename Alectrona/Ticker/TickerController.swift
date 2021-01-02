@@ -18,7 +18,6 @@ class TickerController {
         let endpoint = Endpoint.tickerSearch(text)
         return API.get(type: TickerSearchResult.self, url: endpoint.url)
             .map(\.quotes)
-            .print()
             .eraseToAnyPublisher()
     }
 }
