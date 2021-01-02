@@ -7,6 +7,8 @@
 
 import Alamofire
 import SwiftyJSON
+/// FIXME: remove combine from API
+import Combine
 
 struct Response<T> {
     struct ErrorInReponse: Error {
@@ -28,11 +30,11 @@ struct Response<T> {
     }
 }
 
-class QuoteLoader {
+class API {
     private static let BASE_URL: String = "https://query1.finance.yahoo.com/v8/finance/chart/"
     
     class func getLiveQuote(forTicker ticker: String, callback: @escaping (Response<Quote>) -> Void) {
-        AF.request(QuoteLoader.BASE_URL + ticker).validate().responseJSON { (response) in
+        AF.request(API.BASE_URL + ticker).validate().responseJSON { (response) in
             guard let data = response.data else {
                 return
             }
@@ -50,6 +52,35 @@ class QuoteLoader {
             }
         }
     }
+    
+    class func searchTickers2(_ searchText: String) -> AnyPublisher<[TickerSearchResult], URLSession.DataTaskPublisher.Failure> {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "query1.finance.yahoo.com"
+        components.path = "/v1/finance/search"
+        components.queryItems = [
+            URLQueryItem(name: "q", value: searchText)
+        ]
+        
+        return URLSession.shared.dataTaskPublisher(for: components.url!)
+            .map { $0.data }
+            .map { (data) -> [TickerSearchResult] in
+                do {
+                    let asJSON = try JSON(data: data)
+                    return asJSON["quotes"].arrayValue
+                        .map { TickerSearchResult(symbol: $0["symbol"].stringValue, name: $0["longname"].stringValue, exchange: $0["exchange"].stringValue) }
+                } catch {
+                    return [TickerSearchResult]()
+                }
+            }
+            .eraseToAnyPublisher()
+    }
+}
+
+struct TickerSearchResult {
+    var symbol: String
+    var name: String
+    var exchange: String
 }
 
 struct Quote {

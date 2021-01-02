@@ -26,7 +26,7 @@ class LiveQuoteRunner {
     }
     
     private func getTickers() -> [String] {
-        return ["TTCF","VEEV"]
+        return ["CSCO","VEEV"]
     }
     
     private func getLiveQuotesForTickers(_ tickers: [String], callback: @escaping () -> Void) {
@@ -34,7 +34,7 @@ class LiveQuoteRunner {
         
         for ticker in tickers {
             group.enter()
-            QuoteLoader.getLiveQuote(forTicker: ticker, callback: { [weak self] (response: Response<Quote>) in
+            API.getLiveQuote(forTicker: ticker, callback: { [weak self] (response: Response<Quote>) in
                 guard let strongSelf = self, let quote = response.data else {
                     return
                 }

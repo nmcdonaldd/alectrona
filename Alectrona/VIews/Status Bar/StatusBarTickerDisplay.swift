@@ -17,14 +17,10 @@ private struct StatusBarPreferenceKey: PreferenceKey {
     typealias Value = CGSize
 }
 
-struct TickerSize {
-    var size: CGSize
-    var ticker: String
-}
-
 struct StatusBarTickerDisplay: View {
     var ticker: String
-    var onSizeChange: (TickerSize) -> Void
+    var onSizeChange: (CGSize) -> Void
+    
     @EnvironmentObject var quote: LiveQuote
     
     var formattedQuote: String {
@@ -43,27 +39,43 @@ struct StatusBarTickerDisplay: View {
             Text(formattedQuote)
                 .foregroundColor(.primary)
             Text("(\(formattedPercentageDifference)%)")
-                .foregroundColor(quote.percentageGain == 0.0 ? .black : quote.percentageGain < 0 ? .red : .green)
+                .foregroundColor(quote.percentageGain == 0.0 ? .white : quote.percentageGain < 0 ? .red : .green)
         }.fixedSize()
         .background(GeometryReader { proxy in
             return Color.clear.preference(key: StatusBarPreferenceKey.self, value: proxy.size)
         }).onPreferenceChange(StatusBarPreferenceKey.self, perform: { value in
             DispatchQueue.main.async {
-                onSizeChange(TickerSize(size: value, ticker: ticker))
+                onSizeChange(value)
             }
         })
     }
 }
 
-//struct StatusBarTickerDisplay_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HStack(spacing: 12) {
-//            StatusBarTickerDisplay(onSizeChange: { (_) in
-//                // No op
-//            }, data: StatusBarTickerData(ticker: "AAPL", quote: 131.97, percentageDifference: 0.012))
-//            StatusBarTickerDisplay(onSizeChange: { (_) in
-//                // No op
-//            }, data: StatusBarTickerData(ticker: "AMZN", quote: 3123.12834, percentageDifference: -0.123))
-//        }
-//    }
-//}
+#if DEBUG
+struct StatusBarTickerDisplay_Previews: PreviewProvider {
+    static var veevQuote: LiveQuote {
+        let liveQuote = LiveQuote()
+        liveQuote.fairMarketPrice = 256.123
+        liveQuote.percentageGain = 0.012
+        return liveQuote
+    }
+    
+    static var cscoQuote: LiveQuote {
+        let liveQuote = LiveQuote()
+        liveQuote.fairMarketPrice = 44.12
+        liveQuote.percentageGain = -0.012
+        return liveQuote
+    }
+    
+    static var previews: some View {
+        HStack(spacing: 12) {
+            StatusBarTickerDisplay(ticker: "VEEV") { (_) in
+                // No-op
+            }.environmentObject(veevQuote)
+            StatusBarTickerDisplay(ticker: "CSCO") { (_) in
+                // No-op
+            }.environmentObject(cscoQuote)
+        }
+    }
+}
+#endif
