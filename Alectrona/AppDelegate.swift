@@ -12,11 +12,8 @@ import SwiftUI
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     let statusBar = StatusBar()
-    let quoteRunner = LiveQuoteRunner()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        quoteRunner.delegate = LiveQuoteStore.shared
-        quoteRunner.beginRepeatedWork()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

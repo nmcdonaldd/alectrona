@@ -13,8 +13,7 @@ class TickerQuoteStatusItem {
     private var hostingView: NSView!
     
     init(ticker: String) {
-        let liveQuote: LiveQuote = LiveQuoteStore.shared.getLiveQuoteByTicker(ticker)
-        hostingView = NSHostingView(rootView: StatusBarTickerDisplay(ticker: ticker, onSizeChange: onSizeChange).environmentObject(liveQuote))
+        hostingView = NSHostingView(rootView: StatusBarTickerDisplay(symbol: ticker, onSizeChange: onSizeChange))
         statusItem.button?.addSubview(hostingView)
     }
     

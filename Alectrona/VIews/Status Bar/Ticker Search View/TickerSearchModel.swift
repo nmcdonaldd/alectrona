@@ -13,9 +13,10 @@ class TickerSearchModel: ObservableObject {
     @Published var searchText: String = ""
     
     // output
-    @Published var searchResults: [TickerSearchResult] = [TickerSearchResult]()
+    @Published var searchResults: [Ticker] = [Ticker]()
     
     private var cancellableSet: Set<AnyCancellable> = []
+    private var tickerController = TickerController()
     
     private var searchTextPublisher: AnyPublisher<String, Never> {
         $searchText
@@ -26,11 +27,13 @@ class TickerSearchModel: ObservableObject {
             .eraseToAnyPublisher()
     }
     
-    private var resultsPublisher: AnyPublisher<[TickerSearchResult], Never> {
+    private var resultsPublisher: AnyPublisher<[Ticker], Never> {
         searchTextPublisher
             .receive(on: RunLoop.main)
-            .flatMap { API.searchTickers2($0) }
-            .replaceError(with: [TickerSearchResult]())
+            .flatMap { [unowned self] searchText in
+                return self.tickerController.searchTickers(withText: searchText)
+            }
+            .replaceError(with: [Ticker]())
             .eraseToAnyPublisher()
     }
     

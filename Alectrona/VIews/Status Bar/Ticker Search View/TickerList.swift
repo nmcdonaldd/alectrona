@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct TickerList: View {
-    var tickerList: [TickerSearchResult]
+    var tickerList: [Ticker]
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -23,11 +23,11 @@ struct TickerList: View {
     }
 }
 
-#if DEBUG
-struct TickerList_Preview: PreviewProvider {
-    static var previews: some View {
-        TickerList(tickerList: [TickerSearchResult(symbol: "CSCO", name: "Cisco Systems, Inc", exchange: "NYQ"), TickerSearchResult(symbol: "SPY", name: "SPDR Standards & Poor Deposits", exchange: "NYSE")])
-            .previewLayout(.sizeThatFits)
-    }
-}
-#endif
+//#if DEBUG
+//struct TickerList_Preview: PreviewProvider {
+//    static var previews: some View {
+//        TickerList(tickerList: [TickerSearchResult(symbol: "CSCO", name: "Cisco Systems, Inc", exchange: "NYQ"), TickerSearchResult(symbol: "SPY", name: "SPDR Standards & Poor Deposits", exchange: "NYSE")])
+//            .previewLayout(.sizeThatFits)
+//    }
+//}
+//#endif

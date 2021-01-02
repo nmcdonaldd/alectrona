@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct TickerRow: View {
-    var ticker: TickerSearchResult
+    var ticker: Ticker
     
     var body: some View {
         Button(action: {
@@ -19,9 +19,11 @@ struct TickerRow: View {
                 VStack(alignment: .leading) {
                     Text(ticker.symbol)
                         .font(.title3)
-                    Text(ticker.name)
-                        .foregroundColor(.gray)
-                        .font(.subheadline)
+                    if (ticker.longname != nil) {
+                        Text(ticker.longname!)
+                            .foregroundColor(.gray)
+                            .font(.subheadline)
+                    }
                 }
                 Spacer()
                 Text(ticker.exchange)
@@ -31,13 +33,13 @@ struct TickerRow: View {
     }
 }
 
-#if DEBUG
-struct TickerRow_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            TickerRow(ticker: TickerSearchResult(symbol: "VEEV", name: "Veeva Systems, Inc.", exchange: "NYS"))
-            TickerRow(ticker: TickerSearchResult(symbol: "CSCO", name: "Cisco Systems", exchange: "NYSE"))
-        }.previewLayout(.fixed(width: 1000, height: 1000))
-    }
-}
-#endif
+//#if DEBUG
+//struct TickerRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            TickerRow(ticker: TickerSearchResult(symbol: "VEEV", name: "Veeva Systems, Inc.", exchange: "NYS"))
+//            TickerRow(ticker: TickerSearchResult(symbol: "CSCO", name: "Cisco Systems", exchange: "NYSE"))
+//        }.previewLayout(.fixed(width: 1000, height: 1000))
+//    }
+//}
+//#endif

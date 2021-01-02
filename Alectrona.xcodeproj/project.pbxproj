@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		486E53E90906DABD58DFAEF7 /* Pods_Alectrona.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922B08E465C063D61DFFBEFA /* Pods_Alectrona.framework */; };
+		AC45DA0325A01D2400A4B810 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA0225A01D2400A4B810 /* Ticker.swift */; };
+		AC45DA0825A01E9500A4B810 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA0725A01E9500A4B810 /* Endpoint.swift */; };
+		AC45DA1125A0593E00A4B810 /* TickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA1025A0593E00A4B810 /* TickerController.swift */; };
+		AC45DA1625A05A1100A4B810 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA1525A05A1100A4B810 /* Quote.swift */; };
+		AC45DA1C25A05A3100A4B810 /* QuoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA1B25A05A3100A4B810 /* QuoteController.swift */; };
+		AC45DA2125A068AF00A4B810 /* LiveQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA2025A068AF00A4B810 /* LiveQuote.swift */; };
 		AC65D0BA25955822008C6C5C /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC65D0B925955822008C6C5C /* StatusBar.swift */; };
 		AC65D0BF259559F6008C6C5C /* StatusBarTickerDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC65D0BE259559F6008C6C5C /* StatusBarTickerDisplay.swift */; };
 		AC67719E259C56BC00F807DB /* NewTickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC67719D259C56BC00F807DB /* NewTickerButton.swift */; };
@@ -24,9 +30,6 @@
 		AC92B49F2589F4BA002826F8 /* AlectronaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92B49E2589F4BA002826F8 /* AlectronaUITests.swift */; };
 		ACE5EA6125980A3400485626 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5EA6025980A3400485626 /* API.swift */; };
 		ACE5EA812599058900485626 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5EA802599058900485626 /* Extensions.swift */; };
-		ACE5EAAC2599388500485626 /* LiveQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5EAAB2599388500485626 /* LiveQuote.swift */; };
-		ACE5EABA25993AFB00485626 /* LiveQuoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5EAB925993AFB00485626 /* LiveQuoteStore.swift */; };
-		ACE5EAC0259A581700485626 /* QuoteRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5EABF259A581700485626 /* QuoteRunner.swift */; };
 		AD70A8D0F14679867CDD22AF /* Pods_Alectrona_AlectronaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 154C042B8E71643B3982C387 /* Pods_Alectrona_AlectronaUITests.framework */; };
 		E3374D5BA3650C86B2D83EFD /* Pods_AlectronaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8E4440523D00ED7EB9AA7A /* Pods_AlectronaTests.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +58,12 @@
 		2F8E4440523D00ED7EB9AA7A /* Pods_AlectronaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlectronaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63804F299E522A6611217C04 /* Pods-Alectrona.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alectrona.release.xcconfig"; path = "Target Support Files/Pods-Alectrona/Pods-Alectrona.release.xcconfig"; sourceTree = "<group>"; };
 		922B08E465C063D61DFFBEFA /* Pods_Alectrona.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alectrona.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC45DA0225A01D2400A4B810 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
+		AC45DA0725A01E9500A4B810 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		AC45DA1025A0593E00A4B810 /* TickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerController.swift; sourceTree = "<group>"; };
+		AC45DA1525A05A1100A4B810 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		AC45DA1B25A05A3100A4B810 /* QuoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteController.swift; sourceTree = "<group>"; };
+		AC45DA2025A068AF00A4B810 /* LiveQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuote.swift; sourceTree = "<group>"; };
 		AC65D0B925955822008C6C5C /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		AC65D0BE259559F6008C6C5C /* StatusBarTickerDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarTickerDisplay.swift; sourceTree = "<group>"; };
 		AC67719D259C56BC00F807DB /* NewTickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTickerButton.swift; sourceTree = "<group>"; };
@@ -78,9 +87,6 @@
 		AC92B4A02589F4BA002826F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACE5EA6025980A3400485626 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		ACE5EA802599058900485626 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		ACE5EAAB2599388500485626 /* LiveQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuote.swift; sourceTree = "<group>"; };
-		ACE5EAB925993AFB00485626 /* LiveQuoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuoteStore.swift; sourceTree = "<group>"; };
-		ACE5EABF259A581700485626 /* QuoteRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRunner.swift; sourceTree = "<group>"; };
 		B59F1F743562E437462B3ADF /* Pods-AlectronaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlectronaTests.debug.xcconfig"; path = "Target Support Files/Pods-AlectronaTests/Pods-AlectronaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B9E7D0A7940B6CA59BFE161D /* Pods-Alectrona-AlectronaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alectrona-AlectronaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Alectrona-AlectronaUITests/Pods-Alectrona-AlectronaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FCB00CD0B972088CC587E992 /* Pods-Alectrona.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alectrona.debug.xcconfig"; path = "Target Support Files/Pods-Alectrona/Pods-Alectrona.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +133,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AC45DA0C25A058E700A4B810 /* Ticker */ = {
+			isa = PBXGroup;
+			children = (
+				AC45DA0225A01D2400A4B810 /* Ticker.swift */,
+				AC45DA1025A0593E00A4B810 /* TickerController.swift */,
+			);
+			path = Ticker;
+			sourceTree = "<group>";
+		};
+		AC45DA1A25A05A1800A4B810 /* Quote */ = {
+			isa = PBXGroup;
+			children = (
+				AC45DA1525A05A1100A4B810 /* Quote.swift */,
+				AC45DA1B25A05A3100A4B810 /* QuoteController.swift */,
+			);
+			path = Quote;
+			sourceTree = "<group>";
+		};
 		AC5C9C9E2591C1AA004CC724 /* VIews */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +178,7 @@
 				AC65D0BE259559F6008C6C5C /* StatusBarTickerDisplay.swift */,
 				AC7C76A7259C06C500082025 /* TickerQuoteStatusItem.swift */,
 				AC67719D259C56BC00F807DB /* NewTickerButton.swift */,
+				AC45DA2025A068AF00A4B810 /* LiveQuote.swift */,
 			);
 			path = "Status Bar";
 			sourceTree = "<group>";
@@ -183,7 +208,8 @@
 		AC92B47C2589F4B9002826F8 /* Alectrona */ = {
 			isa = PBXGroup;
 			children = (
-				ACE5EAA72599385D00485626 /* Model */,
+				AC45DA1A25A05A1800A4B810 /* Quote */,
+				AC45DA0C25A058E700A4B810 /* Ticker */,
 				ACE5EA7F2599057A00485626 /* Util */,
 				ACE5EA7A259810CE00485626 /* API */,
 				AC5C9C9E2591C1AA004CC724 /* VIews */,
@@ -193,7 +219,6 @@
 				AC92B4892589F4BA002826F8 /* Info.plist */,
 				AC92B48A2589F4BA002826F8 /* Alectrona.entitlements */,
 				AC92B4832589F4BA002826F8 /* Preview Content */,
-				ACE5EABF259A581700485626 /* QuoteRunner.swift */,
 			);
 			path = Alectrona;
 			sourceTree = "<group>";
@@ -238,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				ACE5EA6025980A3400485626 /* API.swift */,
+				AC45DA0725A01E9500A4B810 /* Endpoint.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -248,15 +274,6 @@
 				ACE5EA802599058900485626 /* Extensions.swift */,
 			);
 			path = Util;
-			sourceTree = "<group>";
-		};
-		ACE5EAA72599385D00485626 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				ACE5EAAB2599388500485626 /* LiveQuote.swift */,
-				ACE5EAB925993AFB00485626 /* LiveQuoteStore.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,15 +521,18 @@
 				AC6771D4259FC38D00F807DB /* TickerList.swift in Sources */,
 				AC6771CF259FBFD900F807DB /* TickerRow.swift in Sources */,
 				AC65D0BF259559F6008C6C5C /* StatusBarTickerDisplay.swift in Sources */,
-				ACE5EAAC2599388500485626 /* LiveQuote.swift in Sources */,
+				AC45DA1625A05A1100A4B810 /* Quote.swift in Sources */,
+				AC45DA0325A01D2400A4B810 /* Ticker.swift in Sources */,
+				AC45DA1C25A05A3100A4B810 /* QuoteController.swift in Sources */,
 				AC6771A3259C5D0F00F807DB /* NewTickerSelectorView.swift in Sources */,
 				ACE5EA6125980A3400485626 /* API.swift in Sources */,
 				AC65D0BA25955822008C6C5C /* StatusBar.swift in Sources */,
-				ACE5EABA25993AFB00485626 /* LiveQuoteStore.swift in Sources */,
+				AC45DA2125A068AF00A4B810 /* LiveQuote.swift in Sources */,
+				AC45DA0825A01E9500A4B810 /* Endpoint.swift in Sources */,
+				AC45DA1125A0593E00A4B810 /* TickerController.swift in Sources */,
 				AC6771CA259DC5DE00F807DB /* TickerSearchModel.swift in Sources */,
 				AC67719E259C56BC00F807DB /* NewTickerButton.swift in Sources */,
 				AC92B47E2589F4B9002826F8 /* AppDelegate.swift in Sources */,
-				ACE5EAC0259A581700485626 /* QuoteRunner.swift in Sources */,
 				ACE5EA812599058900485626 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

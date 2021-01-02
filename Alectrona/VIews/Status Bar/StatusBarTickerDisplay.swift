@@ -18,17 +18,17 @@ private struct StatusBarPreferenceKey: PreferenceKey {
 }
 
 struct StatusBarTickerDisplay: View {
-    var ticker: String
-    var onSizeChange: (CGSize) -> Void
+    let ticker: String
+    let onSizeChange: (CGSize) -> Void
     
-    @EnvironmentObject var quote: LiveQuote
+    @ObservedObject var liveQuote: LiveQuote
     
     var formattedQuote: String {
-        NumberFormatter.localizedString(from: NSNumber(value: quote.fairMarketPrice), number: .currency)
+        NumberFormatter.localizedString(from: NSNumber(value: liveQuote.quote.chartPreviousClose), number: .currency)
     }
     
     var formattedPercentageDifference: String {
-        NumberFormatter.localizedString(from: NSNumber(value: (quote.percentageGain*100).rounded(toPlaces: 2)), number: .decimal)
+        NumberFormatter.localizedString(from: NSNumber(value: (liveQuote.quote.percentageGain*100).rounded(toPlaces: 2)), number: .decimal)
     }
     
     var body: some View {
@@ -39,7 +39,7 @@ struct StatusBarTickerDisplay: View {
             Text(formattedQuote)
                 .foregroundColor(.primary)
             Text("(\(formattedPercentageDifference)%)")
-                .foregroundColor(quote.percentageGain == 0.0 ? .white : quote.percentageGain < 0 ? .red : .green)
+                .foregroundColor(liveQuote.quote.percentageGain == 0.0 ? .white : liveQuote.quote.percentageGain < 0 ? .red : .green)
         }.fixedSize()
         .background(GeometryReader { proxy in
             return Color.clear.preference(key: StatusBarPreferenceKey.self, value: proxy.size)
@@ -49,33 +49,40 @@ struct StatusBarTickerDisplay: View {
             }
         })
     }
+    
+    init(symbol: String, onSizeChange: @escaping (CGSize) -> Void) {
+        self.ticker = symbol
+        self.onSizeChange = onSizeChange
+        
+        liveQuote = LiveQuote(symbol: symbol)
+    }
 }
 
-#if DEBUG
-struct StatusBarTickerDisplay_Previews: PreviewProvider {
-    static var veevQuote: LiveQuote {
-        let liveQuote = LiveQuote()
-        liveQuote.fairMarketPrice = 256.123
-        liveQuote.percentageGain = 0.012
-        return liveQuote
-    }
-    
-    static var cscoQuote: LiveQuote {
-        let liveQuote = LiveQuote()
-        liveQuote.fairMarketPrice = 44.12
-        liveQuote.percentageGain = -0.012
-        return liveQuote
-    }
-    
-    static var previews: some View {
-        HStack(spacing: 12) {
-            StatusBarTickerDisplay(ticker: "VEEV") { (_) in
-                // No-op
-            }.environmentObject(veevQuote)
-            StatusBarTickerDisplay(ticker: "CSCO") { (_) in
-                // No-op
-            }.environmentObject(cscoQuote)
-        }
-    }
-}
-#endif
+//#if DEBUG
+//struct StatusBarTickerDisplay_Previews: PreviewProvider {
+//    static var veevQuote: LiveQuote {
+//        let liveQuote = LiveQuote()
+//        liveQuote.fairMarketPrice = 256.123
+//        liveQuote.percentageGain = 0.012
+//        return liveQuote
+//    }
+//
+//    static var cscoQuote: LiveQuote {
+//        let liveQuote = LiveQuote()
+//        liveQuote.fairMarketPrice = 44.12
+//        liveQuote.percentageGain = -0.012
+//        return liveQuote
+//    }
+//
+//    static var previews: some View {
+//        HStack(spacing: 12) {
+//            StatusBarTickerDisplay(ticker: "VEEV") { (_) in
+//                // No-op
+//            }.environmentObject(veevQuote)
+//            StatusBarTickerDisplay(ticker: "CSCO") { (_) in
+//                // No-op
+//            }.environmentObject(cscoQuote)
+//        }
+//    }
+//}
+//#endif
