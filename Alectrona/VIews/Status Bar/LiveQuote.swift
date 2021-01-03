@@ -27,26 +27,43 @@ class LiveQuote: ObservableObject {
     private lazy var quotePublisher: AnyPublisher<Quote, Error> = {
         repeatedWorkPublisher
             .receive(on: RunLoop.main)
-            .flatMap({ _ in self.quoteController.getQuote(forSymbol: self.symbol) })
-            .share()
+            .flatMap({ _ in self.getQuote() })
             .eraseToAnyPublisher()
     }()
+    
+    private func getQuote() -> AnyPublisher<Quote, Error> {
+        return self.quoteController.getQuote(forSymbol: symbol)
+    }
     
     init(symbol: String) {
         self.symbol = symbol
         
-        quotePublisher
+        // Loads the quote instantly
+        subscribers(forQuotePublisher: getQuote())
+        
+        // Kicks off repeated loads
+        subscribers(forQuotePublisher: quotePublisher)
+    }
+    
+    private func subscribers(forQuotePublisher publisher: AnyPublisher<Quote, Error>) {
+        let sharedPublisher = publisher.share()
+        
+        sharedPublisher
             .receive(on: RunLoop.main)
             .replaceError(with: LiveQuote.BASE_QUOTE)
             .map { $0.percentageGain }
             .assign(to: \.percentageGain, on: self)
             .store(in: &cancellables)
         
-        quotePublisher
+        sharedPublisher
             .receive(on: RunLoop.main)
             .replaceError(with: LiveQuote.BASE_QUOTE)
             .map { $0.regularMarketPrice }
             .assign(to: \.regularMarketPrice, on: self)
             .store(in: &cancellables)
+    }
+    
+    deinit {
+        cancellables.forEach({ $0.cancel() })
     }
 }
