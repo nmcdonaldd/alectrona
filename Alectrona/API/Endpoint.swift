@@ -39,4 +39,13 @@ extension Endpoint {
     static func getQuote(forSymbol symbol: String) -> Self {
         return Endpoint(path: "/v8/finance/chart/\(symbol)", host: "query1.finance.yahoo.com")
     }
+    
+    static func getNews(forSymbol symbol: String, newsCount: Int = 3) -> Self {
+        return Endpoint(path: "/v1/finance/search",
+                        host: "query1.finance.yahoo.com",
+                        queryItems: [
+                            URLQueryItem(name: "q", value: symbol),
+                            URLQueryItem(name: "newsCount", value: String(newsCount))
+                        ])
+    }
 }

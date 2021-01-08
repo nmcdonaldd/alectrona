@@ -24,11 +24,11 @@ class StatusBar {
         /// FIXME: move to some environment variable
         let tickers = getTickersToDisplay()
         for ticker in tickers {
-            let _ = TickerQuoteStatusItem(ticker: ticker)
+            TickerQuoteStatusItem(ticker: ticker)
         }
     }
     
     func getTickersToDisplay() -> [String] {
-        return ["CSCO", "VEEV"]
+        return ["TTD", "LMND"]
     }
 }

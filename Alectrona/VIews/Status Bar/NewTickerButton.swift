@@ -12,14 +12,21 @@ class NewTickerButton {
     
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     private var popover = NSPopover()
+    private var hostingView: NSView!
     
     init() {
-        statusItem.button?.title = "+"
+        hostingView = NSHostingView(rootView: NewTickerStatusItemView(onSizeChange: onSizeChange))
+        statusItem.button?.addSubview(hostingView)
         statusItem.button?.action = #selector(onButtonClicked)
         
         // Necessary so AppDelegate doesn't implicitly receive the action
         statusItem.button?.target = self
         popover.behavior = .transient
+    }
+    
+    private func onSizeChange(_ size: CGSize) {
+        hostingView.setFrameSize(NSSize(width: size.width, height: NSStatusBar.system.thickness))
+        statusItem.length = size.width
     }
     
     @objc func onButtonClicked() {

@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC09EFDC25A591600091B227 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFDB25A591600091B227 /* News.swift */; };
+		AC09EFE125A5916D0091B227 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFE025A5916D0091B227 /* NewsController.swift */; };
+		AC09EFE625A5A95F0091B227 /* NewsLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFE525A5A95F0091B227 /* NewsLink.swift */; };
+		AC09EFEB25A5AA420091B227 /* NewsLinkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFEA25A5AA420091B227 /* NewsLinkController.swift */; };
+		AC09EFF025A5AEC00091B227 /* NewsScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFEF25A5AEC00091B227 /* NewsScraper.swift */; };
+		AC09EFF625A5AF530091B227 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = AC09EFF525A5AF530091B227 /* SwiftSoup */; };
+		AC09EFFF25A5AF980091B227 /* HTMLScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFFE25A5AF980091B227 /* HTMLScraper.swift */; };
 		AC45DA0325A01D2400A4B810 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA0225A01D2400A4B810 /* Ticker.swift */; };
 		AC45DA0825A01E9500A4B810 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA0725A01E9500A4B810 /* Endpoint.swift */; };
 		AC45DA1125A0593E00A4B810 /* TickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA1025A0593E00A4B810 /* TickerController.swift */; };
 		AC45DA1625A05A1100A4B810 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA1525A05A1100A4B810 /* Quote.swift */; };
 		AC45DA1C25A05A3100A4B810 /* QuoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA1B25A05A3100A4B810 /* QuoteController.swift */; };
 		AC45DA2125A068AF00A4B810 /* LiveQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA2025A068AF00A4B810 /* LiveQuote.swift */; };
+		AC646C4825A83FBF00493F93 /* LiveQuotePopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C4725A83FBF00493F93 /* LiveQuotePopoverView.swift */; };
+		AC646C5025A84C8C00493F93 /* StatusItemViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C4F25A84C8C00493F93 /* StatusItemViewable.swift */; };
+		AC646C5525A8FCBF00493F93 /* NewTickerStatusItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C5425A8FCBF00493F93 /* NewTickerStatusItemView.swift */; };
 		AC65D0BA25955822008C6C5C /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC65D0B925955822008C6C5C /* StatusBar.swift */; };
 		AC65D0BF259559F6008C6C5C /* StatusBarTickerDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC65D0BE259559F6008C6C5C /* StatusBarTickerDisplay.swift */; };
 		AC67719E259C56BC00F807DB /* NewTickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC67719D259C56BC00F807DB /* NewTickerButton.swift */; };
@@ -49,12 +59,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC09EFDB25A591600091B227 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		AC09EFE025A5916D0091B227 /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
+		AC09EFE525A5A95F0091B227 /* NewsLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsLink.swift; sourceTree = "<group>"; };
+		AC09EFEA25A5AA420091B227 /* NewsLinkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsLinkController.swift; sourceTree = "<group>"; };
+		AC09EFEF25A5AEC00091B227 /* NewsScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsScraper.swift; sourceTree = "<group>"; };
+		AC09EFFE25A5AF980091B227 /* HTMLScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLScraper.swift; sourceTree = "<group>"; };
 		AC45DA0225A01D2400A4B810 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		AC45DA0725A01E9500A4B810 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		AC45DA1025A0593E00A4B810 /* TickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerController.swift; sourceTree = "<group>"; };
 		AC45DA1525A05A1100A4B810 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		AC45DA1B25A05A3100A4B810 /* QuoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteController.swift; sourceTree = "<group>"; };
 		AC45DA2025A068AF00A4B810 /* LiveQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuote.swift; sourceTree = "<group>"; };
+		AC646C4725A83FBF00493F93 /* LiveQuotePopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuotePopoverView.swift; sourceTree = "<group>"; };
+		AC646C4F25A84C8C00493F93 /* StatusItemViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemViewable.swift; sourceTree = "<group>"; };
+		AC646C5425A8FCBF00493F93 /* NewTickerStatusItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTickerStatusItemView.swift; sourceTree = "<group>"; };
 		AC65D0B925955822008C6C5C /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		AC65D0BE259559F6008C6C5C /* StatusBarTickerDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarTickerDisplay.swift; sourceTree = "<group>"; };
 		AC67719D259C56BC00F807DB /* NewTickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTickerButton.swift; sourceTree = "<group>"; };
@@ -85,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC09EFF625A5AF530091B227 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +125,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC09EFDA25A591380091B227 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				AC09EFDB25A591600091B227 /* News.swift */,
+				AC09EFE025A5916D0091B227 /* NewsController.swift */,
+				AC09EFE525A5A95F0091B227 /* NewsLink.swift */,
+				AC09EFEA25A5AA420091B227 /* NewsLinkController.swift */,
+				AC09EFEF25A5AEC00091B227 /* NewsScraper.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		AC09EFFD25A5AF830091B227 /* Scaper */ = {
+			isa = PBXGroup;
+			children = (
+				AC09EFFE25A5AF980091B227 /* HTMLScraper.swift */,
+			);
+			path = Scaper;
+			sourceTree = "<group>";
+		};
 		AC45DA0C25A058E700A4B810 /* Ticker */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +171,25 @@
 			path = VIews;
 			sourceTree = "<group>";
 		};
+		AC646C3F25A83EEF00493F93 /* Ticker Quote View */ = {
+			isa = PBXGroup;
+			children = (
+				AC646C4625A83F6300493F93 /* Popover */,
+				AC45DA2025A068AF00A4B810 /* LiveQuote.swift */,
+				AC65D0BE259559F6008C6C5C /* StatusBarTickerDisplay.swift */,
+				AC7C76A7259C06C500082025 /* TickerQuoteStatusItem.swift */,
+			);
+			path = "Ticker Quote View";
+			sourceTree = "<group>";
+		};
+		AC646C4625A83F6300493F93 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				AC646C4725A83FBF00493F93 /* LiveQuotePopoverView.swift */,
+			);
+			path = Popover;
+			sourceTree = "<group>";
+		};
 		AC6771C8259DC5AF00F807DB /* Ticker Search View */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +197,7 @@
 				AC6771C9259DC5DE00F807DB /* TickerSearchModel.swift */,
 				AC6771CE259FBFD900F807DB /* TickerRow.swift */,
 				AC6771D3259FC38D00F807DB /* TickerList.swift */,
+				AC646C5425A8FCBF00493F93 /* NewTickerStatusItemView.swift */,
 			);
 			path = "Ticker Search View";
 			sourceTree = "<group>";
@@ -145,12 +205,11 @@
 		AC7C76B7259C245B00082025 /* Status Bar */ = {
 			isa = PBXGroup;
 			children = (
+				AC67719D259C56BC00F807DB /* NewTickerButton.swift */,
+				AC646C3F25A83EEF00493F93 /* Ticker Quote View */,
 				AC6771C8259DC5AF00F807DB /* Ticker Search View */,
 				AC65D0B925955822008C6C5C /* StatusBar.swift */,
-				AC65D0BE259559F6008C6C5C /* StatusBarTickerDisplay.swift */,
-				AC7C76A7259C06C500082025 /* TickerQuoteStatusItem.swift */,
-				AC67719D259C56BC00F807DB /* NewTickerButton.swift */,
-				AC45DA2025A068AF00A4B810 /* LiveQuote.swift */,
+				AC646C4F25A84C8C00493F93 /* StatusItemViewable.swift */,
 			);
 			path = "Status Bar";
 			sourceTree = "<group>";
@@ -178,6 +237,8 @@
 		AC92B47C2589F4B9002826F8 /* Alectrona */ = {
 			isa = PBXGroup;
 			children = (
+				AC09EFFD25A5AF830091B227 /* Scaper */,
+				AC09EFDA25A591380091B227 /* News */,
 				AC45DA1A25A05A1800A4B810 /* Quote */,
 				AC45DA0C25A058E700A4B810 /* Ticker */,
 				ACE5EA7F2599057A00485626 /* Util */,
@@ -252,6 +313,9 @@
 			dependencies = (
 			);
 			name = Alectrona;
+			packageProductDependencies = (
+				AC09EFF525A5AF530091B227 /* SwiftSoup */,
+			);
 			productName = Alectrona;
 			productReference = AC92B47A2589F4B9002826F8 /* Alectrona.app */;
 			productType = "com.apple.product-type.application";
@@ -324,7 +388,7 @@
 			);
 			mainGroup = AC92B4712589F4B9002826F8;
 			packageReferences = (
-				AC92B4AF258A8319002826F8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				AC09EFF425A5AF530091B227 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = AC92B47B2589F4B9002826F8 /* Products */;
 			projectDirPath = "";
@@ -378,12 +442,21 @@
 				AC45DA1C25A05A3100A4B810 /* QuoteController.swift in Sources */,
 				AC6771A3259C5D0F00F807DB /* NewTickerSelectorView.swift in Sources */,
 				ACE5EA6125980A3400485626 /* API.swift in Sources */,
+				AC646C5525A8FCBF00493F93 /* NewTickerStatusItemView.swift in Sources */,
+				AC646C4825A83FBF00493F93 /* LiveQuotePopoverView.swift in Sources */,
 				AC65D0BA25955822008C6C5C /* StatusBar.swift in Sources */,
+				AC646C5025A84C8C00493F93 /* StatusItemViewable.swift in Sources */,
 				AC45DA2125A068AF00A4B810 /* LiveQuote.swift in Sources */,
 				AC45DA0825A01E9500A4B810 /* Endpoint.swift in Sources */,
+				AC09EFFF25A5AF980091B227 /* HTMLScraper.swift in Sources */,
+				AC09EFDC25A591600091B227 /* News.swift in Sources */,
 				AC45DA1125A0593E00A4B810 /* TickerController.swift in Sources */,
 				AC6771CA259DC5DE00F807DB /* TickerSearchModel.swift in Sources */,
 				AC67719E259C56BC00F807DB /* NewTickerButton.swift in Sources */,
+				AC09EFEB25A5AA420091B227 /* NewsLinkController.swift in Sources */,
+				AC09EFF025A5AEC00091B227 /* NewsScraper.swift in Sources */,
+				AC09EFE625A5A95F0091B227 /* NewsLink.swift in Sources */,
+				AC09EFE125A5916D0091B227 /* NewsController.swift in Sources */,
 				AC92B47E2589F4B9002826F8 /* AppDelegate.swift in Sources */,
 				ACE5EA812599058900485626 /* Extensions.swift in Sources */,
 			);
@@ -715,15 +788,23 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AC92B4AF258A8319002826F8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		AC09EFF425A5AF530091B227 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.4.0;
+				minimumVersion = 2.3.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AC09EFF525A5AF530091B227 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC09EFF425A5AF530091B227 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AC92B4722589F4B9002826F8 /* Project object */;
 }

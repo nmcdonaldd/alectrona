@@ -7,16 +7,6 @@
 
 import SwiftUI
 
-private struct StatusBarPreferenceKey: PreferenceKey {
-    static var defaultValue: CGSize = CGSize.zero
-    
-    static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
-        value = nextValue()
-    }
-    
-    typealias Value = CGSize
-}
-
 struct StatusBarTickerDisplay: View {
     let ticker: String
     let onSizeChange: (CGSize) -> Void
@@ -32,22 +22,17 @@ struct StatusBarTickerDisplay: View {
     }
     
     var body: some View {
-        HStack(spacing: 6) {
-            Text(ticker)
-                .bold()
-                .foregroundColor(.primary)
-            Text(formattedQuote)
-                .foregroundColor(.primary)
-            Text("(\(formattedPercentageDifference)%)")
-                .foregroundColor(liveQuote.percentageGain == 0.0 ? .white : liveQuote.percentageGain < 0 ? .red : .green)
-        }.fixedSize()
-        .background(GeometryReader { proxy in
-            return Color.clear.preference(key: StatusBarPreferenceKey.self, value: proxy.size)
-        }).onPreferenceChange(StatusBarPreferenceKey.self, perform: { value in
-            DispatchQueue.main.async {
-                onSizeChange(value)
-            }
-        })
+        StatusItemViewable(onSizeChange: onSizeChange) {
+            HStack(spacing: 6) {
+                Text(ticker)
+                    .bold()
+                    .foregroundColor(.primary)
+                Text(formattedQuote)
+                    .foregroundColor(.primary)
+                Text("(\(formattedPercentageDifference)%)")
+                    .foregroundColor(liveQuote.percentageGain == 0.0 ? .white : liveQuote.percentageGain < 0 ? .red : .green)
+            }.fixedSize()
+        }
     }
     
     init(symbol: String, onSizeChange: @escaping (CGSize) -> Void) {
