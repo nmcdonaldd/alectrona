@@ -14,7 +14,10 @@ class StatusBar {
     
     init() {
         refreshTickers()
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshTickers), name: NSNotification.Name("something"), object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(refreshTickers),
+                                               name: NotificationKey.newTickerAdded,
+                                               object: nil)
     }
     
     @objc private func refreshTickers() {
@@ -27,7 +30,6 @@ class StatusBar {
     }
     
     private func renderTickers() {
-        /// FIXME: move to some environment variable
         let tickers = getTickersToDisplay()
         for ticker in tickers {
             displayedTickers.append(TickerQuoteStatusItem(ticker: ticker))
@@ -35,6 +37,6 @@ class StatusBar {
     }
     
     func getTickersToDisplay() -> [String] {
-        return UserDefaults.standard.array(forKey: "watchlist") as? [String] ?? [String]()
+        return UserDefaults.standard.array(forKey: UserDefaultsKey.watchlist) as? [String] ?? [String]()
     }
 }

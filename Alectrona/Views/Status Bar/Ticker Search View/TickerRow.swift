@@ -13,10 +13,10 @@ struct TickerRow: View {
     
     var body: some View {
         Button(action: {
-            var currentValues = UserDefaults.standard.array(forKey: "watchlist") as? [String] ?? [String]()
+            var currentValues = UserDefaultsHelper.getValue(forKey: UserDefaultsKey.watchlist, withDefaultValue: [String]())!   // Safe since we are providing a non-nil default value
             currentValues.append(ticker.symbol)
-            UserDefaults.standard.setValue(currentValues, forKey: "watchlist")
-            NotificationCenter.default.post(name: NSNotification.Name("something"), object: nil)
+            UserDefaultsHelper.setValue(forKey: UserDefaultsKey.watchlist, value: currentValues)
+            NotificationCenter.default.post(name: NotificationKey.newTickerAdded, object: nil)
         }, label: {
             HStack {
                 VStack(alignment: .leading) {
