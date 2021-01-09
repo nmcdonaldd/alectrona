@@ -13,7 +13,10 @@ struct TickerRow: View {
     
     var body: some View {
         Button(action: {
-            print("clicked!")
+            var currentValues = UserDefaults.standard.array(forKey: "watchlist") as? [String] ?? [String]()
+            currentValues.append(ticker.symbol)
+            UserDefaults.standard.setValue(currentValues, forKey: "watchlist")
+            NotificationCenter.default.post(name: NSNotification.Name("something"), object: nil)
         }, label: {
             HStack {
                 VStack(alignment: .leading) {

@@ -18,7 +18,6 @@ struct NewTickerSelectorView: View {
                 TextField("Ticker", text: $model.searchText)
             }
             TickerList(tickerList: model.searchResults)
-                .background(Color.clear)
         }.padding()
     }
 }

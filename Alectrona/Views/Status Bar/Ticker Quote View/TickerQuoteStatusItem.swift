@@ -40,4 +40,8 @@ class TickerQuoteStatusItem {
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minX)
         }
     }
+    
+    func remove() {
+        NSStatusBar.system.removeStatusItem(statusItem)
+    }
 }

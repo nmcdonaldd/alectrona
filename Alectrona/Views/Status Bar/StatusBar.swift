@@ -8,27 +8,33 @@
 import Foundation
 import SwiftUI
 
-struct StatusBarViewContainer {
-    var statusBarItem: NSStatusItem
-    var hostingView: NSView
-}
-
 class StatusBar {
     private let newTickerButton = NewTickerButton()
+    private var displayedTickers = [TickerQuoteStatusItem]()
     
     init() {
+        refreshTickers()
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshTickers), name: NSNotification.Name("something"), object: nil)
+    }
+    
+    @objc private func refreshTickers() {
+        removeAllTickerDisplays()
         renderTickers()
+    }
+    
+    private func removeAllTickerDisplays() {
+        displayedTickers.forEach({ $0.remove() })
     }
     
     private func renderTickers() {
         /// FIXME: move to some environment variable
         let tickers = getTickersToDisplay()
         for ticker in tickers {
-            TickerQuoteStatusItem(ticker: ticker)
+            displayedTickers.append(TickerQuoteStatusItem(ticker: ticker))
         }
     }
     
     func getTickersToDisplay() -> [String] {
-        return ["TTD", "LMND"]
+        return UserDefaults.standard.array(forKey: "watchlist") as? [String] ?? [String]()
     }
 }
