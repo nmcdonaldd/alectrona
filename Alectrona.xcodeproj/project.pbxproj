@@ -23,7 +23,7 @@
 		AC646C4825A83FBF00493F93 /* LiveQuotePopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C4725A83FBF00493F93 /* LiveQuotePopoverView.swift */; };
 		AC646C5025A84C8C00493F93 /* StatusItemViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C4F25A84C8C00493F93 /* StatusItemViewable.swift */; };
 		AC646C5525A8FCBF00493F93 /* NewTickerStatusItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C5425A8FCBF00493F93 /* NewTickerStatusItemView.swift */; };
-		AC646C8825A9A15900493F93 /* AlectronaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C8725A9A15900493F93 /* AlectronaConstants.swift */; };
+		AC646C8825A9A15900493F93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C8725A9A15900493F93 /* Constants.swift */; };
 		AC646C8D25A9A2AC00493F93 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C8C25A9A2AC00493F93 /* UserDefaultsHelper.swift */; };
 		AC65D0BA25955822008C6C5C /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC65D0B925955822008C6C5C /* StatusBar.swift */; };
 		AC65D0BF259559F6008C6C5C /* StatusBarTickerDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC65D0BE259559F6008C6C5C /* StatusBarTickerDisplay.swift */; };
@@ -76,7 +76,7 @@
 		AC646C4725A83FBF00493F93 /* LiveQuotePopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuotePopoverView.swift; sourceTree = "<group>"; };
 		AC646C4F25A84C8C00493F93 /* StatusItemViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemViewable.swift; sourceTree = "<group>"; };
 		AC646C5425A8FCBF00493F93 /* NewTickerStatusItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTickerStatusItemView.swift; sourceTree = "<group>"; };
-		AC646C8725A9A15900493F93 /* AlectronaConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlectronaConstants.swift; sourceTree = "<group>"; };
+		AC646C8725A9A15900493F93 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC646C8C25A9A2AC00493F93 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		AC65D0B925955822008C6C5C /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		AC65D0BE259559F6008C6C5C /* StatusBarTickerDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarTickerDisplay.swift; sourceTree = "<group>"; };
@@ -297,7 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				ACE5EA802599058900485626 /* Extensions.swift */,
-				AC646C8725A9A15900493F93 /* AlectronaConstants.swift */,
+				AC646C8725A9A15900493F93 /* Constants.swift */,
 				AC646C8C25A9A2AC00493F93 /* UserDefaultsHelper.swift */,
 			);
 			path = Util;
@@ -439,7 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC646C8825A9A15900493F93 /* AlectronaConstants.swift in Sources */,
+				AC646C8825A9A15900493F93 /* Constants.swift in Sources */,
 				AC7C76A8259C06C500082025 /* TickerQuoteStatusItem.swift in Sources */,
 				AC6771D4259FC38D00F807DB /* TickerList.swift in Sources */,
 				AC6771CF259FBFD900F807DB /* TickerRow.swift in Sources */,
