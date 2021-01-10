@@ -18,11 +18,11 @@ private struct StatusBarPreferenceKey: PreferenceKey {
     typealias Value = CGSize
 }
 
-struct StatusItemViewable<CONTENT: View>: View {
-    let content: CONTENT
+struct StatusItemViewable<Content>: View where Content: View {
+    let content: Content
     let onSizeChange: (CGSize) -> Void
     
-    @inlinable init(onSizeChange: @escaping (CGSize) -> Void, @ViewBuilder _ content: () -> CONTENT) {
+    @inlinable init(onSizeChange: @escaping (CGSize) -> Void, @ViewBuilder _ content: () -> Content) {
         self.onSizeChange = onSizeChange
         self.content = content()
     }
