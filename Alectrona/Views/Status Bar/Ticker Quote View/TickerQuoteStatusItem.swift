@@ -11,10 +11,12 @@ import SwiftUI
 class TickerQuoteStatusItem {
     private var statusItem: NSStatusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private var hostingView: NSView!
-    private var popover = NSPopover()
+    private let popover = NSPopover()
+    private let symbol: String
     
-    init(ticker: String) {
-        hostingView = NSHostingView(rootView: StatusBarTickerDisplay(symbol: ticker, onSizeChange: onSizeChange))
+    init(symbol: String) {
+        self.symbol = symbol
+        hostingView = NSHostingView(rootView: StatusBarTickerDisplay(symbol: symbol, onSizeChange: onSizeChange))
         
         // Set up button
         statusItem.button?.addSubview(hostingView)
@@ -22,6 +24,7 @@ class TickerQuoteStatusItem {
         
         // Necessary so AppDelegate doesn't implicitly receive the action
         statusItem.button?.target = self
+        popover.behavior = .transient
     }
     
     private func onSizeChange(_ size: CGSize) {
@@ -36,8 +39,8 @@ class TickerQuoteStatusItem {
             guard let button = statusItem.button else {
                 return
             }
-            popover.contentViewController = NSHostingController(rootView: LiveQuotePopoverView())
-            popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minX)
+            popover.contentViewController = NSHostingController(rootView: LiveQuotePopoverView(fundamentalsViewModel: FundamentalsViewModel(symbol: symbol)))
+            popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
         }
     }
     

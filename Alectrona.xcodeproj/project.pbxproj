@@ -14,12 +14,17 @@
 		AC09EFF025A5AEC00091B227 /* NewsScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFEF25A5AEC00091B227 /* NewsScraper.swift */; };
 		AC09EFF625A5AF530091B227 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = AC09EFF525A5AF530091B227 /* SwiftSoup */; };
 		AC09EFFF25A5AF980091B227 /* HTMLScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFFE25A5AF980091B227 /* HTMLScraper.swift */; };
+		AC11CCF725AED7FB009D9822 /* Fundamentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11CCF625AED7FB009D9822 /* Fundamentals.swift */; };
+		AC11CCFC25AED8F4009D9822 /* FundamentalsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11CCFB25AED8F4009D9822 /* FundamentalsController.swift */; };
+		AC11CD0125AED978009D9822 /* FundamentalsScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11CD0025AED978009D9822 /* FundamentalsScraper.swift */; };
+		AC11CD0C25AFE3F0009D9822 /* FundamentalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11CD0B25AFE3F0009D9822 /* FundamentalsViewModel.swift */; };
 		AC45DA0325A01D2400A4B810 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA0225A01D2400A4B810 /* Ticker.swift */; };
 		AC45DA0825A01E9500A4B810 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA0725A01E9500A4B810 /* Endpoint.swift */; };
 		AC45DA1125A0593E00A4B810 /* TickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA1025A0593E00A4B810 /* TickerController.swift */; };
 		AC45DA1625A05A1100A4B810 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA1525A05A1100A4B810 /* Quote.swift */; };
 		AC45DA1C25A05A3100A4B810 /* QuoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA1B25A05A3100A4B810 /* QuoteController.swift */; };
 		AC45DA2125A068AF00A4B810 /* LiveQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA2025A068AF00A4B810 /* LiveQuote.swift */; };
+		AC61DDD125AFFAB20065FC64 /* FundamentalDataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61DDD025AFFAB20065FC64 /* FundamentalDataList.swift */; };
 		AC646C4825A83FBF00493F93 /* LiveQuotePopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C4725A83FBF00493F93 /* LiveQuotePopoverView.swift */; };
 		AC646C5025A84C8C00493F93 /* StatusItemViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C4F25A84C8C00493F93 /* StatusItemViewable.swift */; };
 		AC646C5525A8FCBF00493F93 /* NewTickerStatusItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C5425A8FCBF00493F93 /* NewTickerStatusItemView.swift */; };
@@ -67,12 +72,17 @@
 		AC09EFEA25A5AA420091B227 /* NewsLinkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsLinkController.swift; sourceTree = "<group>"; };
 		AC09EFEF25A5AEC00091B227 /* NewsScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsScraper.swift; sourceTree = "<group>"; };
 		AC09EFFE25A5AF980091B227 /* HTMLScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLScraper.swift; sourceTree = "<group>"; };
+		AC11CCF625AED7FB009D9822 /* Fundamentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fundamentals.swift; sourceTree = "<group>"; };
+		AC11CCFB25AED8F4009D9822 /* FundamentalsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentalsController.swift; sourceTree = "<group>"; };
+		AC11CD0025AED978009D9822 /* FundamentalsScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentalsScraper.swift; sourceTree = "<group>"; };
+		AC11CD0B25AFE3F0009D9822 /* FundamentalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FundamentalsViewModel.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/FundamentalsViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		AC45DA0225A01D2400A4B810 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		AC45DA0725A01E9500A4B810 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		AC45DA1025A0593E00A4B810 /* TickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerController.swift; sourceTree = "<group>"; };
 		AC45DA1525A05A1100A4B810 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		AC45DA1B25A05A3100A4B810 /* QuoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteController.swift; sourceTree = "<group>"; };
 		AC45DA2025A068AF00A4B810 /* LiveQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuote.swift; sourceTree = "<group>"; };
+		AC61DDD025AFFAB20065FC64 /* FundamentalDataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FundamentalDataList.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/FundamentalDataList.swift"; sourceTree = SOURCE_ROOT; };
 		AC646C4725A83FBF00493F93 /* LiveQuotePopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuotePopoverView.swift; sourceTree = "<group>"; };
 		AC646C4F25A84C8C00493F93 /* StatusItemViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemViewable.swift; sourceTree = "<group>"; };
 		AC646C5425A8FCBF00493F93 /* NewTickerStatusItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTickerStatusItemView.swift; sourceTree = "<group>"; };
@@ -149,6 +159,16 @@
 			path = Scaper;
 			sourceTree = "<group>";
 		};
+		AC11CCF525AED7E4009D9822 /* Fundamentals */ = {
+			isa = PBXGroup;
+			children = (
+				AC11CCF625AED7FB009D9822 /* Fundamentals.swift */,
+				AC11CCFB25AED8F4009D9822 /* FundamentalsController.swift */,
+				AC11CD0025AED978009D9822 /* FundamentalsScraper.swift */,
+			);
+			path = Fundamentals;
+			sourceTree = "<group>";
+		};
 		AC45DA0C25A058E700A4B810 /* Ticker */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				AC646C4725A83FBF00493F93 /* LiveQuotePopoverView.swift */,
+				AC11CD0B25AFE3F0009D9822 /* FundamentalsViewModel.swift */,
+				AC61DDD025AFFAB20065FC64 /* FundamentalDataList.swift */,
 			);
 			path = Popover;
 			sourceTree = "<group>";
@@ -241,6 +263,7 @@
 		AC92B47C2589F4B9002826F8 /* Alectrona */ = {
 			isa = PBXGroup;
 			children = (
+				AC11CCF525AED7E4009D9822 /* Fundamentals */,
 				AC09EFFD25A5AF830091B227 /* Scaper */,
 				AC09EFDA25A591380091B227 /* News */,
 				AC45DA1A25A05A1800A4B810 /* Quote */,
@@ -440,12 +463,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC646C8825A9A15900493F93 /* Constants.swift in Sources */,
+				AC11CCF725AED7FB009D9822 /* Fundamentals.swift in Sources */,
 				AC7C76A8259C06C500082025 /* TickerQuoteStatusItem.swift in Sources */,
+				AC11CCFC25AED8F4009D9822 /* FundamentalsController.swift in Sources */,
+				AC11CD0C25AFE3F0009D9822 /* FundamentalsViewModel.swift in Sources */,
 				AC6771D4259FC38D00F807DB /* TickerList.swift in Sources */,
 				AC6771CF259FBFD900F807DB /* TickerRow.swift in Sources */,
 				AC65D0BF259559F6008C6C5C /* StatusBarTickerDisplay.swift in Sources */,
 				AC45DA1625A05A1100A4B810 /* Quote.swift in Sources */,
 				AC45DA0325A01D2400A4B810 /* Ticker.swift in Sources */,
+				AC11CD0125AED978009D9822 /* FundamentalsScraper.swift in Sources */,
 				AC45DA1C25A05A3100A4B810 /* QuoteController.swift in Sources */,
 				AC6771A3259C5D0F00F807DB /* NewTickerSelectorView.swift in Sources */,
 				ACE5EA6125980A3400485626 /* API.swift in Sources */,
@@ -463,6 +490,7 @@
 				AC67719E259C56BC00F807DB /* NewTickerButton.swift in Sources */,
 				AC09EFEB25A5AA420091B227 /* NewsLinkController.swift in Sources */,
 				AC09EFF025A5AEC00091B227 /* NewsScraper.swift in Sources */,
+				AC61DDD125AFFAB20065FC64 /* FundamentalDataList.swift in Sources */,
 				AC09EFE625A5A95F0091B227 /* NewsLink.swift in Sources */,
 				AC09EFE125A5916D0091B227 /* NewsController.swift in Sources */,
 				AC92B47E2589F4B9002826F8 /* AppDelegate.swift in Sources */,

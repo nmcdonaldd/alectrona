@@ -32,7 +32,7 @@ class StatusBar {
     private func renderTickers() {
         let tickers = getTickersToDisplay()
         for ticker in tickers {
-            displayedTickers.append(TickerQuoteStatusItem(ticker: ticker))
+            displayedTickers.append(TickerQuoteStatusItem(symbol: ticker))
         }
     }
     

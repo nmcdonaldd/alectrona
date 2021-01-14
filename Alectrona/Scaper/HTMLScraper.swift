@@ -10,11 +10,7 @@ import SwiftSoup
 
 class HTMLScraper {
     class func getDocument(fromURL url: URL) throws -> Document? {
-        do {
-            return try SwiftSoup.parse(String(contentsOf: url))
-        } catch let error {
-            throw ScraperError(error: error)
-        }
+        return try SwiftSoup.parse(String(contentsOf: url))
     }
 }
 
