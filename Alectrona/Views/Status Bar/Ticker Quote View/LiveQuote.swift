@@ -62,8 +62,4 @@ class LiveQuote: ObservableObject {
             .assign(to: \.regularMarketPrice, on: self)
             .store(in: &cancellables)
     }
-    
-    deinit {
-        cancellables.forEach({ $0.cancel() })
-    }
 }

@@ -43,8 +43,4 @@ class TickerSearchModel: ObservableObject {
             .assign(to: \.searchResults, on: self)
             .store(in: &cancellableSet)
     }
-    
-    deinit {
-        cancellableSet.forEach({ $0.cancel() })
-    }
 }
