@@ -17,20 +17,20 @@ struct FundamentalDataList: View {
     var fundamentalData: [FundamentalDataRow]
     var body: some View {
         VStack {
-            ForEach(fundamentalData, id: \.label) { fundamentalDataPoint in
+            ForEach(fundamentalData.indices) { index in
                 HStack {
-                    Text(fundamentalDataPoint.label)
+                    Text(fundamentalData[index].label)
                         .foregroundColor(.gray)
                         .fixedSize()
                     Spacer(minLength: 20)
-                    Text(fundamentalDataPoint.value)
+                    Text(fundamentalData[index].value)
                         .bold()
                         .foregroundColor(.primary)
                         .fixedSize()
                 }
-                // FIXME: Move to soem reduce function
-                // FIXME: Only put spacer in between two rows.
-                Spacer()
+                if(index != fundamentalData.count-1) {
+                    Spacer()
+                }
             }
         }.fixedSize()
     }
