@@ -13,9 +13,3 @@ class HTMLScraper {
         return try SwiftSoup.parse(String(contentsOf: url))
     }
 }
-
-private struct ScraperError: Error {
-    init(error: Error) {
-        
-    }
-}

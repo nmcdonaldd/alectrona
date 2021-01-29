@@ -29,7 +29,6 @@ class TickerSearchModel: ObservableObject {
     
     private var resultsPublisher: AnyPublisher<[Ticker], Never> {
         searchTextPublisher
-            .receive(on: RunLoop.main)
             .flatMap { [unowned self] searchText in
                 return self.tickerController.searchTickers(withText: searchText)
             }
