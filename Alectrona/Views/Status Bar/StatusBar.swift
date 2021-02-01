@@ -13,6 +13,8 @@ import Defaults
 class StatusBar {
     private let newTickerButton = NewTickerButton()
     private var displayedTickers = [TickerQuoteStatusItem]()
+    
+    /// Can't find a way to reference `self` in the `sink` usage below unless this is optional
     private var storage: AnyCancellable?
     
     init() {

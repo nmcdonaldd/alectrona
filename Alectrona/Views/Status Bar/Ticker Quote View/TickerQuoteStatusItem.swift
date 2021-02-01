@@ -33,6 +33,8 @@ class TickerQuoteStatusItem {
     }
     
     @objc func onButtonClicked() {
+        // For some reason, the ticker detail popover does not clear even when it's set to .transient
+        NSApplication.shared.activate(ignoringOtherApps: true)
         if(popover.isShown) {
             popover.close()
         } else {
