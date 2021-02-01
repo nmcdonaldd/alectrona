@@ -7,16 +7,16 @@
 
 import Foundation
 import SwiftUI
+import Defaults
 
 struct TickerRow: View {
     var ticker: Ticker
     
     var body: some View {
         Button(action: {
-            var currentValues = UserDefaultsHelper.getValue(forKey: UserDefaultsKey.watchlist, withDefaultValue: [String]())!   // Safe since we are providing a non-nil default value
+            var currentValues = Defaults[.watchlist]
             currentValues.append(ticker.symbol)
-            UserDefaultsHelper.setValue(forKey: UserDefaultsKey.watchlist, value: currentValues)
-            NotificationCenter.default.post(name: NotificationKey.newTickerAdded, object: nil)
+            Defaults[.watchlist] = currentValues
         }, label: {
             HStack {
                 VStack(alignment: .leading) {

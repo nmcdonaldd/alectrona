@@ -10,8 +10,6 @@ import Combine
 
 class BackgroundJobSumitter {
     
-//    private static var SHARED_STORAGE = Set<AnyCancellable>()
-    
     class func submit<Configuration, Output>(jobConfiguration: Configuration) -> BackgroundJobSubmission<Output> where Configuration: BackgroundJobConfiguration, Output == Configuration.JobOutput {
         let backgroundJobScheduler = NSBackgroundActivityScheduler(identifier: jobConfiguration.jobIdentifier)
         backgroundJobScheduler.interval = jobConfiguration.interval

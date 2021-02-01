@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Defaults
 
 struct NotificationKey {
     static let newTickerAdded = Notification.Name("notificationAdded")
@@ -34,4 +35,8 @@ struct YFinanceHTMLKey {
         static let exDividendDate = "EX_DIVIDEND_DATE-value"
         static let oneYearTargetPrice = "ONE_YEAR_TARGET_PRICE-value"
     }
+}
+
+extension Defaults.Keys {
+    static let watchlist = Key<[String]>("watchlist", default: [String]())
 }

@@ -10,6 +10,7 @@ import Combine
 
 struct BackgroundJobSubmission<JobOutput> {
     private let outputPublisher: AnyPublisher<JobOutput, Never>
+    
     var publisher: AnyPublisher<JobOutput, Never> {
         return outputPublisher.eraseToAnyPublisher()
     }

@@ -7,36 +7,22 @@
 
 import Foundation
 import SwiftUI
+import Combine
+import Defaults
 
 class StatusBar {
     private let newTickerButton = NewTickerButton()
     private var displayedTickers = [TickerQuoteStatusItem]()
+    private var storage: AnyCancellable?
     
     init() {
-        refreshTickers()
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(refreshTickers),
-                                               name: NotificationKey.newTickerAdded,
-                                               object: nil)
-    }
-    
-    @objc private func refreshTickers() {
-        removeAllTickerDisplays()
-        renderTickers()
-    }
-    
-    private func removeAllTickerDisplays() {
-        displayedTickers.forEach({ $0.remove() })
-    }
-    
-    private func renderTickers() {
-        let tickers = getTickersToDisplay()
-        for ticker in tickers {
-            displayedTickers.append(TickerQuoteStatusItem(symbol: ticker))
-        }
-    }
-    
-    func getTickersToDisplay() -> [String] {
-        return UserDefaults.standard.array(forKey: UserDefaultsKey.watchlist) as? [String] ?? [String]()
+        storage = Defaults.publisher(.watchlist)
+            .map(\.newValue)
+            .sink(receiveValue: { [weak self] (symbols) in
+                self?.displayedTickers.forEach({ $0.remove() })
+                for ticker in symbols {
+                    self?.displayedTickers.append(TickerQuoteStatusItem(symbol: ticker))
+                }
+            })
     }
 }

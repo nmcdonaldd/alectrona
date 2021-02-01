@@ -29,7 +29,6 @@
 		AC646C5025A84C8C00493F93 /* StatusItemViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C4F25A84C8C00493F93 /* StatusItemViewable.swift */; };
 		AC646C5525A8FCBF00493F93 /* NewTickerStatusItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C5425A8FCBF00493F93 /* NewTickerStatusItemView.swift */; };
 		AC646C8825A9A15900493F93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C8725A9A15900493F93 /* Constants.swift */; };
-		AC646C8D25A9A2AC00493F93 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C8C25A9A2AC00493F93 /* UserDefaultsHelper.swift */; };
 		AC65D0BA25955822008C6C5C /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC65D0B925955822008C6C5C /* StatusBar.swift */; };
 		AC65D0BF259559F6008C6C5C /* StatusBarTickerDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC65D0BE259559F6008C6C5C /* StatusBarTickerDisplay.swift */; };
 		AC67719E259C56BC00F807DB /* NewTickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC67719D259C56BC00F807DB /* NewTickerButton.swift */; };
@@ -37,6 +36,7 @@
 		AC6771CA259DC5DE00F807DB /* TickerSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6771C9259DC5DE00F807DB /* TickerSearchModel.swift */; };
 		AC6771CF259FBFD900F807DB /* TickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6771CE259FBFD900F807DB /* TickerRow.swift */; };
 		AC6771D4259FC38D00F807DB /* TickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6771D3259FC38D00F807DB /* TickerList.swift */; };
+		AC71D37D25C776E5005C5234 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = AC71D37C25C776E5005C5234 /* Defaults */; };
 		AC737CF325C3CE0C0026027C /* LiveQuoteBackgroundJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC737CF225C3CE0C0026027C /* LiveQuoteBackgroundJob.swift */; };
 		AC7C76A8259C06C500082025 /* TickerQuoteStatusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7C76A7259C06C500082025 /* TickerQuoteStatusItem.swift */; };
 		AC92B47E2589F4B9002826F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92B47D2589F4B9002826F8 /* AppDelegate.swift */; };
@@ -91,7 +91,6 @@
 		AC646C4F25A84C8C00493F93 /* StatusItemViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemViewable.swift; sourceTree = "<group>"; };
 		AC646C5425A8FCBF00493F93 /* NewTickerStatusItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTickerStatusItemView.swift; sourceTree = "<group>"; };
 		AC646C8725A9A15900493F93 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		AC646C8C25A9A2AC00493F93 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		AC65D0B925955822008C6C5C /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		AC65D0BE259559F6008C6C5C /* StatusBarTickerDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarTickerDisplay.swift; sourceTree = "<group>"; };
 		AC67719D259C56BC00F807DB /* NewTickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTickerButton.swift; sourceTree = "<group>"; };
@@ -126,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC71D37D25C776E5005C5234 /* Defaults in Frameworks */,
 				AC09EFF625A5AF530091B227 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,7 +341,6 @@
 			children = (
 				ACE5EA802599058900485626 /* Extensions.swift */,
 				AC646C8725A9A15900493F93 /* Constants.swift */,
-				AC646C8C25A9A2AC00493F93 /* UserDefaultsHelper.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -364,6 +363,7 @@
 			name = Alectrona;
 			packageProductDependencies = (
 				AC09EFF525A5AF530091B227 /* SwiftSoup */,
+				AC71D37C25C776E5005C5234 /* Defaults */,
 			);
 			productName = Alectrona;
 			productReference = AC92B47A2589F4B9002826F8 /* Alectrona.app */;
@@ -438,6 +438,7 @@
 			mainGroup = AC92B4712589F4B9002826F8;
 			packageReferences = (
 				AC09EFF425A5AF530091B227 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				AC71D37B25C776E5005C5234 /* XCRemoteSwiftPackageReference "Defaults" */,
 			);
 			productRefGroup = AC92B47B2589F4B9002826F8 /* Products */;
 			projectDirPath = "";
@@ -502,7 +503,6 @@
 				AC646C4825A83FBF00493F93 /* LiveQuotePopoverView.swift in Sources */,
 				AC65D0BA25955822008C6C5C /* StatusBar.swift in Sources */,
 				AC646C5025A84C8C00493F93 /* StatusItemViewable.swift in Sources */,
-				AC646C8D25A9A2AC00493F93 /* UserDefaultsHelper.swift in Sources */,
 				AC45DA2125A068AF00A4B810 /* LiveQuote.swift in Sources */,
 				AC45DA0825A01E9500A4B810 /* Endpoint.swift in Sources */,
 				AC09EFFF25A5AF980091B227 /* HTMLScraper.swift in Sources */,
@@ -856,6 +856,14 @@
 				minimumVersion = 2.3.2;
 			};
 		};
+		AC71D37B25C776E5005C5234 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -863,6 +871,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AC09EFF425A5AF530091B227 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
 			productName = SwiftSoup;
+		};
+		AC71D37C25C776E5005C5234 /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC71D37B25C776E5005C5234 /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

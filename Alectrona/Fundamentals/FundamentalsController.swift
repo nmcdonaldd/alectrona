@@ -41,6 +41,6 @@ class FundamentalsController {
     
     private func getFundamentalsURL(forSymbol symbol: String) -> URL {
         // FIXME: move to URL components composition?
-        return URL(string: "https://finance.yahoo.com/quote/\(symbol)?p=\(symbol)")!
+        return URL(string: "https://finance.yahoo.com/quote/\(symbol)")!
     }
 }
