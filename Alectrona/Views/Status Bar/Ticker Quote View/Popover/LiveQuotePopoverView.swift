@@ -16,11 +16,12 @@ struct LiveQuotePopoverView: View {
     var body: some View {
         HStack {
             FundamentalDataList(fundamentalData: buildFundamentalDataListColumn1(fromFundamentals: fundamentalsViewModel.fundamentals))
-            Spacer(minLength: 10)
+            Spacer(minLength: Spacing.medium)
             Divider()
-            Spacer(minLength: 10)
+            Spacer(minLength: Spacing.medium)
             FundamentalDataList(fundamentalData: buildFundamentalDataListColumn2(fromFundamentals: fundamentalsViewModel.fundamentals))
-        }.padding().fixedSize()
+        }.padding()
+        .fixedSize()
     }
     
     private func buildFundamentalDataListColumn1(fromFundamentals fundamentals: Fundamentals) -> [FundamentalDataList.FundamentalDataRow] {
@@ -50,6 +51,6 @@ struct LiveQuotePopoverView: View {
 
 struct LiveQuotePopoverView_Preview: PreviewProvider {
     static var previews: some View {
-        LiveQuotePopoverView(fundamentalsViewModel: FundamentalsViewModel(fundamentalsPublisher: CurrentValueSubject<Fundamentals, Never>(.empty)))
+        LiveQuotePopoverView(fundamentalsViewModel: FundamentalsViewModel(fundamentalsPublisher: CurrentValueSubject<Fundamentals, Never>(.empty).eraseToAnyPublisher()))
     }
 }

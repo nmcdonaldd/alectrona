@@ -14,34 +14,12 @@ class TickerQuoteStatusItem {
     private var hostingView: NSView!
     private let popover = NSPopover()
     private let symbol: String
-    
-    /// FIXME: Move to model somewhere else
-    private var fundamentalsPublisher: CurrentValueSubject<Fundamentals, Never>
-    private let fundamentalsBackgroundJobSubmission: BackgroundJobSubmission<Fundamentals>
-    private var storage = Set<AnyCancellable>()
+    private var tickerQuoteStatusItemModel: TickerQuoteStatusItemModel
     
     init(symbol: String) {
         self.symbol = symbol
         
-        let fundamentalsLoader = Future<Fundamentals, Never> { promise in
-            DispatchQueue.global(qos: .userInitiated).async {
-                var fundamentals: Fundamentals
-                do {
-                    fundamentals = try FundamentalsController().getFundamentals(forSymbol: symbol)
-                } catch {
-                    fundamentals = .empty
-                }
-                promise(.success(fundamentals))
-            }
-        }
-        
-        // Init publisher
-        fundamentalsPublisher = CurrentValueSubject<Fundamentals, Never>(.empty)
-        fundamentalsBackgroundJobSubmission = BackgroundJobSumitter.submit(jobConfiguration: FundamentalsBackgroundJob(symbol: symbol))
-        fundamentalsBackgroundJobSubmission.publisher
-            .append(fundamentalsLoader)
-            .sink { self.fundamentalsPublisher.send($0) }
-            .store(in: &storage)
+        tickerQuoteStatusItemModel = TickerQuoteStatusItemModel(symbol: symbol)
         
         hostingView = NSHostingView(rootView: StatusBarTickerDisplay(symbol: symbol, onSizeChange: onSizeChange))
         
@@ -68,13 +46,13 @@ class TickerQuoteStatusItem {
             guard let button = statusItem.button else {
                 return
             }
-            popover.contentViewController = NSHostingController(rootView: LiveQuotePopoverView(fundamentalsViewModel: FundamentalsViewModel(fundamentalsPublisher: fundamentalsPublisher)))
+            popover.contentViewController = NSHostingController(rootView: LiveQuotePopoverView(fundamentalsViewModel: FundamentalsViewModel(fundamentalsPublisher: tickerQuoteStatusItemModel.fundamentalsPublisher)))
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
         }
     }
     
     func remove() {
-        fundamentalsBackgroundJobSubmission.cancelJob()
+        tickerQuoteStatusItemModel.cancel()
         NSStatusBar.system.removeStatusItem(statusItem)
     }
 }

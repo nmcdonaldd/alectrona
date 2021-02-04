@@ -37,6 +37,11 @@ struct YFinanceHTMLKey {
     }
 }
 
+struct Spacing {
+    static let small: CGFloat = 6
+    static let medium: CGFloat = 10
+}
+
 extension Defaults.Keys {
     static let watchlist = Key<[String]>("watchlist", default: [String]())
 }

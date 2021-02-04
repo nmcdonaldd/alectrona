@@ -8,14 +8,13 @@
 import Foundation
 import Combine
 
+typealias FundamentalsPublisher = CurrentValueSubject<Fundamentals, Never>
 class FundamentalsViewModel: ObservableObject {
     
     @Published var fundamentals: Fundamentals = .empty
     private var storage = Set<AnyCancellable>()
     
-    typealias FundamentalsPublisher = CurrentValueSubject<Fundamentals, Never>
-    
-    init(fundamentalsPublisher: FundamentalsPublisher) {
+    init(fundamentalsPublisher: AnyPublisher<Fundamentals, Never>) {
         fundamentalsPublisher
             .receive(on: RunLoop.main)
             .sink { self.fundamentals = $0 }

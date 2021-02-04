@@ -22,13 +22,10 @@ struct FundamentalDataList: View {
                     Text(fundamentalData[index].label)
                         .bold()
                         .foregroundColor(.primary)
-//                        .foregroundColor(.gray)
                         .fixedSize()
                     Spacer(minLength: 20)
                     Text(fundamentalData[index].value)
-//                        .bold()
                         .foregroundColor(.gray)
-//                        .foregroundColor(.primary)
                         .fixedSize()
                 }
                 if(index != fundamentalData.count-1) {

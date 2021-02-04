@@ -6,37 +6,47 @@
 //
 
 import Foundation
+import Combine
 
 class FundamentalsController {
     
     struct FundamentalsControllerError: Error {}
     
-    func getFundamentals(forSymbol symbol: String) throws -> Fundamentals {
-        let documentToScrape = try HTMLScraper.getDocument(fromURL: getFundamentalsURL(forSymbol: symbol))
-        
-        guard let document = documentToScrape else {
-            throw FundamentalsControllerError()
-        }
-        
-        let rawFundamentalsData = try FundamentalsScraper.shared.getFundamentals(fromDocument: document)
-        
-        return Fundamentals(
-            marketCap: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.marketCap]!,
-            open: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.open]!,
-            bid: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.bid]!,
-            ask: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.ask]!,
-            daysRange: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.daysRange]!,
-            fiftyTwoWeekRange: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.fiftyTwoWeekRange]!,
-            todayVolume: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.todayVolume]!,
-            threeMonthAverageVolume: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.threeMonthAverageVolume]!,
-            fiveYearBeta: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.fiveYearBeta]!,
-            peRatio: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.peReatio]!,
-            epsRatio: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.epsRatio]!,
-            earningsDate: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.earningsDate]!,
-            dividendAndYield: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.dividendAndYield]!,
-            exDividendDate: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.exDividendDate]!,
-            oneYearPriceTarget: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.oneYearTargetPrice]!,
-            previousClose: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.previousClose]!)
+    func getFundamentals(forSymbol symbol: String) -> AnyPublisher<Fundamentals, Never> {
+        return Future<Fundamentals, Never> { promise in
+            DispatchQueue.global(qos: .utility).async {
+                do {
+                    let documentToScrape = try HTMLScraper.getDocument(fromURL: self.getFundamentalsURL(forSymbol: symbol))
+                    
+                    guard let document = documentToScrape else {
+                        throw FundamentalsControllerError()
+                    }
+                    
+                    let rawFundamentalsData = try FundamentalsScraper.shared.getFundamentals(fromDocument: document)
+                    
+                    promise(.success(Fundamentals(
+                        marketCap: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.marketCap]!,
+                        open: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.open]!,
+                        bid: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.bid]!,
+                        ask: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.ask]!,
+                        daysRange: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.daysRange]!,
+                        fiftyTwoWeekRange: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.fiftyTwoWeekRange]!,
+                        todayVolume: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.todayVolume]!,
+                        threeMonthAverageVolume: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.threeMonthAverageVolume]!,
+                        fiveYearBeta: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.fiveYearBeta]!,
+                        peRatio: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.peReatio]!,
+                        epsRatio: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.epsRatio]!,
+                        earningsDate: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.earningsDate]!,
+                        dividendAndYield: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.dividendAndYield]!,
+                        exDividendDate: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.exDividendDate]!,
+                        oneYearPriceTarget: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.oneYearTargetPrice]!,
+                        previousClose: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.previousClose]!)))
+                } catch {
+                    // FIXME: Don't just replace with an empty Fundamentals handle with a real error.
+                    promise(.success(.empty))
+                }
+            }
+        }.eraseToAnyPublisher()
     }
     
     private func getFundamentalsURL(forSymbol symbol: String) -> URL {

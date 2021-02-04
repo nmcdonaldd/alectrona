@@ -25,12 +25,6 @@ class FundamentalsBackgroundJob: BackgroundJobConfiguration {
     }
     
     func doJob() -> AnyPublisher<Fundamentals, Never> {
-        do {
-            return Just(try fundamentalsController.getFundamentals(forSymbol: symbol))
-                .eraseToAnyPublisher()
-        } catch {
-            return Just(.empty)
-                .eraseToAnyPublisher()
-        }
+        return fundamentalsController.getFundamentals(forSymbol: symbol)
     }
 }
