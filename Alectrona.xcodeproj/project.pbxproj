@@ -24,6 +24,7 @@
 		AC45DA1625A05A1100A4B810 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA1525A05A1100A4B810 /* Quote.swift */; };
 		AC45DA1C25A05A3100A4B810 /* QuoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA1B25A05A3100A4B810 /* QuoteController.swift */; };
 		AC45DA2125A068AF00A4B810 /* LiveQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA2025A068AF00A4B810 /* LiveQuote.swift */; };
+		AC48956C25C9B46800E1BF3A /* FundamentalsBackgroundJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48956B25C9B46800E1BF3A /* FundamentalsBackgroundJob.swift */; };
 		AC61DDD125AFFAB20065FC64 /* FundamentalDataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61DDD025AFFAB20065FC64 /* FundamentalDataList.swift */; };
 		AC646C4825A83FBF00493F93 /* LiveQuotePopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C4725A83FBF00493F93 /* LiveQuotePopoverView.swift */; };
 		AC646C5025A84C8C00493F93 /* StatusItemViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C4F25A84C8C00493F93 /* StatusItemViewable.swift */; };
@@ -86,6 +87,7 @@
 		AC45DA1525A05A1100A4B810 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		AC45DA1B25A05A3100A4B810 /* QuoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteController.swift; sourceTree = "<group>"; };
 		AC45DA2025A068AF00A4B810 /* LiveQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuote.swift; sourceTree = "<group>"; };
+		AC48956B25C9B46800E1BF3A /* FundamentalsBackgroundJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentalsBackgroundJob.swift; sourceTree = "<group>"; };
 		AC61DDD025AFFAB20065FC64 /* FundamentalDataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FundamentalDataList.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/FundamentalDataList.swift"; sourceTree = SOURCE_ROOT; };
 		AC646C4725A83FBF00493F93 /* LiveQuotePopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuotePopoverView.swift; sourceTree = "<group>"; };
 		AC646C4F25A84C8C00493F93 /* StatusItemViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemViewable.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				ACF3296425BFD588000299C2 /* BackgroundJobConfiguration.swift */,
 				ACB2779025BFE606002AEEBF /* BackgroundJobSubmission.swift */,
 				AC737CF225C3CE0C0026027C /* LiveQuoteBackgroundJob.swift */,
+				AC48956B25C9B46800E1BF3A /* FundamentalsBackgroundJob.swift */,
 			);
 			path = "Background Job";
 			sourceTree = "<group>";
@@ -412,7 +415,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1230;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					AC92B4792589F4B9002826F8 = {
 						CreatedOnToolsVersion = 12.3;
@@ -516,6 +519,7 @@
 				AC09EFF025A5AEC00091B227 /* NewsScraper.swift in Sources */,
 				AC61DDD125AFFAB20065FC64 /* FundamentalDataList.swift in Sources */,
 				AC09EFE625A5A95F0091B227 /* NewsLink.swift in Sources */,
+				AC48956C25C9B46800E1BF3A /* FundamentalsBackgroundJob.swift in Sources */,
 				AC09EFE125A5916D0091B227 /* NewsController.swift in Sources */,
 				AC92B47E2589F4B9002826F8 /* AppDelegate.swift in Sources */,
 				ACE5EA812599058900485626 /* Extensions.swift in Sources */,
@@ -686,6 +690,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Alectrona/Alectrona.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Alectrona/Preview Content\"";
@@ -709,6 +714,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Alectrona/Alectrona.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Alectrona/Preview Content\"";

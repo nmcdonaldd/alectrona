@@ -24,7 +24,6 @@ class LiveQuote: ObservableObject {
         
         let repeatedQuoteLoadPublisher = Deferred { self.quoteController.guaranteedQuote(forSymbol: symbol) }
             .append(submission.publisher)
-            .print()
             .share()
             .eraseToAnyPublisher()
         

@@ -11,7 +11,7 @@ class FundamentalsController {
     
     struct FundamentalsControllerError: Error {}
     
-    func getFundamentalsForSymbol(_ symbol: String) throws -> Fundamentals {
+    func getFundamentals(forSymbol symbol: String) throws -> Fundamentals {
         let documentToScrape = try HTMLScraper.getDocument(fromURL: getFundamentalsURL(forSymbol: symbol))
         
         guard let document = documentToScrape else {

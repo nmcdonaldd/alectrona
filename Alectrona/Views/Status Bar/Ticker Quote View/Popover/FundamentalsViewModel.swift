@@ -6,29 +6,19 @@
 //
 
 import Foundation
+import Combine
 
 class FundamentalsViewModel: ObservableObject {
-    let symbol: String
     
-    @Published var fundamentals: Fundamentals? = nil
+    @Published var fundamentals: Fundamentals = .empty
+    private var storage = Set<AnyCancellable>()
     
-    init(symbol: String) {
-        self.symbol = symbol
-        getFundamentals()
-    }
+    typealias FundamentalsPublisher = CurrentValueSubject<Fundamentals, Never>
     
-    private func getFundamentals() {
-        DispatchQueue.global(qos: .background).async {
-            var fundamentals: Fundamentals? = nil
-            do {
-                fundamentals = try FundamentalsController().getFundamentalsForSymbol(self.symbol)
-            } catch {
-                print("something went wrong")
-            }
-            
-            DispatchQueue.main.async {
-                self.fundamentals = fundamentals
-            }
-        }
+    init(fundamentalsPublisher: FundamentalsPublisher) {
+        fundamentalsPublisher
+            .receive(on: RunLoop.main)
+            .sink { self.fundamentals = $0 }
+            .store(in: &storage)
     }
 }

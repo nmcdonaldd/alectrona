@@ -9,13 +9,21 @@ import Foundation
 import Combine
 
 struct BackgroundJobSubmission<JobOutput> {
+    typealias BackgroundJobCanceller = () -> ()
     private let outputPublisher: AnyPublisher<JobOutput, Never>
     
     var publisher: AnyPublisher<JobOutput, Never> {
         return outputPublisher.eraseToAnyPublisher()
     }
     
-    init(ouputPublisher: AnyPublisher<JobOutput, Never>) {
+    private let canceller: () -> ()
+    
+    init(ouputPublisher: AnyPublisher<JobOutput, Never>, canceller: @escaping () -> ()) {
         self.outputPublisher = ouputPublisher
+        self.canceller = canceller
+    }
+    
+    func cancelJob() {
+        canceller()
     }
 }

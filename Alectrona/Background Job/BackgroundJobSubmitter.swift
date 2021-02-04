@@ -31,6 +31,9 @@ class BackgroundJobSumitter {
                 .store(in: &storage)
         }
         
-        return BackgroundJobSubmission(ouputPublisher: outputPassthroughSubject.eraseToAnyPublisher())
+//        return BackgroundJobSubmission(ouputPublisher: outputPassthroughSubject.eraseToAnyPublisher())
+        return BackgroundJobSubmission(ouputPublisher: outputPassthroughSubject.eraseToAnyPublisher()) {
+            backgroundJobScheduler.invalidate()
+        }
     }
 }

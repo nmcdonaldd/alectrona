@@ -22,7 +22,7 @@ struct LiveQuoteBackgroundJob: BackgroundJobConfiguration {
     
     init(symbol: String) {
         self.symbol = symbol
-        jobIdentifier = "com.nickdonald.alectrona.\(symbol).quoteLoade"
+        jobIdentifier = "com.nickdonald.alectrona.\(symbol).quote"
     }
     
     func doJob() -> AnyPublisher<Quote, Never> {

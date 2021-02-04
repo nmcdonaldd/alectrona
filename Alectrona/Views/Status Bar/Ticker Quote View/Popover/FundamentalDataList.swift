@@ -20,12 +20,15 @@ struct FundamentalDataList: View {
             ForEach(fundamentalData.indices) { index in
                 HStack {
                     Text(fundamentalData[index].label)
-                        .foregroundColor(.gray)
+                        .bold()
+                        .foregroundColor(.primary)
+//                        .foregroundColor(.gray)
                         .fixedSize()
                     Spacer(minLength: 20)
                     Text(fundamentalData[index].value)
-                        .bold()
-                        .foregroundColor(.primary)
+//                        .bold()
+                        .foregroundColor(.gray)
+//                        .foregroundColor(.primary)
                         .fixedSize()
                 }
                 if(index != fundamentalData.count-1) {

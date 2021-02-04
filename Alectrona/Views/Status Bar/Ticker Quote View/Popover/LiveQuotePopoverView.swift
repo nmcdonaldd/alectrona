@@ -7,23 +7,20 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 struct LiveQuotePopoverView: View {
     
     @ObservedObject var fundamentalsViewModel: FundamentalsViewModel
     
     var body: some View {
-        if(fundamentalsViewModel.fundamentals == nil) {
-            Text("Loading...")
-        } else {
-            HStack{
-                FundamentalDataList(fundamentalData: buildFundamentalDataListColumn1(fromFundamentals: fundamentalsViewModel.fundamentals!))
-                Spacer(minLength: 10)
-                Divider()
-                Spacer(minLength: 10)
-                FundamentalDataList(fundamentalData: buildFundamentalDataListColumn2(fromFundamentals: fundamentalsViewModel.fundamentals!))
-            }.padding()
-        }
+        HStack {
+            FundamentalDataList(fundamentalData: buildFundamentalDataListColumn1(fromFundamentals: fundamentalsViewModel.fundamentals))
+            Spacer(minLength: 10)
+            Divider()
+            Spacer(minLength: 10)
+            FundamentalDataList(fundamentalData: buildFundamentalDataListColumn2(fromFundamentals: fundamentalsViewModel.fundamentals))
+        }.padding().fixedSize()
     }
     
     private func buildFundamentalDataListColumn1(fromFundamentals fundamentals: Fundamentals) -> [FundamentalDataList.FundamentalDataRow] {
@@ -48,5 +45,11 @@ struct LiveQuotePopoverView: View {
         fundamentalDataList.append(FundamentalDataList.FundamentalDataRow(label: "Dividend & Yield", value: fundamentals.dividendAndYield))
         
         return fundamentalDataList
+    }
+}
+
+struct LiveQuotePopoverView_Preview: PreviewProvider {
+    static var previews: some View {
+        LiveQuotePopoverView(fundamentalsViewModel: FundamentalsViewModel(fundamentalsPublisher: CurrentValueSubject<Fundamentals, Never>(.empty)))
     }
 }

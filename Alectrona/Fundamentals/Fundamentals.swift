@@ -24,4 +24,23 @@ struct Fundamentals {
     var exDividendDate: String
     var oneYearPriceTarget: String
     var previousClose: String
+    
+    static var empty = Fundamentals(
+        marketCap: "",
+        open: "",
+        bid: "",
+        ask: "",
+        daysRange: "",
+        fiftyTwoWeekRange: "",
+        todayVolume: "",
+        threeMonthAverageVolume: "",
+        fiveYearBeta: "",
+        peRatio: "",
+        epsRatio: "",
+        earningsDate: "",
+        dividendAndYield: "",
+        exDividendDate: "",
+        oneYearPriceTarget: "",
+        previousClose: ""
+    )
 }
