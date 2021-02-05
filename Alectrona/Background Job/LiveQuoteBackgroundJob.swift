@@ -17,7 +17,7 @@ struct LiveQuoteBackgroundJob: BackgroundJobConfiguration {
     
     var jobIdentifier: String
     var interval = 5.0
-    var quality: QualityOfService = .userInitiated
+    var quality: QualityOfService = .utility
     var repeats = true
     
     init(symbol: String) {

@@ -12,7 +12,7 @@ class FundamentalsBackgroundJob: BackgroundJobConfiguration {
     typealias JobOutput = Fundamentals
     
     var jobIdentifier: String
-    var interval: Double = 60   // 60 Seconds
+    var interval: Double = 30   // 30 Seconds
     var quality: QualityOfService = .utility
     var repeats: Bool = true
     

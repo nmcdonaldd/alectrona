@@ -15,7 +15,7 @@ class NewsController {
     }
     
     func getNews(fromNewsLinks newsLinks: [NewsLink]) throws -> [News] {
-        do{
+        do {
             return try newsLinks.map { newsLink in
                 guard let url = URL(string: newsLink.link) else {
                     throw NewsError(message: "Cannot parse error")
