@@ -14,24 +14,26 @@ class NewsController {
         var message: String
     }
     
-    func getNews(fromNewsLinks newsLinks: [NewsLink]) throws -> [News] {
-        do {
-            return try newsLinks.map { newsLink in
-                guard let url = URL(string: newsLink.link) else {
-                    throw NewsError(message: "Cannot parse error")
+    func getNews(fromNewsLinks newsLink: NewsLink) -> AnyPublisher<News, Never> {
+        return Future<News, Never> { promise in
+            DispatchQueue.global(qos: .utility).async {
+                do {
+                    guard let url = URL(string: newsLink.link) else {
+                        return
+                    }
+                    
+                    guard let document = try HTMLScraper.getDocument(fromURL: url) else {
+                        return
+                    }
+                    
+                    promise(.success(News(publishedTime: newsLink.providerPublishTime,
+                                          newsText: NewsScraper.getNewsText(fromDocument: document),
+                                          publisher: newsLink.publisher,
+                                          url: newsLink.link)))
+                } catch {
+                    return
                 }
-                
-                guard let document = try HTMLScraper.getDocument(fromURL: url) else {
-                    throw NewsError(message: "Cannot get document")
-                }
-                
-                return News(publishedTime: newsLink.providerPublishTime,
-                            newsText: NewsScraper.getNewsText(fromDocument: document),
-                            publisher: newsLink.publisher,
-                            url: newsLink.link)
             }
-        } catch let error {
-            throw error
-        }
+        }.eraseToAnyPublisher()
     }
 }

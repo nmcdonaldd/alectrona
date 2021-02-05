@@ -8,28 +8,19 @@
 import Foundation
 import SwiftSoup
 
+typealias NewsText = [String]
 class NewsScraper {
-    
-    struct NewsScraperError: Error {
-        
-    }
-    
-    typealias NewsText = String
-    
     static func getNewsText(fromDocument document: Document) -> NewsText {
         do {
-            let elements: Elements? = try document.select("div.cass-body")
-            let firstPerhaps = elements?.first()
-            
-            guard let first = firstPerhaps else {
-                throw NewsScraperError()
+            let elements: Elements? = try document.select("div.caas-body")
+            guard let paragraphContainers = elements?.first() else {
+                return [String]()
             }
             
-            print(first)
-        } catch let error {
-            print(error)
+            return try paragraphContainers.select("p")
+                .map { try $0.text() }
+        } catch {
+            return [String]()
         }
-        
-        return "poop"
     }
 }

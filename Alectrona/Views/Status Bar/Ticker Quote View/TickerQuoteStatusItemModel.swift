@@ -11,7 +11,8 @@ import Combine
 class TickerQuoteStatusItemModel {
     
     private let currentFundamentalsValuePublisher = CurrentValueSubject<Fundamentals, Never>(.empty)
-    private var backgroundJobSubmission: BackgroundJobSubmission<Fundamentals>
+    private var fundamentalsBackgroundJobSubmission: BackgroundJobSubmission<Fundamentals>
+    private var newsBackgroundJobSubmission: BackgroundJobSubmission<[News]>
     private var storage = Set<AnyCancellable>()
     
     var fundamentalsPublisher: AnyPublisher<Fundamentals, Never> {
@@ -19,14 +20,25 @@ class TickerQuoteStatusItemModel {
     }
     
     init(symbol: String) {
-        backgroundJobSubmission = BackgroundJobSumitter.submit(jobConfiguration: FundamentalsBackgroundJob(symbol: symbol))
+        fundamentalsBackgroundJobSubmission = BackgroundJobSumitter.submit(jobConfiguration: FundamentalsBackgroundJob(symbol: symbol))
+        newsBackgroundJobSubmission = BackgroundJobSumitter.submit(jobConfiguration: NewsBackgroundJobConfiguration(symbol: symbol))
+        
         FundamentalsController().getFundamentals(forSymbol: symbol)
-            .append(backgroundJobSubmission.publisher)
+            .append(fundamentalsBackgroundJobSubmission.publisher)
             .sink { self.currentFundamentalsValuePublisher.send($0) }
+            .store(in: &storage)
+        
+        StockNewsController().getStockNews(forSymbol: symbol)
+            .append(newsBackgroundJobSubmission.publisher)
+            .print()
+            .sink(receiveValue: { (value) in
+//                print(value)
+            })
             .store(in: &storage)
     }
     
     func cancel() {
-        backgroundJobSubmission.cancelJob()
+        fundamentalsBackgroundJobSubmission.cancelJob()
+        newsBackgroundJobSubmission.cancelJob()
     }
 }

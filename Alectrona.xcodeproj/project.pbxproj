@@ -42,6 +42,7 @@
 		AC7C76A8259C06C500082025 /* TickerQuoteStatusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7C76A7259C06C500082025 /* TickerQuoteStatusItem.swift */; };
 		AC8480C125CBC6AF0061E7E4 /* TickerQuoteStatusItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8480C025CBC6AF0061E7E4 /* TickerQuoteStatusItemModel.swift */; };
 		AC8BECF425CC5E2A007AF467 /* NewsBackgroundJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8BECF325CC5E2A007AF467 /* NewsBackgroundJob.swift */; };
+		AC8BED0225CD0F54007AF467 /* StockNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8BED0125CD0F54007AF467 /* StockNewsController.swift */; };
 		AC92B47E2589F4B9002826F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92B47D2589F4B9002826F8 /* AppDelegate.swift */; };
 		AC92B4822589F4BA002826F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC92B4812589F4BA002826F8 /* Assets.xcassets */; };
 		AC92B4852589F4BA002826F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC92B4842589F4BA002826F8 /* Preview Assets.xcassets */; };
@@ -106,6 +107,7 @@
 		AC7C76A7259C06C500082025 /* TickerQuoteStatusItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerQuoteStatusItem.swift; sourceTree = "<group>"; };
 		AC8480C025CBC6AF0061E7E4 /* TickerQuoteStatusItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TickerQuoteStatusItemModel.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/TickerQuoteStatusItemModel.swift"; sourceTree = SOURCE_ROOT; };
 		AC8BECF325CC5E2A007AF467 /* NewsBackgroundJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsBackgroundJob.swift; sourceTree = "<group>"; };
+		AC8BED0125CD0F54007AF467 /* StockNewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockNewsController.swift; sourceTree = "<group>"; };
 		AC92B47A2589F4B9002826F8 /* Alectrona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alectrona.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC92B47D2589F4B9002826F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC92B4812589F4BA002826F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				AC09EFE525A5A95F0091B227 /* NewsLink.swift */,
 				AC09EFEA25A5AA420091B227 /* NewsLinkController.swift */,
 				AC09EFEF25A5AEC00091B227 /* NewsScraper.swift */,
+				AC8BED0125CD0F54007AF467 /* StockNewsController.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				AC45DA2125A068AF00A4B810 /* LiveQuote.swift in Sources */,
 				AC45DA0825A01E9500A4B810 /* Endpoint.swift in Sources */,
 				AC09EFFF25A5AF980091B227 /* HTMLScraper.swift in Sources */,
+				AC8BED0225CD0F54007AF467 /* StockNewsController.swift in Sources */,
 				AC09EFDC25A591600091B227 /* News.swift in Sources */,
 				AC45DA1125A0593E00A4B810 /* TickerController.swift in Sources */,
 				AC6771CA259DC5DE00F807DB /* TickerSearchModel.swift in Sources */,

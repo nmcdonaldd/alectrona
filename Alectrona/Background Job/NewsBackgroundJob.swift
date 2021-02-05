@@ -17,13 +17,13 @@ class NewsBackgroundJobConfiguration: BackgroundJobConfiguration {
     var repeats: Bool = true
     
     private let symbol: String
-    private let newsController = NewsController()
+    private let newsController = StockNewsController()
     init(symbol: String) {
         self.symbol = symbol
         self.jobIdentifier = "com.nickdonald.alectrona.\(symbol).news"
     }
     
     func doJob() -> AnyPublisher<[News], Never> {
-        return Empty().eraseToAnyPublisher()
+        return newsController.getStockNews(forSymbol: symbol)
     }
 }
