@@ -46,7 +46,7 @@ class TickerQuoteStatusItem {
             guard let button = statusItem.button else {
                 return
             }
-            popover.contentViewController = NSHostingController(rootView: LiveQuotePopoverView(fundamentalsViewModel: FundamentalsViewModel(fundamentalsPublisher: tickerQuoteStatusItemModel.fundamentalsPublisher)))
+            popover.contentViewController = NSHostingController(rootView: LiveQuotePopoverView(fundamentalsViewModel: FundamentalsViewModel(fundamentalsPublisher: tickerQuoteStatusItemModel.fundamentalsPublisher, newsPublisher: tickerQuoteStatusItemModel.newsPublisher)))
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
         }
     }

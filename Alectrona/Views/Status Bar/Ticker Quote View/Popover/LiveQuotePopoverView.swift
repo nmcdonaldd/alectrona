@@ -14,14 +14,18 @@ struct LiveQuotePopoverView: View {
     @ObservedObject var fundamentalsViewModel: FundamentalsViewModel
     
     var body: some View {
-        HStack {
-            FundamentalDataList(fundamentalData: buildFundamentalDataListColumn1(fromFundamentals: fundamentalsViewModel.fundamentals))
-            Spacer(minLength: Spacing.medium)
-            Divider()
-            Spacer(minLength: Spacing.medium)
-            FundamentalDataList(fundamentalData: buildFundamentalDataListColumn2(fromFundamentals: fundamentalsViewModel.fundamentals))
-        }.padding()
-        .fixedSize()
+        ScrollView {
+            VStack {
+                HStack {
+                    FundamentalDataList(fundamentalData: buildFundamentalDataListColumn1(fromFundamentals: fundamentalsViewModel.fundamentals))
+                    Spacer(minLength: Spacing.medium)
+                    Divider()
+                    Spacer(minLength: Spacing.medium)
+                    FundamentalDataList(fundamentalData: buildFundamentalDataListColumn2(fromFundamentals: fundamentalsViewModel.fundamentals))
+                }.fixedSize()
+                NewsList(newsList: fundamentalsViewModel.news)
+            }.padding()
+        }
     }
     
     private func buildFundamentalDataListColumn1(fromFundamentals fundamentals: Fundamentals) -> [FundamentalDataList.FundamentalDataRow] {
@@ -51,6 +55,6 @@ struct LiveQuotePopoverView: View {
 
 struct LiveQuotePopoverView_Preview: PreviewProvider {
     static var previews: some View {
-        LiveQuotePopoverView(fundamentalsViewModel: FundamentalsViewModel(fundamentalsPublisher: CurrentValueSubject<Fundamentals, Never>(.empty).eraseToAnyPublisher()))
+        LiveQuotePopoverView(fundamentalsViewModel: FundamentalsViewModel(fundamentalsPublisher: Just(.empty).eraseToAnyPublisher(), newsPublisher: Just([News]()).eraseToAnyPublisher()))
     }
 }

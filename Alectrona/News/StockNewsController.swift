@@ -36,7 +36,6 @@ class StockNewsController {
                 return newsPassThroughSubject.eraseToAnyPublisher()
             }
             .replaceError(with: [News]())
-            .print()
             .eraseToAnyPublisher()
     }
 }

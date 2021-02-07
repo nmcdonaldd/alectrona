@@ -11,12 +11,17 @@ import Combine
 class TickerQuoteStatusItemModel {
     
     private let currentFundamentalsValuePublisher = CurrentValueSubject<Fundamentals, Never>(.empty)
+    private let currentNewsFundamentalsValuePublisher = CurrentValueSubject<[News], Never>([News]())
     private var fundamentalsBackgroundJobSubmission: BackgroundJobSubmission<Fundamentals>
     private var newsBackgroundJobSubmission: BackgroundJobSubmission<[News]>
     private var storage = Set<AnyCancellable>()
     
     var fundamentalsPublisher: AnyPublisher<Fundamentals, Never> {
         return currentFundamentalsValuePublisher.eraseToAnyPublisher()
+    }
+    
+    var newsPublisher: AnyPublisher<[News], Never> {
+        return currentNewsFundamentalsValuePublisher.eraseToAnyPublisher()
     }
     
     init(symbol: String) {
@@ -30,10 +35,7 @@ class TickerQuoteStatusItemModel {
         
         StockNewsController().getStockNews(forSymbol: symbol)
             .append(newsBackgroundJobSubmission.publisher)
-            .print()
-            .sink(receiveValue: { (value) in
-//                print(value)
-            })
+            .sink { self.currentNewsFundamentalsValuePublisher.send($0) }
             .store(in: &storage)
     }
     

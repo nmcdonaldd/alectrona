@@ -12,7 +12,7 @@ class NewsBackgroundJobConfiguration: BackgroundJobConfiguration {
     typealias JobOutput = [News]
     
     var jobIdentifier: String
-    var interval: Double = 60 * 5 // 5 minutes
+    var interval: Double = 60*5 // 5 minutes
     var quality: QualityOfService = .utility
     var repeats: Bool = true
     

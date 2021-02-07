@@ -17,9 +17,7 @@ class NewsLinkController {
     func getNewsLinks(forSymbol symbol: String, newsCount: Int = 3) -> AnyPublisher<[NewsLink], Error> {
         let endpoint = Endpoint.getNews(forSymbol: symbol, newsCount: newsCount)
         return API.get(type: NewsSearchResult.self, url: endpoint.url)
-            .map({ result -> [NewsLink] in
-                return result.news
-            })
+            .map({ $0.news })
             .eraseToAnyPublisher()
     }
 }

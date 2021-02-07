@@ -27,6 +27,7 @@ class NewsController {
                     }
                     
                     promise(.success(News(publishedTime: newsLink.providerPublishTime,
+                                          title: newsLink.title,
                                           newsText: NewsScraper.getNewsText(fromDocument: document),
                                           publisher: newsLink.publisher,
                                           url: newsLink.link)))
