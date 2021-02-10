@@ -16,7 +16,7 @@ struct TickerList: View {
             VStack {
                 ForEach(tickerList, id: \.symbol) { ticker in
                     TickerRow(ticker: ticker)
-                    Spacer()
+                    Divider()
                 }
             }
         }

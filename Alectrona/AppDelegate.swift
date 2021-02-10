@@ -11,9 +11,10 @@ import SwiftUI
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    let statusBar = StatusBar()
+    var statusBar: StatusBar?
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        statusBar = StatusBar()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

@@ -30,7 +30,7 @@ struct StatusItemViewable<Content>: View where Content: View {
     var body: some View {
         content
             .background(GeometryReader { proxy in
-                return Color.clear.preference(key: StatusBarPreferenceKey.self, value: proxy.size)
+                return Color.clear/*opacity(0.0)*/.preference(key: StatusBarPreferenceKey.self, value: proxy.size)
             }).onPreferenceChange(StatusBarPreferenceKey.self, perform: { value in
                 DispatchQueue.main.async {
                     onSizeChange(value)

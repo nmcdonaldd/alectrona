@@ -15,7 +15,11 @@ struct LiveQuotePopoverView: View {
     
     var body: some View {
         ScrollView {
-            VStack {
+            VStack(alignment: .leading) {
+                Text("Fundamentals")
+                    .font(.callout)
+                    .foregroundColor(.gray)
+                    .bold()
                 HStack {
                     FundamentalDataList(fundamentalData: buildFundamentalDataListColumn1(fromFundamentals: fundamentalsViewModel.fundamentals))
                     Spacer(minLength: Spacing.medium)
@@ -23,6 +27,11 @@ struct LiveQuotePopoverView: View {
                     Spacer(minLength: Spacing.medium)
                     FundamentalDataList(fundamentalData: buildFundamentalDataListColumn2(fromFundamentals: fundamentalsViewModel.fundamentals))
                 }.fixedSize()
+                Divider()
+                Text("News")
+                    .font(.callout)
+                    .foregroundColor(.gray)
+                    .bold()
                 NewsList(newsList: fundamentalsViewModel.news)
             }.padding()
         }

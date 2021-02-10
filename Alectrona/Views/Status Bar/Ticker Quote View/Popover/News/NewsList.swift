@@ -14,7 +14,14 @@ struct NewsList: View {
     var body: some View {
         VStack {
             ForEach(newsList, id: \.url) { news in
-                NewsRow(news: news)
+                Button(action: {
+                    if let url = URL(string: news.url) {
+                        NSWorkspace.shared.open(url)
+                    }
+                }, label: {
+                    NewsRow(news: news)
+                }).buttonStyle(PlainButtonStyle())
+                Divider()
             }
         }
     }

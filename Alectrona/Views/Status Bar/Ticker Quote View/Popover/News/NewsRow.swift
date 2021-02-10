@@ -16,17 +16,16 @@ struct NewsRow: View {
             Text(news.title)
                 .font(.headline)
                 .bold()
-            Spacer(minLength: 3)
-            HStack(spacing: 4) {
+            Spacer(minLength: 2)
+            HStack(spacing: 2) {
                 Text(news.publisher)
                 Text("•")
                 Text(String(news.publishedTime))
             }
             .font(.subheadline)
             .foregroundColor(.gray)
-            Spacer(minLength: 3)
+            Spacer(minLength: 4)
             Text(news.newsText[0])
-                .lineLimit(nil)
                 .font(.body)
         }
     }

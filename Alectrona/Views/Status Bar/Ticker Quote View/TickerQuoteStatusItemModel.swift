@@ -32,7 +32,7 @@ class TickerQuoteStatusItemModel {
             .append(fundamentalsBackgroundJobSubmission.publisher)
             .sink { self.currentFundamentalsValuePublisher.send($0) }
             .store(in: &storage)
-        
+
         StockNewsController().getStockNews(forSymbol: symbol)
             .append(newsBackgroundJobSubmission.publisher)
             .sink { self.currentNewsFundamentalsValuePublisher.send($0) }

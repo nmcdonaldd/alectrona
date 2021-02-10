@@ -14,11 +14,19 @@ struct StatusBarTickerDisplay: View {
     @ObservedObject var liveQuote: LiveQuote
     
     var formattedQuote: String {
-        NumberFormatter.localizedString(from: NSNumber(value: liveQuote.regularMarketPrice), number: .currency)
+        NumberFormatter.localizedString(from: NSNumber(value: liveQuote.currentQuote.regularMarketPrice), number: .currency)
     }
     
     var formattedPercentageDifference: String {
-        NumberFormatter.localizedString(from: NSNumber(value: (liveQuote.percentageGain*100).rounded(toPlaces: 2)), number: .decimal)
+        NumberFormatter.localizedString(from: NSNumber(value: (liveQuote.currentQuote.percentageGain*100).rounded(toPlaces: 2)), number: .decimal)
+    }
+    
+    var color: Color {
+        if(liveQuote.currentQuote.percentageGain < 0) {
+            return .red
+        }
+        
+        return .green
     }
     
     var body: some View {
@@ -30,7 +38,7 @@ struct StatusBarTickerDisplay: View {
                 Text(formattedQuote)
                     .foregroundColor(.primary)
                 Text("(\(formattedPercentageDifference)%)")
-                    .foregroundColor(liveQuote.percentageGain == 0.0 ? .white : liveQuote.percentageGain < 0 ? .red : .green)
+                    .foregroundColor(color)
             }.fixedSize()
         }
     }
