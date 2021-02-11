@@ -21,13 +21,13 @@ struct FundamentalDataList: View {
                 HStack {
                     Text(fundamentalData[index].label)
                         .font(.body)
-                        .foregroundColor(.primary)
+                        .bold()
+                        .interfaceStyleRespectingGray()
                         .fixedSize()
                     Spacer(minLength: 20)
                     Text(fundamentalData[index].value)
-                        .font(.callout)
-                        .bold()
-                        .foregroundColor(.gray)
+                        .font(.body)
+                        .foregroundColor(.primary)
                         .fixedSize()
                 }
                 if(index != fundamentalData.count-1) {

@@ -12,7 +12,7 @@ struct NewsList: View {
     var newsList: [News]
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             ForEach(newsList, id: \.url) { news in
                 Button(action: {
                     if let url = URL(string: news.url) {

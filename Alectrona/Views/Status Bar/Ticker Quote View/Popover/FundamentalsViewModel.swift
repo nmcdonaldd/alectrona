@@ -21,7 +21,8 @@ class FundamentalsViewModel: ObservableObject {
             .sink { self.fundamentals = $0 }
             .store(in: &storage)
         
-        newsPublisher.receive(on: RunLoop.main)
+        newsPublisher
+            .receive(on: RunLoop.main)
             .sink { self.news = $0 }
             .store(in: &storage)
     }

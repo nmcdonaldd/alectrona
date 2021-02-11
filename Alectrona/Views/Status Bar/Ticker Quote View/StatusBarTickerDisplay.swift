@@ -5,6 +5,7 @@
 //  Created by Nicholas McDonald on 12/24/20.
 //
 
+import Foundation
 import SwiftUI
 
 struct StatusBarTickerDisplay: View {
@@ -14,11 +15,13 @@ struct StatusBarTickerDisplay: View {
     @ObservedObject var liveQuote: LiveQuote
     
     var formattedQuote: String {
+        /// FIXME: is .currency localized? Would it be correct if user in another language? I doubt it. Perhaps remove $ (implicitly added with .currency)
         NumberFormatter.localizedString(from: NSNumber(value: liveQuote.currentQuote.regularMarketPrice), number: .currency)
     }
     
     var formattedPercentageDifference: String {
-        NumberFormatter.localizedString(from: NSNumber(value: (liveQuote.currentQuote.percentageGain*100).rounded(toPlaces: 2)), number: .decimal)
+        String(format: "%.2f", liveQuote.currentQuote.percentageGain*100.0)
+//        NumberFormatter.localizedString(from: NSNumber(value: (liveQuote.currentQuote.percentageGain*100).rounded(toPlaces: 2)), number: .decimal)
     }
     
     var color: Color {

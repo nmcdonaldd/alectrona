@@ -53,6 +53,7 @@
 		AC92B49F2589F4BA002826F8 /* AlectronaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92B49E2589F4BA002826F8 /* AlectronaUITests.swift */; };
 		ACB2779125BFE606002AEEBF /* BackgroundJobSubmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2779025BFE606002AEEBF /* BackgroundJobSubmission.swift */; };
 		ACCED62F25D3B43700BAADBA /* CombinedFundamentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCED62E25D3B43700BAADBA /* CombinedFundamentals.swift */; };
+		ACCED64025D5983600BAADBA /* StyleRespectingGrayText.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCED63F25D5983600BAADBA /* StyleRespectingGrayText.swift */; };
 		ACE5EA6125980A3400485626 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5EA6025980A3400485626 /* API.swift */; };
 		ACE5EA812599058900485626 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5EA802599058900485626 /* Extensions.swift */; };
 		ACF3296025BFD521000299C2 /* BackgroundJobSubmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3295F25BFD521000299C2 /* BackgroundJobSubmitter.swift */; };
@@ -128,6 +129,7 @@
 		AC92B4A02589F4BA002826F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACB2779025BFE606002AEEBF /* BackgroundJobSubmission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundJobSubmission.swift; sourceTree = "<group>"; };
 		ACCED62E25D3B43700BAADBA /* CombinedFundamentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CombinedFundamentals.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/CombinedFundamentals.swift"; sourceTree = SOURCE_ROOT; };
+		ACCED63F25D5983600BAADBA /* StyleRespectingGrayText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StyleRespectingGrayText.swift; path = Alectrona/Views/StyleRespectingGrayText.swift; sourceTree = SOURCE_ROOT; };
 		ACE5EA6025980A3400485626 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		ACE5EA802599058900485626 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ACF3295F25BFD521000299C2 /* BackgroundJobSubmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundJobSubmitter.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				AC7C76B7259C245B00082025 /* Status Bar */,
+				ACCED63F25D5983600BAADBA /* StyleRespectingGrayText.swift */,
 			);
 			path = VIews;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				AC6771CA259DC5DE00F807DB /* TickerSearchModel.swift in Sources */,
 				AC8BED2425CDBAE8007AF467 /* NewsList.swift in Sources */,
 				AC67719E259C56BC00F807DB /* NewTickerButton.swift in Sources */,
+				ACCED64025D5983600BAADBA /* StyleRespectingGrayText.swift in Sources */,
 				ACB2779125BFE606002AEEBF /* BackgroundJobSubmission.swift in Sources */,
 				ACF3296525BFD588000299C2 /* BackgroundJobConfiguration.swift in Sources */,
 				AC09EFEB25A5AA420091B227 /* NewsLinkController.swift in Sources */,

@@ -44,4 +44,5 @@ struct Spacing {
 
 extension Defaults.Keys {
     static let watchlist = Key<[String]>("watchlist", default: [String]())
+    static let interfaceStyle = Key<String>("AppleInterfaceStyle", default: "Light")
 }

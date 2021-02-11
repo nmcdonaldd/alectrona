@@ -18,14 +18,14 @@ struct LiveQuotePopoverView: View {
             VStack(alignment: .leading) {
                 Text("Fundamentals")
                     .font(.body)
-                    .foregroundColor(.gray)
                     .bold()
+                    .interfaceStyleRespectingGray()
                 CombinedFundamentals(fundamentals: fundamentalsViewModel.fundamentals)
                 Divider()
                 Text("News")
                     .font(.body)
-                    .foregroundColor(.gray)
                     .bold()
+                    .interfaceStyleRespectingGray()
                 NewsList(newsList: fundamentalsViewModel.news)
             }.padding()
         }
