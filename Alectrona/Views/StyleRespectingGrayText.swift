@@ -16,12 +16,11 @@ struct InterfaceStyleRespectedGray: ViewModifier {
             return Color(NSColor.darkGray)
         }
         
-        return Color(NSColor.darkGray)
+        return Color(NSColor.lightGray)
     }
     
     func body(content: Content) -> some View {
-        content
-            .foregroundColor(color)
+        content.foregroundColor(color)
     }
 }
 
