@@ -15,7 +15,7 @@ struct LiveQuotePopoverView: View {
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading) {
+            VStack {
                 Text("Fundamentals")
                     .font(.body)
                     .bold()

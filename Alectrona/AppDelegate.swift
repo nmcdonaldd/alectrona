@@ -7,7 +7,6 @@
 
 import Cocoa
 import SwiftUI
-import Defaults
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
