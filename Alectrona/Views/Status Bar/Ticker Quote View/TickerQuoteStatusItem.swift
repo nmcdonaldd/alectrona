@@ -20,6 +20,7 @@ class TickerQuoteStatusItem {
         self.symbol = symbol
         
         tickerQuoteStatusItemModel = TickerQuoteStatusItemModel(symbol: symbol)
+        tickerQuoteStatusItemModel.repeatedLoad()
         
         hostingView = NSHostingView(rootView: StatusBarTickerDisplay(symbol: symbol, onSizeChange: onSizeChange))
         

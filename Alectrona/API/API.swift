@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class API {
-    class func get<T>(type: T.Type, url: URL) -> AnyPublisher<T, Error> where T: Decodable {
+    func get<T>(type: T.Type, url: URL) -> AnyPublisher<T, Error> where T: Decodable {
         return URLSession.shared.dataTaskPublisher(for: url)
             .map(\.data)
             .decode(type: T.self, decoder: JSONDecoder())

@@ -7,14 +7,20 @@
 
 import Foundation
 import Combine
+import Resolver
 
 class TickerQuoteStatusItemModel {
     
     private let currentFundamentalsValuePublisher = CurrentValueSubject<Fundamentals, Never>(.empty)
     private let currentNewsFundamentalsValuePublisher = CurrentValueSubject<[News], Never>([News]())
-    private var fundamentalsBackgroundJobSubmission: BackgroundJobSubmission<Fundamentals>
-    private var newsBackgroundJobSubmission: BackgroundJobSubmission<[News]>
+    private var fundamentalsBackgroundJobSubmission: BackgroundJobSubmission<Fundamentals>!
+    private var newsBackgroundJobSubmission: BackgroundJobSubmission<[News]>!
     private var storage = Set<AnyCancellable>()
+    private let symbol: String
+    
+    @Injected private var backgroundJobSubmitter: BackgroundJobSumitter
+    @Injected private var fundamentalsController: FundamentalsController
+    @Injected private var stockNewsController: StockNewsController
     
     var fundamentalsPublisher: AnyPublisher<Fundamentals, Never> {
         return currentFundamentalsValuePublisher.eraseToAnyPublisher()
@@ -25,15 +31,19 @@ class TickerQuoteStatusItemModel {
     }
     
     init(symbol: String) {
-        fundamentalsBackgroundJobSubmission = BackgroundJobSumitter.submit(jobConfiguration: FundamentalsBackgroundJob(symbol: symbol))
-        newsBackgroundJobSubmission = BackgroundJobSumitter.submit(jobConfiguration: NewsBackgroundJobConfiguration(symbol: symbol))
+        self.symbol = symbol
+    }
+    
+    func repeatedLoad() {
+        fundamentalsBackgroundJobSubmission = backgroundJobSubmitter.submit(jobConfiguration: FundamentalsBackgroundJob(symbol: symbol))
+        newsBackgroundJobSubmission = backgroundJobSubmitter.submit(jobConfiguration: NewsBackgroundJobConfiguration(symbol: symbol))
         
-        FundamentalsController().getFundamentals(forSymbol: symbol)
+        fundamentalsController.getFundamentals(forSymbol: symbol)
             .append(fundamentalsBackgroundJobSubmission.publisher)
             .sink { self.currentFundamentalsValuePublisher.send($0) }
             .store(in: &storage)
 
-        StockNewsController().getStockNews(forSymbol: symbol)
+        stockNewsController.getStockNews(forSymbol: symbol)
             .append(newsBackgroundJobSubmission.publisher)
             .sink { self.currentNewsFundamentalsValuePublisher.send($0) }
             .store(in: &storage)

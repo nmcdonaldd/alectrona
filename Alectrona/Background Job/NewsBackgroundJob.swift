@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import Resolver
 
 class NewsBackgroundJobConfiguration: BackgroundJobConfiguration {
     typealias JobOutput = [News]
@@ -15,9 +16,10 @@ class NewsBackgroundJobConfiguration: BackgroundJobConfiguration {
     var interval: Double = 60*5 // 5 minutes
     var quality: QualityOfService = .utility
     var repeats: Bool = true
-    
     private let symbol: String
-    private let newsController = StockNewsController()
+    
+    @Injected private var newsController: StockNewsController
+    
     init(symbol: String) {
         self.symbol = symbol
         self.jobIdentifier = "com.nickdonald.alectrona.\(symbol).news"

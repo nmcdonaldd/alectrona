@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import Resolver
 
 class QuoteController {
     private static let BASE_QUOTE = Quote(regularMarketPrice: 0.0, chartPreviousClose: 0.0)
@@ -21,9 +22,11 @@ class QuoteController {
         var meta: Quote
     }
     
+    @Injected private var api: API
+    
     func getQuote(forSymbol symbol: String) -> AnyPublisher<Quote, Error> {
         let endpoint = Endpoint.getQuote(forSymbol: symbol)
-        return API.get(type: ChartResult.self, url: endpoint.url)
+        return api.get(type: ChartResult.self, url: endpoint.url)
             .map { $0.chart.result[0].meta }
             .eraseToAnyPublisher()
     }

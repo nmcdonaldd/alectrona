@@ -7,18 +7,20 @@
 
 import Foundation
 import Combine
+import Resolver
 
 struct LiveQuoteBackgroundJob: BackgroundJobConfiguration {
     typealias JobOutput = Quote
     
     private static let BASE_QUOTE = Quote(regularMarketPrice: 0.0, chartPreviousClose: 0.0)
-    private let quoteController = QuoteController()
     private let symbol: String
     
     var jobIdentifier: String
     var interval = 5.0
     var quality: QualityOfService = .utility
     var repeats = true
+    
+    @Injected private var quoteController: QuoteController
     
     init(symbol: String) {
         self.symbol = symbol

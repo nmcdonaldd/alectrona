@@ -7,10 +7,11 @@
 
 import Foundation
 import Combine
+import Resolver
 
 class StockNewsController {
-    private let newsLinkController = NewsLinkController()
-    private let newsController = NewsController()
+    @Injected private var newsLinkController: NewsLinkController
+    @Injected private var newsController: NewsController
     
     func getStockNews(forSymbol symbol: String) -> AnyPublisher<[News], Never> {
         var storage = Set<AnyCancellable>()
