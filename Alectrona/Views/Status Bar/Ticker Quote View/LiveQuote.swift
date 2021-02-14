@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import Resolver
 
 struct LiveCurrentQuote {
     var percentageGain: Double = 0.0
@@ -18,13 +19,14 @@ class LiveQuote: ObservableObject {
     
     private var cancellables: Set<AnyCancellable> = []
     private var quoteController = QuoteController()
+    @Injected private var backgroundJobSubmitter: BackgroundJobSumitter
     
     @Published var currentQuote = LiveCurrentQuote()
     
     init(symbol: String) {
         self.symbol = symbol
         
-        let submission = BackgroundJobSumitter.submit(jobConfiguration: LiveQuoteBackgroundJob(symbol: symbol))
+        let submission = backgroundJobSubmitter.submit(jobConfiguration: LiveQuoteBackgroundJob(symbol: symbol))
         
         self.quoteController.guaranteedQuote(forSymbol: symbol)
             .append(submission.publisher)

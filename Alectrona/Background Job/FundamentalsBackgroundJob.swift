@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import Resolver
 
 class FundamentalsBackgroundJob: BackgroundJobConfiguration {
     typealias JobOutput = Fundamentals
@@ -17,7 +18,7 @@ class FundamentalsBackgroundJob: BackgroundJobConfiguration {
     var repeats: Bool = true
     
     private let symbol: String
-    private var fundamentalsController = FundamentalsController()
+    @Injected private var fundamentalsController: FundamentalsController
     
     init(symbol: String) {
         self.symbol = symbol

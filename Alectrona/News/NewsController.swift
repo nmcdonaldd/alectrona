@@ -7,8 +7,11 @@
 
 import Foundation
 import Combine
+import Resolver
 
 class NewsController {
+    
+    @Injected private var htmlScraper: HTMLScraper
     
     struct NewsError: Error {
         var message: String
@@ -22,7 +25,7 @@ class NewsController {
                         return
                     }
                     
-                    guard let document = try HTMLScraper.getDocument(fromURL: url) else {
+                    guard let document = try self.htmlScraper.getDocument(fromURL: url) else {
                         return
                     }
                     

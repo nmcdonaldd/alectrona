@@ -7,8 +7,11 @@
 
 import Foundation
 import Combine
+import Resolver
 
 class TickerController {
+    
+    @Injected private var api: API
     
     private struct TickerSearchResult: Decodable {
         var quotes: [Ticker]
@@ -16,7 +19,7 @@ class TickerController {
     
     func searchTickers(withText text: String) -> AnyPublisher<[Ticker], Error> {
         let endpoint = Endpoint.tickerSearch(text)
-        return API.get(type: TickerSearchResult.self, url: endpoint.url)
+        return api.get(type: TickerSearchResult.self, url: endpoint.url)
             .map(\.quotes)
             .eraseToAnyPublisher()
     }

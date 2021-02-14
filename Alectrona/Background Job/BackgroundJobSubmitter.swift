@@ -10,7 +10,7 @@ import Combine
 
 class BackgroundJobSumitter {
     
-    class func submit<Configuration, Output>(jobConfiguration: Configuration) -> BackgroundJobSubmission<Output> where Configuration: BackgroundJobConfiguration, Output == Configuration.JobOutput {
+    func submit<Configuration, Output>(jobConfiguration: Configuration) -> BackgroundJobSubmission<Output> where Configuration: BackgroundJobConfiguration, Output == Configuration.JobOutput {
         let backgroundJobScheduler = NSBackgroundActivityScheduler(identifier: jobConfiguration.jobIdentifier)
         backgroundJobScheduler.interval = jobConfiguration.interval
         backgroundJobScheduler.qualityOfService = jobConfiguration.quality
