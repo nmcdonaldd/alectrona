@@ -9,7 +9,7 @@ import Foundation
 import SwiftSoup
 
 class HTMLScraper {
-    class func getDocument(fromURL url: URL) throws -> Document? {
+    func getDocument(fromURL url: URL) throws -> Document? {
         return try SwiftSoup.parse(String(contentsOf: url))
     }
 }

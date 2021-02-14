@@ -7,8 +7,11 @@
 
 import Foundation
 import Combine
+import Resolver
 
 class FundamentalsController {
+    
+    @Injected private var htmlScraper: HTMLScraper
     
     struct FundamentalsControllerError: Error {}
     
@@ -16,7 +19,7 @@ class FundamentalsController {
         return Future<Fundamentals, Never> { promise in
             DispatchQueue.global(qos: .utility).async {
                 do {
-                    let documentToScrape = try HTMLScraper.getDocument(fromURL: self.getFundamentalsURL(forSymbol: symbol))
+                    let documentToScrape = try self.htmlScraper.getDocument(fromURL: self.getFundamentalsURL(forSymbol: symbol))
                     
                     guard let document = documentToScrape else {
                         throw FundamentalsControllerError()

@@ -17,5 +17,6 @@ extension Resolver: ResolverRegistering {
         register { QuoteController() }
         register { TickerController() }
         register { API() }
+        register { HTMLScraper() }
     }
 }
