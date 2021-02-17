@@ -21,5 +21,6 @@ protocol BackgroundJobConfiguration {
 }
 
 extension BackgroundJobConfiguration {
+    var repeats: Bool { true }
     var tolerance: Double { 0.5 }
 }

@@ -15,7 +15,6 @@ class NewsBackgroundJobConfiguration: BackgroundJobConfiguration {
     var jobIdentifier: String
     var interval: Double = 60*5 // 5 minutes
     var quality: QualityOfService = .utility
-    var repeats: Bool = true
     private let symbol: String
     
     @Injected private var newsController: StockNewsController

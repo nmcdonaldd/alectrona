@@ -10,10 +10,6 @@ import SwiftSoup
 
 class FundamentalsScraper {
     
-    static let shared = FundamentalsScraper()
-    
-    private init() {}
-    
     func getFundamentals(fromDocument document: Document) throws -> [String: String] {
         let tableElements = try document.select("table")
         let fundamentalsTable1 = tableElements[0]

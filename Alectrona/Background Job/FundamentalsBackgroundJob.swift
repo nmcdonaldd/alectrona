@@ -15,7 +15,6 @@ class FundamentalsBackgroundJob: BackgroundJobConfiguration {
     var jobIdentifier: String
     var interval: Double = 30   // 30 Seconds
     var quality: QualityOfService = .utility
-    var repeats: Bool = true
     
     private let symbol: String
     @Injected private var fundamentalsController: FundamentalsController

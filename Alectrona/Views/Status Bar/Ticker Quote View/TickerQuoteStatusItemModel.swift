@@ -14,7 +14,7 @@ class TickerQuoteStatusItemModel {
     private let currentFundamentalsValuePublisher = CurrentValueSubject<Fundamentals, Never>(.empty)
     private let currentNewsFundamentalsValuePublisher = CurrentValueSubject<[News], Never>([News]())
     private var fundamentalsBackgroundJobSubmission: BackgroundJobSubmission<Fundamentals>!
-    private var newsBackgroundJobSubmission: BackgroundJobSubmission<[News]>!
+    private var newsBackgroundJobSubmission: BackgroundJobSubmission<[News]>?
     private var storage = Set<AnyCancellable>()
     private let symbol: String
     
@@ -36,21 +36,23 @@ class TickerQuoteStatusItemModel {
     
     func repeatedLoad() {
         fundamentalsBackgroundJobSubmission = backgroundJobSubmitter.submit(jobConfiguration: FundamentalsBackgroundJob(symbol: symbol))
-        newsBackgroundJobSubmission = backgroundJobSubmitter.submit(jobConfiguration: NewsBackgroundJobConfiguration(symbol: symbol))
+        
+        if(Features.newsStreaming) {
+            newsBackgroundJobSubmission = backgroundJobSubmitter.submit(jobConfiguration: NewsBackgroundJobConfiguration(symbol: symbol))
+            stockNewsController.getStockNews(forSymbol: symbol)
+                .append(newsBackgroundJobSubmission!.publisher)
+                .sink { self.currentNewsFundamentalsValuePublisher.send($0) }
+                .store(in: &storage)
+        }
         
         fundamentalsController.getFundamentals(forSymbol: symbol)
             .append(fundamentalsBackgroundJobSubmission.publisher)
             .sink { self.currentFundamentalsValuePublisher.send($0) }
             .store(in: &storage)
-
-        stockNewsController.getStockNews(forSymbol: symbol)
-            .append(newsBackgroundJobSubmission.publisher)
-            .sink { self.currentNewsFundamentalsValuePublisher.send($0) }
-            .store(in: &storage)
     }
     
     func cancel() {
         fundamentalsBackgroundJobSubmission.cancelJob()
-        newsBackgroundJobSubmission.cancelJob()
+        newsBackgroundJobSubmission?.cancelJob()
     }
 }

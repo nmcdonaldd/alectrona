@@ -56,6 +56,10 @@
 		ACCED64025D5983600BAADBA /* StyleRespectingGrayText.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCED63F25D5983600BAADBA /* StyleRespectingGrayText.swift */; };
 		ACCED65525D8553C00BAADBA /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = ACCED65425D8553C00BAADBA /* Resolver */; };
 		ACCED65D25D855C300BAADBA /* AppDelegate+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCED65C25D855C300BAADBA /* AppDelegate+Injection.swift */; };
+		ACCED67825DA292A00BAADBA /* YMFF in Frameworks */ = {isa = PBXBuildFile; productRef = ACCED67725DA292A00BAADBA /* YMFF */; };
+		ACCED68025DA296A00BAADBA /* Features.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCED67F25DA296A00BAADBA /* Features.swift */; };
+		ACCED68525DA2A6E00BAADBA /* Features.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACCED68425DA2A6E00BAADBA /* Features.plist */; };
+		ACCED68A25DA2AD700BAADBA /* PlistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCED68925DA2AD700BAADBA /* PlistService.swift */; };
 		ACE5EA6125980A3400485626 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5EA6025980A3400485626 /* API.swift */; };
 		ACE5EA812599058900485626 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5EA802599058900485626 /* Extensions.swift */; };
 		ACF3296025BFD521000299C2 /* BackgroundJobSubmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3295F25BFD521000299C2 /* BackgroundJobSubmitter.swift */; };
@@ -133,6 +137,9 @@
 		ACCED62E25D3B43700BAADBA /* CombinedFundamentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CombinedFundamentals.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/CombinedFundamentals.swift"; sourceTree = SOURCE_ROOT; };
 		ACCED63F25D5983600BAADBA /* StyleRespectingGrayText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StyleRespectingGrayText.swift; path = Alectrona/Views/StyleRespectingGrayText.swift; sourceTree = SOURCE_ROOT; };
 		ACCED65C25D855C300BAADBA /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
+		ACCED67F25DA296A00BAADBA /* Features.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features.swift; sourceTree = "<group>"; };
+		ACCED68425DA2A6E00BAADBA /* Features.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Features.plist; sourceTree = "<group>"; };
+		ACCED68925DA2AD700BAADBA /* PlistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistService.swift; sourceTree = "<group>"; };
 		ACE5EA6025980A3400485626 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		ACE5EA802599058900485626 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ACF3295F25BFD521000299C2 /* BackgroundJobSubmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundJobSubmitter.swift; sourceTree = "<group>"; };
@@ -146,6 +153,7 @@
 			files = (
 				ACCED65525D8553C00BAADBA /* Resolver in Frameworks */,
 				AC71D37D25C776E5005C5234 /* Defaults in Frameworks */,
+				ACCED67825DA292A00BAADBA /* YMFF in Frameworks */,
 				AC09EFF625A5AF530091B227 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +340,7 @@
 				AC92B4812589F4BA002826F8 /* Assets.xcassets */,
 				AC92B4862589F4BA002826F8 /* Main.storyboard */,
 				AC92B4892589F4BA002826F8 /* Info.plist */,
+				ACCED68425DA2A6E00BAADBA /* Features.plist */,
 				AC92B48A2589F4BA002826F8 /* Alectrona.entitlements */,
 				AC92B4832589F4BA002826F8 /* Preview Content */,
 			);
@@ -378,6 +387,8 @@
 			children = (
 				ACE5EA802599058900485626 /* Extensions.swift */,
 				AC646C8725A9A15900493F93 /* Constants.swift */,
+				ACCED67F25DA296A00BAADBA /* Features.swift */,
+				ACCED68925DA2AD700BAADBA /* PlistService.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -402,6 +413,7 @@
 				AC09EFF525A5AF530091B227 /* SwiftSoup */,
 				AC71D37C25C776E5005C5234 /* Defaults */,
 				ACCED65425D8553C00BAADBA /* Resolver */,
+				ACCED67725DA292A00BAADBA /* YMFF */,
 			);
 			productName = Alectrona;
 			productReference = AC92B47A2589F4B9002826F8 /* Alectrona.app */;
@@ -478,6 +490,7 @@
 				AC09EFF425A5AF530091B227 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				AC71D37B25C776E5005C5234 /* XCRemoteSwiftPackageReference "Defaults" */,
 				ACCED65325D8553C00BAADBA /* XCRemoteSwiftPackageReference "Resolver" */,
+				ACCED67625DA292A00BAADBA /* XCRemoteSwiftPackageReference "YMFF" */,
 			);
 			productRefGroup = AC92B47B2589F4B9002826F8 /* Products */;
 			projectDirPath = "";
@@ -498,6 +511,7 @@
 				AC92B4882589F4BA002826F8 /* Main.storyboard in Resources */,
 				AC92B4852589F4BA002826F8 /* Preview Assets.xcassets in Resources */,
 				AC92B4822589F4BA002826F8 /* Assets.xcassets in Resources */,
+				ACCED68525DA2A6E00BAADBA /* Features.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +564,7 @@
 				AC45DA2125A068AF00A4B810 /* LiveQuote.swift in Sources */,
 				AC45DA0825A01E9500A4B810 /* Endpoint.swift in Sources */,
 				AC09EFFF25A5AF980091B227 /* HTMLScraper.swift in Sources */,
+				ACCED68A25DA2AD700BAADBA /* PlistService.swift in Sources */,
 				AC8BED0225CD0F54007AF467 /* StockNewsController.swift in Sources */,
 				AC09EFDC25A591600091B227 /* News.swift in Sources */,
 				AC45DA1125A0593E00A4B810 /* TickerController.swift in Sources */,
@@ -564,6 +579,7 @@
 				AC61DDD125AFFAB20065FC64 /* FundamentalDataList.swift in Sources */,
 				AC09EFE625A5A95F0091B227 /* NewsLink.swift in Sources */,
 				AC48956C25C9B46800E1BF3A /* FundamentalsBackgroundJob.swift in Sources */,
+				ACCED68025DA296A00BAADBA /* Features.swift in Sources */,
 				AC09EFE125A5916D0091B227 /* NewsController.swift in Sources */,
 				AC92B47E2589F4B9002826F8 /* AppDelegate.swift in Sources */,
 				ACE5EA812599058900485626 /* Extensions.swift in Sources */,
@@ -789,7 +805,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nickdonald.AlectronaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -810,7 +826,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nickdonald.AlectronaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -922,6 +938,14 @@
 				minimumVersion = 1.4.0;
 			};
 		};
+		ACCED67625DA292A00BAADBA /* XCRemoteSwiftPackageReference "YMFF" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yakovmanshin/YMFF";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -939,6 +963,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ACCED65325D8553C00BAADBA /* XCRemoteSwiftPackageReference "Resolver" */;
 			productName = Resolver;
+		};
+		ACCED67725DA292A00BAADBA /* YMFF */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ACCED67625DA292A00BAADBA /* XCRemoteSwiftPackageReference "YMFF" */;
+			productName = YMFF;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

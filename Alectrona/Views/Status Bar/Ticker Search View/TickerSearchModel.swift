@@ -30,9 +30,7 @@ class TickerSearchModel: ObservableObject {
     
     private var resultsPublisher: AnyPublisher<[Ticker], Never> {
         searchTextPublisher
-            .flatMap { [unowned self] searchText in
-                return self.tickerController.searchTickers(withText: searchText)
-            }
+            .flatMap { self.tickerController.searchTickers(withText: $0) }
             .replaceError(with: [Ticker]())
             .eraseToAnyPublisher()
     }

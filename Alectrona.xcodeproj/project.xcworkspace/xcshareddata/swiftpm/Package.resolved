@@ -27,6 +27,15 @@
           "revision": "774dc9c7213085db8aa59595e27c1cd22e428904",
           "version": "2.3.2"
         }
+      },
+      {
+        "package": "YMFF",
+        "repositoryURL": "https://github.com/yakovmanshin/YMFF",
+        "state": {
+          "branch": null,
+          "revision": "ae71331b1010bd997c118460095dcd691dd133c2",
+          "version": "1.1.0"
+        }
       }
     ]
   },

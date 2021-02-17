@@ -13,21 +13,31 @@ struct LiveQuotePopoverView: View {
     
     @ObservedObject var fundamentalsViewModel: FundamentalsViewModel
     
-    var body: some View {
-        ScrollView {
-            VStack {
-                Text("Fundamentals")
-                    .font(.body)
-                    .bold()
-                    .interfaceStyleRespectingGray()
-                CombinedFundamentals(fundamentals: fundamentalsViewModel.fundamentals)
+    var fundamentalsAndPossiblyNews: some View {
+        VStack {
+            Text("Fundamentals")
+                .font(.body)
+                .bold()
+                .interfaceStyleRespectingGray()
+            CombinedFundamentals(fundamentals: fundamentalsViewModel.fundamentals)
+            if(Features.newsStreaming) {
                 Divider()
                 Text("News")
                     .font(.body)
                     .bold()
                     .interfaceStyleRespectingGray()
                 NewsList(newsList: fundamentalsViewModel.news)
-            }.padding()
+            }
+        }.padding()
+    }
+    
+    var body: some View {
+        if(Features.newsStreaming) {
+            ScrollView {
+                fundamentalsAndPossiblyNews
+            }
+        } else {
+            fundamentalsAndPossiblyNews
         }
     }
 }
