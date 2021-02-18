@@ -21,7 +21,7 @@ class TickerSearchModel: ObservableObject {
     
     private var searchTextPublisher: AnyPublisher<String, Never> {
         $searchText
-            .debounce(for: 0.5, scheduler: RunLoop.main)
+            .debounce(for: 0.5, scheduler: RunLoop.current)
             .removeDuplicates()
             // Remove empty strings.
             .filter({ "" != $0 })
