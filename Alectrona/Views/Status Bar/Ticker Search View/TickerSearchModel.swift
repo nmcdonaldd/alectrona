@@ -24,7 +24,7 @@ class TickerSearchModel: ObservableObject {
             .debounce(for: 0.5, scheduler: RunLoop.current)
             .removeDuplicates()
             // Remove empty strings.
-            .filter({ "" != $0 })
+            .filter { "" != $0 }
             .eraseToAnyPublisher()
     }
     
