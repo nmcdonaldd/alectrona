@@ -32,7 +32,7 @@ class LiveQuote: ObservableObject {
             .append(submission.publisher)
             .map { LiveCurrentQuote(percentageGain: $0.percentageGain, regularMarketPrice: $0.regularMarketPrice) }
             .receive(on: RunLoop.main)
-            .sink { self.currentQuote = $0 }
+            .assign(to: \.currentQuote, on: self)
             .store(in: &cancellables)
     }
 }

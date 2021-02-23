@@ -42,6 +42,10 @@ struct Spacing {
     static let medium: CGFloat = 10
 }
 
+struct FeatureKey {
+    static let newsStreaming = "STREAM_NEWS"
+}
+
 extension Defaults.Keys {
     static let watchlist = Key<[String]>("watchlist", default: [String]())
     static let interfaceStyle = Key<String>("AppleInterfaceStyle", default: "Light")

@@ -20,10 +20,11 @@ class StatusBar {
     init() {
         storage = Defaults.publisher(.watchlist)
             .map(\.newValue)
-            .sink(receiveValue: { [weak self] (symbols) in
-                self?.displayedTickers.forEach({ $0.remove() })
+            .sink(receiveValue: { symbols in
+                self.displayedTickers.forEach({ $0.remove() })
+                self.displayedTickers.removeAll()
                 for ticker in symbols {
-                    self?.displayedTickers.append(TickerQuoteStatusItem(symbol: ticker))
+                    self.displayedTickers.append(TickerQuoteStatusItem(symbol: ticker))
                 }
             })
     }

@@ -12,7 +12,8 @@ struct StatusBarTickerDisplay: View {
     let ticker: String
     let onSizeChange: (CGSize) -> Void
     
-    @ObservedObject var liveQuote: LiveQuote
+    /// FIXME: this should be stateobject but I can't figure out how to do a customized init
+    @ObservedObject private var liveQuote: LiveQuote
     
     var formattedQuote: String {
         /// FIXME: is .currency localized? Would it be correct if user in another language? I doubt it. Perhaps remove $ (implicitly added with .currency)
@@ -21,7 +22,6 @@ struct StatusBarTickerDisplay: View {
     
     var formattedPercentageDifference: String {
         String(format: "%.2f", liveQuote.currentQuote.percentageGain*100.0)
-//        NumberFormatter.localizedString(from: NSNumber(value: (liveQuote.currentQuote.percentageGain*100).rounded(toPlaces: 2)), number: .decimal)
     }
     
     var color: Color {
@@ -29,6 +29,7 @@ struct StatusBarTickerDisplay: View {
             return .red
         }
         
+        // We'll return .green if the percentage is net-zero, why not?
         return .green
     }
     
@@ -49,7 +50,6 @@ struct StatusBarTickerDisplay: View {
     init(symbol: String, onSizeChange: @escaping (CGSize) -> Void) {
         self.ticker = symbol
         self.onSizeChange = onSizeChange
-        
         liveQuote = LiveQuote(symbol: symbol)
     }
 }

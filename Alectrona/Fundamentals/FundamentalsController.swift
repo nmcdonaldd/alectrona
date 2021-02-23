@@ -12,6 +12,7 @@ import Resolver
 class FundamentalsController {
     
     @Injected private var htmlScraper: HTMLScraper
+    @Injected private var fundamentalsScraper: FundamentalsScraper
     
     struct FundamentalsControllerError: Error {}
     
@@ -25,7 +26,7 @@ class FundamentalsController {
                         throw FundamentalsControllerError()
                     }
                     
-                    let rawFundamentalsData = try FundamentalsScraper.shared.getFundamentals(fromDocument: document)
+                    let rawFundamentalsData = try self.fundamentalsScraper.getFundamentals(fromDocument: document)
                     
                     promise(.success(Fundamentals(
                         marketCap: rawFundamentalsData[YFinanceHTMLKey.Fundamentals.marketCap]!,

@@ -21,18 +21,16 @@ class TickerSearchModel: ObservableObject {
     
     private var searchTextPublisher: AnyPublisher<String, Never> {
         $searchText
-            .debounce(for: 0.5, scheduler: RunLoop.main)
+            .debounce(for: 0.5, scheduler: RunLoop.current)
             .removeDuplicates()
             // Remove empty strings.
-            .filter({ "" != $0 })
+            .filter { "" != $0 }
             .eraseToAnyPublisher()
     }
     
     private var resultsPublisher: AnyPublisher<[Ticker], Never> {
         searchTextPublisher
-            .flatMap { [unowned self] searchText in
-                return self.tickerController.searchTickers(withText: searchText)
-            }
+            .flatMap { self.tickerController.searchTickers(withText: $0) }
             .replaceError(with: [Ticker]())
             .eraseToAnyPublisher()
     }

@@ -21,11 +21,8 @@ class NewsController {
         return Future<News, Never> { promise in
             DispatchQueue.global(qos: .utility).async {
                 do {
-                    guard let url = URL(string: newsLink.link) else {
-                        return
-                    }
-                    
-                    guard let document = try self.htmlScraper.getDocument(fromURL: url) else {
+                    guard let url = URL(string: newsLink.link),
+                          let document = try self.htmlScraper.getDocument(fromURL: url) else {
                         return
                     }
                     
