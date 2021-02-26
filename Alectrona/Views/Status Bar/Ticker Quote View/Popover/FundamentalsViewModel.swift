@@ -10,12 +10,12 @@ import Combine
 
 class FundamentalsViewModel: ObservableObject {
     
-    @Published var fundamentals: Fundamentals = .empty
+    @Published var fundamentals: FundamentalsQuoteTypeResponse = .empty
     @Published var news: [News] = [News]()
     
     private var storage = Set<AnyCancellable>()
     
-    init(fundamentalsPublisher: AnyPublisher<Fundamentals, Never>, newsPublisher: AnyPublisher<[News], Never>) {
+    init(fundamentalsPublisher: AnyPublisher<FundamentalsQuoteTypeResponse, Never>, newsPublisher: AnyPublisher<[News], Never>) {
         fundamentalsPublisher
             .receive(on: RunLoop.main)
             .sink { self.fundamentals = $0 }

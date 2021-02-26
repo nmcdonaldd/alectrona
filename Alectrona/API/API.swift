@@ -10,9 +10,14 @@ import Combine
 
 class API {
     func get<T>(type: T.Type, url: URL) -> AnyPublisher<T, Error> where T: Decodable {
+        return get(url: url)
+            .decode(type: T.self, decoder: JSONDecoder())
+            .eraseToAnyPublisher()
+    }
+    
+    func get(url: URL) -> AnyPublisher<Data, URLSession.DataTaskPublisher.Failure> {
         return URLSession.shared.dataTaskPublisher(for: url)
             .map(\.data)
-            .decode(type: T.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
     }
 }

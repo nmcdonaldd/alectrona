@@ -10,7 +10,7 @@ import Combine
 import Resolver
 
 class FundamentalsBackgroundJob: BackgroundJobConfiguration {
-    typealias JobOutput = Fundamentals
+    typealias JobOutput = FundamentalsQuoteTypeResponse
     
     var jobIdentifier: String
     var interval: Double = 30   // 30 Seconds
@@ -24,7 +24,7 @@ class FundamentalsBackgroundJob: BackgroundJobConfiguration {
         jobIdentifier = "com.nickdonald.alectrona.\(symbol).fundamentals"
     }
     
-    func doJob() -> AnyPublisher<Fundamentals, Never> {
+    func doJob() -> AnyPublisher<FundamentalsQuoteTypeResponse, Never> {
         return fundamentalsController.getFundamentals(forSymbol: symbol)
     }
 }

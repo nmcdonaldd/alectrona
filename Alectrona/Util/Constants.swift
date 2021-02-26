@@ -46,6 +46,11 @@ struct FeatureKey {
     static let newsStreaming = "STREAM_NEWS"
 }
 
+struct QuoteTypeKey {
+    static let equity = "EQUITY"
+    static let cryptocurrency = "CRYPTOCURRENCY"
+}
+
 extension Defaults.Keys {
     static let watchlist = Key<[String]>("watchlist", default: [String]())
     static let interfaceStyle = Key<String>("AppleInterfaceStyle", default: "Light")
