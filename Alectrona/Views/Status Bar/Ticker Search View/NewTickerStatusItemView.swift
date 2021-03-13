@@ -12,8 +12,7 @@ struct NewTickerStatusItemView: View {
     var onSizeChange: (CGSize) -> Void
     
     var body: some View {
-        StatusItemViewable(onSizeChange: onSizeChange) {
-            Image(systemName: "plus")
-        }
+        Image(systemName: "plus")
+            .inStatusBar(onSizeChange: onSizeChange)
     }
 }

@@ -7,13 +7,15 @@
 
 import Foundation
 
-struct CryptocurrencyFundamentalsResponse: Decodable {
+struct CryptocurrencyFundamentals: Decodable {
     var regularMarketPreviousClose: Double
     var regularMarketOpen: Double
-    var regularMarketChange: Double
     var regularMarketDayRange: String
     var fiftyTwoWeekRange: String
     var startDate: Int
+    var circulatingSupply: Int
     var marketCap: Int
     var regularMarketVolume: Int
+    var shortName: String
+    var fullExchangeName: String
 }

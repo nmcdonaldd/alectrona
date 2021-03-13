@@ -18,23 +18,22 @@ private struct StatusBarPreferenceKey: PreferenceKey {
     typealias Value = CGSize
 }
 
-struct StatusItemViewable<Content>: View where Content: View {
-    let content: Content
-    let onSizeChange: (CGSize) -> Void
-    
-    @inlinable init(onSizeChange: @escaping (CGSize) -> Void, @ViewBuilder _ content: () -> Content) {
-        self.onSizeChange = onSizeChange
-        self.content = content()
-    }
-    
-    var body: some View {
+struct InStatusBar: ViewModifier {
+    var onSizeChange: (CGSize) -> Void
+    func body(content: Content) -> some View {
         content
             .background(GeometryReader { proxy in
-                return Color.clear/*opacity(0.0)*/.preference(key: StatusBarPreferenceKey.self, value: proxy.size)
+                return Color.clear.preference(key: StatusBarPreferenceKey.self, value: proxy.size)
             }).onPreferenceChange(StatusBarPreferenceKey.self, perform: { value in
                 DispatchQueue.main.async {
                     onSizeChange(value)
                 }
             })
+    }
+}
+
+extension View {
+    func inStatusBar(onSizeChange: @escaping (CGSize) -> Void) -> some View {
+        self.modifier(InStatusBar(onSizeChange: onSizeChange))
     }
 }

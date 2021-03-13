@@ -12,8 +12,9 @@ enum FundamentalsQuoteTypeResponse: Decodable {
         var quoteType: QuoteType
     }
     
-    case cryptoCurrency(CryptocurrencyFundamentalsResponse)
-    case equity(EquityFundamentalsResponse)
+    case cryptocurrency(CryptocurrencyFundamentals)
+    case equity(EquityFundamentals)
+    case etf(ETFFundamentals)
     
     ///TODO: remove this. This is mainly as a fallback for errors. I should actually handle errors correctly, though.
     case empty
@@ -21,8 +22,9 @@ enum FundamentalsQuoteTypeResponse: Decodable {
     init(from decoder: Decoder) throws {
         let metadata = try ResultMetadata(from: decoder)
         switch metadata.quoteType {
-        case .CRYPTOCURRENCY: self = try .cryptoCurrency(CryptocurrencyFundamentalsResponse(from: decoder))
-        case .EQUITY: self = try .equity(EquityFundamentalsResponse(from: decoder))
+        case .ETF: self = try .etf(ETFFundamentals(from: decoder))
+        case .EQUITY: self = try .equity(EquityFundamentals(from: decoder))
+        case .CRYPTOCURRENCY: self = try .cryptocurrency(CryptocurrencyFundamentals(from: decoder))
         }
     }
 }

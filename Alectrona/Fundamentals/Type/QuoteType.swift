@@ -8,5 +8,5 @@
 import Foundation
 
 enum QuoteType: String, Decodable {
-    case EQUITY, CRYPTOCURRENCY
+    case EQUITY, CRYPTOCURRENCY, ETF
 }

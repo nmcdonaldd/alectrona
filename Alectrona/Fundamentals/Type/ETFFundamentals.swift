@@ -1,13 +1,13 @@
 //
-//  Equity.swift
+//  ETFFundamentals.swift
 //  Alectrona
 //
-//  Created by Nicholas McDonald on 2/25/21.
+//  Created by Nicholas McDonald on 2/27/21.
 //
 
 import Foundation
 
-struct EquityFundamentals: Decodable {
+struct ETFFundamentals: Decodable {
     var marketCap: Int
     var regularMarketOpen: Double
     var bid: Double
@@ -21,7 +21,4 @@ struct EquityFundamentals: Decodable {
     var longName: String
     var fullExchangeName: String
     var trailingPE: Double?
-    var earningsTimestampStart: Int?
-    var earningsTimestampEnd: Int?
-    var epsTrailingTwelveMonths: Double?
 }

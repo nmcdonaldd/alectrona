@@ -26,7 +26,6 @@ class FundamentalsController {
     func getFundamentals(forSymbol symbol: String) -> AnyPublisher<FundamentalsQuoteTypeResponse, Never> {
         return api.get(type: FundamentalsResponseContainer.self, url: Endpoint.getFundamentals(forSymbol: symbol, requestedFields: [String]()).url)
             .map { $0.quoteResponse.result[0] }
-            .print()
             .replaceError(with: .empty)
             .eraseToAnyPublisher()
     }
