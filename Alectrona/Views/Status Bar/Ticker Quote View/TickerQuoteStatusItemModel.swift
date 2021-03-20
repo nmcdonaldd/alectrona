@@ -11,9 +11,9 @@ import Resolver
 
 class TickerQuoteStatusItemModel {
     
-    private let currentFundamentalsValuePublisher = CurrentValueSubject<Fundamentals, Never>(.empty)
+    private let currentFundamentalsValuePublisher = CurrentValueSubject<FundamentalsQuoteTypeResponse, Never>(.empty)
     private let currentNewsFundamentalsValuePublisher = CurrentValueSubject<[News], Never>([News]())
-    private var fundamentalsBackgroundJobSubmission: BackgroundJobSubmission<Fundamentals>!
+    private var fundamentalsBackgroundJobSubmission: BackgroundJobSubmission<FundamentalsQuoteTypeResponse>!
     private var newsBackgroundJobSubmission: BackgroundJobSubmission<[News]>?
     private var storage = Set<AnyCancellable>()
     private let symbol: String
@@ -22,7 +22,7 @@ class TickerQuoteStatusItemModel {
     @Injected private var fundamentalsController: FundamentalsController
     @Injected private var stockNewsController: StockNewsController
     
-    var fundamentalsPublisher: AnyPublisher<Fundamentals, Never> {
+    var fundamentalsPublisher: AnyPublisher<FundamentalsQuoteTypeResponse, Never> {
         return currentFundamentalsValuePublisher.eraseToAnyPublisher()
     }
     

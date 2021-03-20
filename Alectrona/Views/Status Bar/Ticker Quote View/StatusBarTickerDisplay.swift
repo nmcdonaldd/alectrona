@@ -34,17 +34,16 @@ struct StatusBarTickerDisplay: View {
     }
     
     var body: some View {
-        StatusItemViewable(onSizeChange: onSizeChange) {
-            HStack(spacing: 6) {
-                Text(ticker)
-                    .bold()
-                    .foregroundColor(.primary)
-                Text(formattedQuote)
-                    .foregroundColor(.primary)
-                Text("(\(formattedPercentageDifference)%)")
-                    .foregroundColor(color)
-            }.fixedSize()
-        }
+        HStack(spacing: 6) {
+            Text(ticker)
+                .bold()
+                .foregroundColor(.primary)
+            Text(formattedQuote)
+                .foregroundColor(.primary)
+            Text("(\(formattedPercentageDifference)%)")
+                .foregroundColor(color)
+        }.fixedSize()
+        .inStatusBar(onSizeChange: onSizeChange)
     }
     
     init(symbol: String, onSizeChange: @escaping (CGSize) -> Void) {

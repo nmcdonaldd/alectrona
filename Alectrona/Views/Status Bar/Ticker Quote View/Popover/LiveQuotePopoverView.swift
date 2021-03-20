@@ -15,10 +15,10 @@ struct LiveQuotePopoverView: View {
     
     var fundamentalsAndPossiblyNews: some View {
         VStack {
-            Text("Fundamentals")
-                .font(.body)
-                .bold()
-                .interfaceStyleRespectingGray()
+//            Text("Fundamentals")
+//                .font(.body)
+//                .bold()
+//                .interfaceStyleRespectingGray()
             CombinedFundamentals(fundamentals: fundamentalsViewModel.fundamentals)
             if(Features.newsStreaming) {
                 Divider()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC07288E260311A900072B7C /* FundamentalsViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC07288D260311A900072B7C /* FundamentalsViewHelper.swift */; };
 		AC09EFDC25A591600091B227 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFDB25A591600091B227 /* News.swift */; };
 		AC09EFE125A5916D0091B227 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFE025A5916D0091B227 /* NewsController.swift */; };
 		AC09EFE625A5A95F0091B227 /* NewsLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFE525A5A95F0091B227 /* NewsLink.swift */; };
@@ -14,9 +15,7 @@
 		AC09EFF025A5AEC00091B227 /* NewsScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFEF25A5AEC00091B227 /* NewsScraper.swift */; };
 		AC09EFF625A5AF530091B227 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = AC09EFF525A5AF530091B227 /* SwiftSoup */; };
 		AC09EFFF25A5AF980091B227 /* HTMLScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFFE25A5AF980091B227 /* HTMLScraper.swift */; };
-		AC11CCF725AED7FB009D9822 /* Fundamentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11CCF625AED7FB009D9822 /* Fundamentals.swift */; };
 		AC11CCFC25AED8F4009D9822 /* FundamentalsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11CCFB25AED8F4009D9822 /* FundamentalsController.swift */; };
-		AC11CD0125AED978009D9822 /* FundamentalsScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11CD0025AED978009D9822 /* FundamentalsScraper.swift */; };
 		AC11CD0C25AFE3F0009D9822 /* FundamentalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11CD0B25AFE3F0009D9822 /* FundamentalsViewModel.swift */; };
 		AC45DA0325A01D2400A4B810 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA0225A01D2400A4B810 /* Ticker.swift */; };
 		AC45DA0825A01E9500A4B810 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA0725A01E9500A4B810 /* Endpoint.swift */; };
@@ -27,7 +26,7 @@
 		AC48956C25C9B46800E1BF3A /* FundamentalsBackgroundJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48956B25C9B46800E1BF3A /* FundamentalsBackgroundJob.swift */; };
 		AC61DDD125AFFAB20065FC64 /* FundamentalDataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61DDD025AFFAB20065FC64 /* FundamentalDataList.swift */; };
 		AC646C4825A83FBF00493F93 /* LiveQuotePopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C4725A83FBF00493F93 /* LiveQuotePopoverView.swift */; };
-		AC646C5025A84C8C00493F93 /* StatusItemViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C4F25A84C8C00493F93 /* StatusItemViewable.swift */; };
+		AC646C5025A84C8C00493F93 /* InStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C4F25A84C8C00493F93 /* InStatusBar.swift */; };
 		AC646C5525A8FCBF00493F93 /* NewTickerStatusItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C5425A8FCBF00493F93 /* NewTickerStatusItemView.swift */; };
 		AC646C8825A9A15900493F93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C8725A9A15900493F93 /* Constants.swift */; };
 		AC65D0BA25955822008C6C5C /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC65D0B925955822008C6C5C /* StatusBar.swift */; };
@@ -37,6 +36,12 @@
 		AC6771CA259DC5DE00F807DB /* TickerSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6771C9259DC5DE00F807DB /* TickerSearchModel.swift */; };
 		AC6771CF259FBFD900F807DB /* TickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6771CE259FBFD900F807DB /* TickerRow.swift */; };
 		AC6771D4259FC38D00F807DB /* TickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6771D3259FC38D00F807DB /* TickerList.swift */; };
+		AC69F26F25E9EB7200361E8A /* SpacedDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69F26E25E9EB7200361E8A /* SpacedDivider.swift */; };
+		AC69F29A25EB31B500361E8A /* ETFFundamentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69F29925EB31B500361E8A /* ETFFundamentals.swift */; };
+		AC69F29F25EB321A00361E8A /* ETFFundamentalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69F29E25EB321A00361E8A /* ETFFundamentalsView.swift */; };
+		AC69F2B925F9E45700361E8A /* FundamentalsTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69F2B825F9E45700361E8A /* FundamentalsTitle.swift */; };
+		AC69F2C425FB3A1600361E8A /* ExchangeTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69F2C325FB3A1600361E8A /* ExchangeTitle.swift */; };
+		AC69F2C925FB3AA300361E8A /* TitleWithExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69F2C825FB3AA300361E8A /* TitleWithExchange.swift */; };
 		AC71D37D25C776E5005C5234 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = AC71D37C25C776E5005C5234 /* Defaults */; };
 		AC737CF325C3CE0C0026027C /* LiveQuoteBackgroundJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC737CF225C3CE0C0026027C /* LiveQuoteBackgroundJob.swift */; };
 		AC7C76A8259C06C500082025 /* TickerQuoteStatusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7C76A7259C06C500082025 /* TickerQuoteStatusItem.swift */; };
@@ -45,12 +50,18 @@
 		AC8BED0225CD0F54007AF467 /* StockNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8BED0125CD0F54007AF467 /* StockNewsController.swift */; };
 		AC8BED1B25CDB0B2007AF467 /* NewsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8BED1A25CDB0B2007AF467 /* NewsRow.swift */; };
 		AC8BED2425CDBAE8007AF467 /* NewsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8BED2325CDBAE8007AF467 /* NewsList.swift */; };
+		AC8CA36225E9B47E00DD411D /* EquityFundamentalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CA36125E9B47E00DD411D /* EquityFundamentalsView.swift */; };
+		AC8CA36A25E9B4FB00DD411D /* CryptocurrencyFundamentalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CA36925E9B4FB00DD411D /* CryptocurrencyFundamentalsView.swift */; };
 		AC92B47E2589F4B9002826F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92B47D2589F4B9002826F8 /* AppDelegate.swift */; };
 		AC92B4822589F4BA002826F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC92B4812589F4BA002826F8 /* Assets.xcassets */; };
 		AC92B4852589F4BA002826F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC92B4842589F4BA002826F8 /* Preview Assets.xcassets */; };
 		AC92B4882589F4BA002826F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC92B4862589F4BA002826F8 /* Main.storyboard */; };
 		AC92B4942589F4BA002826F8 /* AlectronaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92B4932589F4BA002826F8 /* AlectronaTests.swift */; };
 		AC92B49F2589F4BA002826F8 /* AlectronaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92B49E2589F4BA002826F8 /* AlectronaUITests.swift */; };
+		ACB0C7A425E89BFB00B905D3 /* CryptocurrencyFundamentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0C7A325E89BFB00B905D3 /* CryptocurrencyFundamentals.swift */; };
+		ACB0C7A925E89C0400B905D3 /* EquityFundamentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0C7A825E89C0400B905D3 /* EquityFundamentals.swift */; };
+		ACB0C7AE25E89CAB00B905D3 /* QuoteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0C7AD25E89CAB00B905D3 /* QuoteType.swift */; };
+		ACB0C7C425E8A10C00B905D3 /* FundamentalsQuoteTypeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0C7C325E8A10C00B905D3 /* FundamentalsQuoteTypeResponse.swift */; };
 		ACB2779125BFE606002AEEBF /* BackgroundJobSubmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2779025BFE606002AEEBF /* BackgroundJobSubmission.swift */; };
 		ACCED62F25D3B43700BAADBA /* CombinedFundamentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCED62E25D3B43700BAADBA /* CombinedFundamentals.swift */; };
 		ACCED64025D5983600BAADBA /* StyleRespectingGrayText.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCED63F25D5983600BAADBA /* StyleRespectingGrayText.swift */; };
@@ -84,15 +95,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC07288D260311A900072B7C /* FundamentalsViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FundamentalsViewHelper.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/Fundamentals/FundamentalsViewHelper.swift"; sourceTree = SOURCE_ROOT; };
 		AC09EFDB25A591600091B227 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		AC09EFE025A5916D0091B227 /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
 		AC09EFE525A5A95F0091B227 /* NewsLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsLink.swift; sourceTree = "<group>"; };
 		AC09EFEA25A5AA420091B227 /* NewsLinkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsLinkController.swift; sourceTree = "<group>"; };
 		AC09EFEF25A5AEC00091B227 /* NewsScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsScraper.swift; sourceTree = "<group>"; };
 		AC09EFFE25A5AF980091B227 /* HTMLScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLScraper.swift; sourceTree = "<group>"; };
-		AC11CCF625AED7FB009D9822 /* Fundamentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fundamentals.swift; sourceTree = "<group>"; };
 		AC11CCFB25AED8F4009D9822 /* FundamentalsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentalsController.swift; sourceTree = "<group>"; };
-		AC11CD0025AED978009D9822 /* FundamentalsScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentalsScraper.swift; sourceTree = "<group>"; };
 		AC11CD0B25AFE3F0009D9822 /* FundamentalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FundamentalsViewModel.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/FundamentalsViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		AC45DA0225A01D2400A4B810 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		AC45DA0725A01E9500A4B810 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -103,7 +113,7 @@
 		AC48956B25C9B46800E1BF3A /* FundamentalsBackgroundJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentalsBackgroundJob.swift; sourceTree = "<group>"; };
 		AC61DDD025AFFAB20065FC64 /* FundamentalDataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FundamentalDataList.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/FundamentalDataList.swift"; sourceTree = SOURCE_ROOT; };
 		AC646C4725A83FBF00493F93 /* LiveQuotePopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuotePopoverView.swift; sourceTree = "<group>"; };
-		AC646C4F25A84C8C00493F93 /* StatusItemViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemViewable.swift; sourceTree = "<group>"; };
+		AC646C4F25A84C8C00493F93 /* InStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InStatusBar.swift; sourceTree = "<group>"; };
 		AC646C5425A8FCBF00493F93 /* NewTickerStatusItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTickerStatusItemView.swift; sourceTree = "<group>"; };
 		AC646C8725A9A15900493F93 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC65D0B925955822008C6C5C /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
@@ -113,6 +123,12 @@
 		AC6771C9259DC5DE00F807DB /* TickerSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerSearchModel.swift; sourceTree = "<group>"; };
 		AC6771CE259FBFD900F807DB /* TickerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerRow.swift; sourceTree = "<group>"; };
 		AC6771D3259FC38D00F807DB /* TickerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerList.swift; sourceTree = "<group>"; };
+		AC69F26E25E9EB7200361E8A /* SpacedDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpacedDivider.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/Fundamentals/SpacedDivider.swift"; sourceTree = SOURCE_ROOT; };
+		AC69F29925EB31B500361E8A /* ETFFundamentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETFFundamentals.swift; sourceTree = "<group>"; };
+		AC69F29E25EB321A00361E8A /* ETFFundamentalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ETFFundamentalsView.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/Fundamentals/ETFFundamentalsView.swift"; sourceTree = SOURCE_ROOT; };
+		AC69F2B825F9E45700361E8A /* FundamentalsTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FundamentalsTitle.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/Fundamentals/FundamentalsTitle.swift"; sourceTree = SOURCE_ROOT; };
+		AC69F2C325FB3A1600361E8A /* ExchangeTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExchangeTitle.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/Fundamentals/ExchangeTitle.swift"; sourceTree = SOURCE_ROOT; };
+		AC69F2C825FB3AA300361E8A /* TitleWithExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TitleWithExchange.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/Fundamentals/TitleWithExchange.swift"; sourceTree = SOURCE_ROOT; };
 		AC737CF225C3CE0C0026027C /* LiveQuoteBackgroundJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuoteBackgroundJob.swift; sourceTree = "<group>"; };
 		AC7C76A7259C06C500082025 /* TickerQuoteStatusItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerQuoteStatusItem.swift; sourceTree = "<group>"; };
 		AC8480C025CBC6AF0061E7E4 /* TickerQuoteStatusItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TickerQuoteStatusItemModel.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/TickerQuoteStatusItemModel.swift"; sourceTree = SOURCE_ROOT; };
@@ -120,6 +136,8 @@
 		AC8BED0125CD0F54007AF467 /* StockNewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockNewsController.swift; sourceTree = "<group>"; };
 		AC8BED1A25CDB0B2007AF467 /* NewsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewsRow.swift; path = "Alectrona/VIews/Status Bar/Ticker Quote View/Popover/News/NewsRow.swift"; sourceTree = SOURCE_ROOT; };
 		AC8BED2325CDBAE8007AF467 /* NewsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewsList.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/News/NewsList.swift"; sourceTree = SOURCE_ROOT; };
+		AC8CA36125E9B47E00DD411D /* EquityFundamentalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EquityFundamentalsView.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/Fundamentals/EquityFundamentalsView.swift"; sourceTree = SOURCE_ROOT; };
+		AC8CA36925E9B4FB00DD411D /* CryptocurrencyFundamentalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CryptocurrencyFundamentalsView.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/Fundamentals/CryptocurrencyFundamentalsView.swift"; sourceTree = SOURCE_ROOT; };
 		AC92B47A2589F4B9002826F8 /* Alectrona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alectrona.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC92B47D2589F4B9002826F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC92B4812589F4BA002826F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,6 +151,10 @@
 		AC92B49A2589F4BA002826F8 /* AlectronaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlectronaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC92B49E2589F4BA002826F8 /* AlectronaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlectronaUITests.swift; sourceTree = "<group>"; };
 		AC92B4A02589F4BA002826F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACB0C7A325E89BFB00B905D3 /* CryptocurrencyFundamentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptocurrencyFundamentals.swift; sourceTree = "<group>"; };
+		ACB0C7A825E89C0400B905D3 /* EquityFundamentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquityFundamentals.swift; sourceTree = "<group>"; };
+		ACB0C7AD25E89CAB00B905D3 /* QuoteType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteType.swift; sourceTree = "<group>"; };
+		ACB0C7C325E8A10C00B905D3 /* FundamentalsQuoteTypeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentalsQuoteTypeResponse.swift; sourceTree = "<group>"; };
 		ACB2779025BFE606002AEEBF /* BackgroundJobSubmission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundJobSubmission.swift; sourceTree = "<group>"; };
 		ACCED62E25D3B43700BAADBA /* CombinedFundamentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CombinedFundamentals.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/CombinedFundamentals.swift"; sourceTree = SOURCE_ROOT; };
 		ACCED63F25D5983600BAADBA /* StyleRespectingGrayText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StyleRespectingGrayText.swift; path = Alectrona/Views/StyleRespectingGrayText.swift; sourceTree = SOURCE_ROOT; };
@@ -199,9 +221,8 @@
 		AC11CCF525AED7E4009D9822 /* Fundamentals */ = {
 			isa = PBXGroup;
 			children = (
-				AC11CCF625AED7FB009D9822 /* Fundamentals.swift */,
+				ACB0C7A225E89BEB00B905D3 /* Type */,
 				AC11CCFB25AED8F4009D9822 /* FundamentalsController.swift */,
-				AC11CD0025AED978009D9822 /* FundamentalsScraper.swift */,
 			);
 			path = Fundamentals;
 			sourceTree = "<group>";
@@ -248,6 +269,7 @@
 		AC646C4625A83F6300493F93 /* Popover */ = {
 			isa = PBXGroup;
 			children = (
+				AC8CA36025E9B46E00DD411D /* Fundamentals */,
 				AC8BED2225CDBACB007AF467 /* News */,
 				AC646C4725A83FBF00493F93 /* LiveQuotePopoverView.swift */,
 				AC11CD0B25AFE3F0009D9822 /* FundamentalsViewModel.swift */,
@@ -289,7 +311,7 @@
 				AC646C3F25A83EEF00493F93 /* Ticker Quote View */,
 				AC6771C8259DC5AF00F807DB /* Ticker Search View */,
 				AC65D0B925955822008C6C5C /* StatusBar.swift */,
-				AC646C4F25A84C8C00493F93 /* StatusItemViewable.swift */,
+				AC646C4F25A84C8C00493F93 /* InStatusBar.swift */,
 			);
 			path = "Status Bar";
 			sourceTree = "<group>";
@@ -301,6 +323,21 @@
 				AC8BED2325CDBAE8007AF467 /* NewsList.swift */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		AC8CA36025E9B46E00DD411D /* Fundamentals */ = {
+			isa = PBXGroup;
+			children = (
+				AC8CA36125E9B47E00DD411D /* EquityFundamentalsView.swift */,
+				AC8CA36925E9B4FB00DD411D /* CryptocurrencyFundamentalsView.swift */,
+				AC69F29E25EB321A00361E8A /* ETFFundamentalsView.swift */,
+				AC69F26E25E9EB7200361E8A /* SpacedDivider.swift */,
+				AC69F2B825F9E45700361E8A /* FundamentalsTitle.swift */,
+				AC69F2C325FB3A1600361E8A /* ExchangeTitle.swift */,
+				AC69F2C825FB3AA300361E8A /* TitleWithExchange.swift */,
+				AC07288D260311A900072B7C /* FundamentalsViewHelper.swift */,
+			);
+			path = Fundamentals;
 			sourceTree = "<group>";
 		};
 		AC92B4712589F4B9002826F8 = {
@@ -371,6 +408,18 @@
 				AC92B4A02589F4BA002826F8 /* Info.plist */,
 			);
 			path = AlectronaUITests;
+			sourceTree = "<group>";
+		};
+		ACB0C7A225E89BEB00B905D3 /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				ACB0C7A325E89BFB00B905D3 /* CryptocurrencyFundamentals.swift */,
+				ACB0C7A825E89C0400B905D3 /* EquityFundamentals.swift */,
+				ACB0C7AD25E89CAB00B905D3 /* QuoteType.swift */,
+				ACB0C7C325E8A10C00B905D3 /* FundamentalsQuoteTypeResponse.swift */,
+				AC69F29925EB31B500361E8A /* ETFFundamentals.swift */,
+			);
+			path = Type;
 			sourceTree = "<group>";
 		};
 		ACE5EA7A259810CE00485626 /* API */ = {
@@ -536,8 +585,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC69F29F25EB321A00361E8A /* ETFFundamentalsView.swift in Sources */,
 				AC646C8825A9A15900493F93 /* Constants.swift in Sources */,
-				AC11CCF725AED7FB009D9822 /* Fundamentals.swift in Sources */,
+				AC69F2B925F9E45700361E8A /* FundamentalsTitle.swift in Sources */,
+				AC69F2C425FB3A1600361E8A /* ExchangeTitle.swift in Sources */,
 				AC7C76A8259C06C500082025 /* TickerQuoteStatusItem.swift in Sources */,
 				AC11CCFC25AED8F4009D9822 /* FundamentalsController.swift in Sources */,
 				AC737CF325C3CE0C0026027C /* LiveQuoteBackgroundJob.swift in Sources */,
@@ -550,19 +601,23 @@
 				ACCED62F25D3B43700BAADBA /* CombinedFundamentals.swift in Sources */,
 				AC45DA1625A05A1100A4B810 /* Quote.swift in Sources */,
 				AC45DA0325A01D2400A4B810 /* Ticker.swift in Sources */,
-				AC11CD0125AED978009D9822 /* FundamentalsScraper.swift in Sources */,
+				AC69F26F25E9EB7200361E8A /* SpacedDivider.swift in Sources */,
 				AC8BED1B25CDB0B2007AF467 /* NewsRow.swift in Sources */,
 				AC45DA1C25A05A3100A4B810 /* QuoteController.swift in Sources */,
 				AC6771A3259C5D0F00F807DB /* NewTickerSelectorView.swift in Sources */,
+				AC8CA36A25E9B4FB00DD411D /* CryptocurrencyFundamentalsView.swift in Sources */,
+				ACB0C7AE25E89CAB00B905D3 /* QuoteType.swift in Sources */,
 				ACE5EA6125980A3400485626 /* API.swift in Sources */,
 				AC646C5525A8FCBF00493F93 /* NewTickerStatusItemView.swift in Sources */,
+				ACB0C7A925E89C0400B905D3 /* EquityFundamentals.swift in Sources */,
 				ACF3296025BFD521000299C2 /* BackgroundJobSubmitter.swift in Sources */,
 				AC646C4825A83FBF00493F93 /* LiveQuotePopoverView.swift in Sources */,
 				AC65D0BA25955822008C6C5C /* StatusBar.swift in Sources */,
-				AC646C5025A84C8C00493F93 /* StatusItemViewable.swift in Sources */,
+				AC646C5025A84C8C00493F93 /* InStatusBar.swift in Sources */,
 				AC8480C125CBC6AF0061E7E4 /* TickerQuoteStatusItemModel.swift in Sources */,
 				AC45DA2125A068AF00A4B810 /* LiveQuote.swift in Sources */,
 				AC45DA0825A01E9500A4B810 /* Endpoint.swift in Sources */,
+				AC69F2C925FB3AA300361E8A /* TitleWithExchange.swift in Sources */,
 				AC09EFFF25A5AF980091B227 /* HTMLScraper.swift in Sources */,
 				ACCED68A25DA2AD700BAADBA /* PlistService.swift in Sources */,
 				AC8BED0225CD0F54007AF467 /* StockNewsController.swift in Sources */,
@@ -570,15 +625,20 @@
 				AC45DA1125A0593E00A4B810 /* TickerController.swift in Sources */,
 				AC6771CA259DC5DE00F807DB /* TickerSearchModel.swift in Sources */,
 				AC8BED2425CDBAE8007AF467 /* NewsList.swift in Sources */,
+				ACB0C7C425E8A10C00B905D3 /* FundamentalsQuoteTypeResponse.swift in Sources */,
+				AC69F29A25EB31B500361E8A /* ETFFundamentals.swift in Sources */,
 				AC67719E259C56BC00F807DB /* NewTickerButton.swift in Sources */,
+				AC8CA36225E9B47E00DD411D /* EquityFundamentalsView.swift in Sources */,
 				ACCED64025D5983600BAADBA /* StyleRespectingGrayText.swift in Sources */,
 				ACB2779125BFE606002AEEBF /* BackgroundJobSubmission.swift in Sources */,
 				ACF3296525BFD588000299C2 /* BackgroundJobConfiguration.swift in Sources */,
 				AC09EFEB25A5AA420091B227 /* NewsLinkController.swift in Sources */,
 				AC09EFF025A5AEC00091B227 /* NewsScraper.swift in Sources */,
 				AC61DDD125AFFAB20065FC64 /* FundamentalDataList.swift in Sources */,
+				AC07288E260311A900072B7C /* FundamentalsViewHelper.swift in Sources */,
 				AC09EFE625A5A95F0091B227 /* NewsLink.swift in Sources */,
 				AC48956C25C9B46800E1BF3A /* FundamentalsBackgroundJob.swift in Sources */,
+				ACB0C7A425E89BFB00B905D3 /* CryptocurrencyFundamentals.swift in Sources */,
 				ACCED68025DA296A00BAADBA /* Features.swift in Sources */,
 				AC09EFE125A5916D0091B227 /* NewsController.swift in Sources */,
 				AC92B47E2589F4B9002826F8 /* AppDelegate.swift in Sources */,

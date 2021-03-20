@@ -14,7 +14,6 @@ extension Resolver: ResolverRegistering {
         register { StockNewsController() }
         register { BackgroundJobSumitter() }
         register { FundamentalsController() }
-        register { FundamentalsScraper() }
         register { QuoteController() }
         register { TickerController() }
         register { API() }

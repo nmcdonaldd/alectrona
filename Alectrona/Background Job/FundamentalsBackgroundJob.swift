@@ -10,11 +10,11 @@ import Combine
 import Resolver
 
 class FundamentalsBackgroundJob: BackgroundJobConfiguration {
-    typealias JobOutput = Fundamentals
+    typealias JobOutput = FundamentalsQuoteTypeResponse
     
     var jobIdentifier: String
-    var interval: Double = 30   // 30 Seconds
-    var quality: QualityOfService = .utility
+    var interval: Double = 2   // 30 Seconds
+    var quality: QualityOfService = .userInitiated
     
     private let symbol: String
     @Injected private var fundamentalsController: FundamentalsController
@@ -24,7 +24,7 @@ class FundamentalsBackgroundJob: BackgroundJobConfiguration {
         jobIdentifier = "com.nickdonald.alectrona.\(symbol).fundamentals"
     }
     
-    func doJob() -> AnyPublisher<Fundamentals, Never> {
+    func doJob() -> AnyPublisher<FundamentalsQuoteTypeResponse, Never> {
         return fundamentalsController.getFundamentals(forSymbol: symbol)
     }
 }

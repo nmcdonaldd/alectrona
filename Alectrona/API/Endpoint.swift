@@ -8,8 +8,8 @@
 import Foundation
 
 struct Endpoint {
-    var path: String
     var host: String
+    var path: String
     var queryItems: [URLQueryItem] = []
 }
 
@@ -30,22 +30,42 @@ extension Endpoint {
 }
 
 extension Endpoint {
+    
+    private static let YFINANCE_HOST = "query1.finance.yahoo.com"
+    
+    static func standardYFinanceHost(path: String, queryItems: [URLQueryItem]?) -> Self {
+        if let guarnteedQueryItems = queryItems {
+            return Endpoint(host: YFINANCE_HOST, path: path, queryItems: guarnteedQueryItems)
+        } else {
+            return Endpoint(host: YFINANCE_HOST, path: path)
+        }
+    }
+    
     static func tickerSearch(_ searchText: String?) -> Self {
-        return Endpoint(path: "/v1/finance/search",
-                        host: "query1.finance.yahoo.com",
-                        queryItems: [URLQueryItem(name: "q", value: searchText)])
+        return standardYFinanceHost(path: "/v1/finance/search",
+                                    queryItems: [
+                                        URLQueryItem(name: "q", value: searchText)
+                                    ])
     }
     
     static func getQuote(forSymbol symbol: String) -> Self {
-        return Endpoint(path: "/v8/finance/chart/\(symbol)", host: "query1.finance.yahoo.com")
+        return standardYFinanceHost(path: "/v8/finance/chart/\(symbol)",
+                                    queryItems: nil)
     }
     
     static func getNews(forSymbol symbol: String, newsCount: Int = 3) -> Self {
-        return Endpoint(path: "/v1/finance/search",
-                        host: "query1.finance.yahoo.com",
-                        queryItems: [
-                            URLQueryItem(name: "q", value: symbol),
-                            URLQueryItem(name: "newsCount", value: String(newsCount))
-                        ])
+        return standardYFinanceHost(path: "/v1/finance/search",
+                                    queryItems: [
+                                        URLQueryItem(name: "q", value: symbol),
+                                        URLQueryItem(name: "newsCount", value: String(newsCount))
+                                    ])
+    }
+    
+    static func getFundamentals(forSymbol symbol: String, requestedFields: [String]) -> Self {
+        return standardYFinanceHost(path: "/v7/finance/quote",
+                                    queryItems: [
+                                        URLQueryItem(name: "symbols", value: symbol),
+                                        URLQueryItem(name: "fields", value: requestedFields.joined(separator:","))
+                                    ])
     }
 }
