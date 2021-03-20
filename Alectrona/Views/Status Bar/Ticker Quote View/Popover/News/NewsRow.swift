@@ -23,7 +23,7 @@ struct NewsRow: View {
             }
             .font(.callout)
             .interfaceStyleRespectingGray()
-            Spacer(minLength: 2)
+            Spacer(minLength: 4).fixedSize()
             Text(news.newsText[0])
                 .font(.body)
         }

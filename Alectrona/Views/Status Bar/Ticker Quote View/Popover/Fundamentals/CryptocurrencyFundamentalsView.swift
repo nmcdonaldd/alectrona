@@ -23,26 +23,19 @@ struct CryptocurrencyFundamentalsView: View {
     private func buildFirstDataList(from fundamentals: CryptocurrencyFundamentals) -> [FundamentalDataList.RowItem] {
         return [
             FundamentalDataList.RowItem(label: "Market Cap", value: String(describing: fundamentals.marketCap.formatUsingAbbrevation())),
-            FundamentalDataList.RowItem(label: "Open", value: String(describing: fundamentals.regularMarketOpen.rounded(toPlaces: 2))),
-            FundamentalDataList.RowItem(label: "Day's Range", value: fundamentals.regularMarketDayRange),
-            FundamentalDataList.RowItem(label: "52 Week Range", value: fundamentals.fiftyTwoWeekRange)
+            FundamentalDataList.RowItem(label: "Open", value: fundamentals.regularMarketOpen.rounded(toPlaces: 2).formattedAsString()),
+            FundamentalDataList.RowItem(label: "Day's Range", value: FundamentalsViewHelper.formatRange(range: fundamentals.regularMarketDayRange)),
+            FundamentalDataList.RowItem(label: "52 Week Range", value: FundamentalsViewHelper.formatRange(range: fundamentals.fiftyTwoWeekRange))
         ]
     }
     
     private func buildSecondDataList(from fundamentals: CryptocurrencyFundamentals) -> [FundamentalDataList.RowItem] {
         return [
-            FundamentalDataList.RowItem(label: "Previous Close", value: String(describing: fundamentals.regularMarketPreviousClose)),
+            FundamentalDataList.RowItem(label: "Previous Close", value: fundamentals.regularMarketPreviousClose.rounded(toPlaces: 2).formattedAsString()),
             FundamentalDataList.RowItem(label: "Volume", value: String(describing: fundamentals.regularMarketVolume.formatUsingAbbrevation())),
-            FundamentalDataList.RowItem(label: "Start Date", value: String(describing: fundamentals.startDate)),
-            FundamentalDataList.RowItem(label: "Circulating Supply", value: String(describing: fundamentals.circulatingSupply))
+            FundamentalDataList.RowItem(label: "Start Date", value: FundamentalsViewHelper.valueAsStringOrNotAvailable(FundamentalsViewHelper.formatDateFromEpoch(fundamentals.startDate))),
+            FundamentalDataList.RowItem(label: "Circulating Supply", value: Double(fundamentals.circulatingSupply).formattedAsString())
         ]
-    }
-    
-    private func valueAsStringOrNotAvailable<T>(_ value: T?) -> String {
-        if let nonNullValue = value {
-            return String(describing: nonNullValue)
-        }
-        return "N/A"
     }
 }
 

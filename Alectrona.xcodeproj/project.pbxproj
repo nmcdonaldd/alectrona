@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC07288E260311A900072B7C /* FundamentalsViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC07288D260311A900072B7C /* FundamentalsViewHelper.swift */; };
 		AC09EFDC25A591600091B227 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFDB25A591600091B227 /* News.swift */; };
 		AC09EFE125A5916D0091B227 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFE025A5916D0091B227 /* NewsController.swift */; };
 		AC09EFE625A5A95F0091B227 /* NewsLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFE525A5A95F0091B227 /* NewsLink.swift */; };
@@ -94,6 +95,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC07288D260311A900072B7C /* FundamentalsViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FundamentalsViewHelper.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/Fundamentals/FundamentalsViewHelper.swift"; sourceTree = SOURCE_ROOT; };
 		AC09EFDB25A591600091B227 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		AC09EFE025A5916D0091B227 /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
 		AC09EFE525A5A95F0091B227 /* NewsLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsLink.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				AC69F2B825F9E45700361E8A /* FundamentalsTitle.swift */,
 				AC69F2C325FB3A1600361E8A /* ExchangeTitle.swift */,
 				AC69F2C825FB3AA300361E8A /* TitleWithExchange.swift */,
+				AC07288D260311A900072B7C /* FundamentalsViewHelper.swift */,
 			);
 			path = Fundamentals;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				AC09EFEB25A5AA420091B227 /* NewsLinkController.swift in Sources */,
 				AC09EFF025A5AEC00091B227 /* NewsScraper.swift in Sources */,
 				AC61DDD125AFFAB20065FC64 /* FundamentalDataList.swift in Sources */,
+				AC07288E260311A900072B7C /* FundamentalsViewHelper.swift in Sources */,
 				AC09EFE625A5A95F0091B227 /* NewsLink.swift in Sources */,
 				AC48956C25C9B46800E1BF3A /* FundamentalsBackgroundJob.swift in Sources */,
 				ACB0C7A425E89BFB00B905D3 /* CryptocurrencyFundamentals.swift in Sources */,

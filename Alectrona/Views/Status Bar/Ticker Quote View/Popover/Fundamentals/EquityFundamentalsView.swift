@@ -26,39 +26,22 @@ struct EquityFundamentalsView: View {
             FundamentalDataList.RowItem(label: "Open", value: String(describing: fundamentals.regularMarketOpen.rounded(toPlaces: 2))),
             FundamentalDataList.RowItem(label: "Bid", value: "\(fundamentals.bid) x \(fundamentals.bidSize*100)"),
             FundamentalDataList.RowItem(label: "Ask", value: "\(fundamentals.ask) x \(fundamentals.askSize*100)"),
-            FundamentalDataList.RowItem(label: "Day's Range", value: fundamentals.regularMarketDayRange),
-            FundamentalDataList.RowItem(label: "52 Week Range", value: fundamentals.fiftyTwoWeekRange)
+            FundamentalDataList.RowItem(label: "Day's Range", value: FundamentalsViewHelper.formatRange(range: fundamentals.regularMarketDayRange)),
+            FundamentalDataList.RowItem(label: "52 Week Range", value: FundamentalsViewHelper.formatRange(range: fundamentals.fiftyTwoWeekRange))
         ]
     }
     
     private func buildSecondDataList(from fundamentals: EquityFundamentals) -> [FundamentalDataList.RowItem] {
         return [
-            FundamentalDataList.RowItem(label: "Previous Close", value: String(describing: fundamentals.regularMarketPreviousClose)),
+            FundamentalDataList.RowItem(label: "Previous Close", value: fundamentals.regularMarketPreviousClose.formattedAsString()),
             FundamentalDataList.RowItem(label: "Volume", value: String(describing: fundamentals.regularMarketVolume.formatUsingAbbrevation())),
-            FundamentalDataList.RowItem(label: "PE Ratio", value: valueAsStringOrNotAvailable(fundamentals.trailingPE?.rounded(toPlaces: 2))),
-            FundamentalDataList.RowItem(label: "EPS Ratio", value: valueAsStringOrNotAvailable(fundamentals.epsTrailingTwelveMonths?.rounded(toPlaces: 2))),
-            FundamentalDataList.RowItem(label: "Earnings Date", value: "\(valueAsStringOrNotAvailable(formatDateFromEpoch(fundamentals.earningsTimestampStart))) - \(valueAsStringOrNotAvailable(formatDateFromEpoch(fundamentals.earningsTimestampEnd)))"),
-            FundamentalDataList.RowItem(label: "52 Week Range", value: fundamentals.fiftyTwoWeekRange)
+            FundamentalDataList.RowItem(label: "Average Volume", value: String(describing: fundamentals.averageDailyVolume3Month.formatUsingAbbrevation())),
+            FundamentalDataList.RowItem(label: "PE Ratio", value: FundamentalsViewHelper.valueAsStringOrNotAvailable(fundamentals.trailingPE?.rounded(toPlaces: 2))),
+            FundamentalDataList.RowItem(label: "EPS Ratio", value: FundamentalsViewHelper.valueAsStringOrNotAvailable(fundamentals.epsTrailingTwelveMonths?.rounded(toPlaces: 2))),
+            FundamentalDataList.RowItem(label: "Earnings Date", value: "\(FundamentalsViewHelper.valueAsStringOrNotAvailable(FundamentalsViewHelper.formatDateFromEpoch(fundamentals.earningsTimestampStart))) - \(FundamentalsViewHelper.valueAsStringOrNotAvailable(FundamentalsViewHelper.formatDateFromEpoch(fundamentals.earningsTimestampEnd)))")
         ]
     }
     
-    private func formatDateFromEpoch(_ timeSince1970: Int?) -> String? {
-        guard let time = timeSince1970 else {
-            return nil
-        }
-        
-        let date = Date(timeIntervalSince1970: TimeInterval(time))
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM dd, YYYY"
-        return dateFormatter.string(from: date)
-    }
-    
-    private func valueAsStringOrNotAvailable<T>(_ value: T?) -> String {
-        if let nonNullValue = value {
-            return String(describing: nonNullValue)
-        }
-        return "N/A"
-    }
 }
 
 //struct EquityFundamentalsView_Previews: PreviewProvider {

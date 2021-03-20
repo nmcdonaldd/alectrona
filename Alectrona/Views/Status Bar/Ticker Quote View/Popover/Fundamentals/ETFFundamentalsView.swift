@@ -25,9 +25,7 @@ struct ETFFundamentalsView: View {
             FundamentalDataList.RowItem(label: "Market Cap", value: String(describing: fundamentals.marketCap.formatUsingAbbrevation())),
             FundamentalDataList.RowItem(label: "Open", value: String(describing: fundamentals.regularMarketOpen.rounded(toPlaces: 2))),
             FundamentalDataList.RowItem(label: "Bid", value: "\(fundamentals.bid) x \(fundamentals.bidSize*100)"),
-            FundamentalDataList.RowItem(label: "Ask", value: "\(fundamentals.ask) x \(fundamentals.askSize*100)"),
-            FundamentalDataList.RowItem(label: "Day's Range", value: fundamentals.regularMarketDayRange),
-            FundamentalDataList.RowItem(label: "52 Week Range", value: fundamentals.fiftyTwoWeekRange)
+            FundamentalDataList.RowItem(label: "Ask", value: "\(fundamentals.ask) x \(fundamentals.askSize*100)")
         ]
     }
     
@@ -35,20 +33,9 @@ struct ETFFundamentalsView: View {
         return [
             FundamentalDataList.RowItem(label: "Previous Close", value: String(describing: fundamentals.regularMarketPreviousClose)),
             FundamentalDataList.RowItem(label: "Volume", value: String(describing: fundamentals.regularMarketVolume.formatUsingAbbrevation())),
-            FundamentalDataList.RowItem(label: "PE Ratio", value: valueAsStringOrNotAvailable(fundamentals.trailingPE?.rounded(toPlaces: 2))),
-            FundamentalDataList.RowItem(label: "Something", value: "FIXME"),
-            FundamentalDataList.RowItem(label: "Something Else", value: "FIXME"),
-//            FundamentalDataList.RowItem(label: "EPS Ratio", value: valueAsStringOrNotAvailable(fundamentals.epsTrailingTwelveMonths?.rounded(toPlaces: 2))),
-//            FundamentalDataList.RowItem(label: "Earnings Date", value: "\(valueAsStringOrNotAvailable(fundamentals.earningsTimestamp)) - FIXME!"),
+            FundamentalDataList.RowItem(label: "Day's Range", value: fundamentals.regularMarketDayRange),
             FundamentalDataList.RowItem(label: "52 Week Range", value: fundamentals.fiftyTwoWeekRange)
         ]
-    }
-    
-    private func valueAsStringOrNotAvailable<T>(_ value: T?) -> String {
-        if let nonNullValue = value {
-            return String(describing: nonNullValue)
-        }
-        return "N/A"
     }
 }
 

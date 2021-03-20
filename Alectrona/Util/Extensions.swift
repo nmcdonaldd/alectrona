@@ -13,6 +13,15 @@ extension Double {
         let divisor = pow(10.0, Double(places))
         return (self * divisor).rounded() / divisor
     }
+    
+    func formattedAsString() -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.minimumIntegerDigits = 1
+        numberFormatter.maximumFractionDigits = 2
+        numberFormatter.minimumFractionDigits = 2
+        numberFormatter.numberStyle = .decimal
+        return numberFormatter.string(for: self) ?? String(describing: self)
+    }
 }
 
 extension Int {

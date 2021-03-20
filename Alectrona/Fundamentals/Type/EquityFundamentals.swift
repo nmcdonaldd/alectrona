@@ -18,6 +18,7 @@ struct EquityFundamentals: Decodable {
     var fiftyTwoWeekRange: String
     var regularMarketPreviousClose: Double
     var regularMarketVolume: Int
+    var averageDailyVolume3Month: Int
     var longName: String
     var fullExchangeName: String
     var trailingPE: Double?
