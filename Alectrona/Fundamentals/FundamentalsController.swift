@@ -24,6 +24,7 @@ class FundamentalsController {
     }
     
     func getFundamentals(forSymbol symbol: String) -> AnyPublisher<FundamentalsQuoteTypeResponse, Never> {
+        /// Empty `requestedFields` means get us everything. Maybe greedy but I don't want to list it all out just yet. Something to fix later on...
         return api.get(type: FundamentalsResponseContainer.self, url: Endpoint.getFundamentals(forSymbol: symbol, requestedFields: [String]()).url)
             .map { $0.quoteResponse.result[0] }
             .replaceError(with: .empty)
