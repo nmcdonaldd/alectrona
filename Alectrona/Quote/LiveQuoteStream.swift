@@ -22,7 +22,6 @@ struct LiveQuoteStream: Cancellable {
     }
     
     func cancel() {
-        print("Cancelling websocket!")
         cancelDelegate()
     }
 }

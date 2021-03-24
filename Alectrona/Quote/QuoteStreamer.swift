@@ -31,9 +31,9 @@ class QuoteStreamer {
                 
                 // Now, convert data to a PricingData protobuf-enabled struct
                 let pricingData = try! PricingData(contiguousBytes: data)
-                print(pricingData)
                 passthroughSubject.send(StreamedQuote(regularMarketPrice: Double(pricingData.price), percentageGain: Double(pricingData.changePercent) / 100.0))
             default:
+                // I don't know what to put here but I have to put *something*
                 print(event)
             }
         }
