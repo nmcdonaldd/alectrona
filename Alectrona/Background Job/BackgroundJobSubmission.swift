@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-struct BackgroundJobSubmission<JobOutput> {
+struct BackgroundJobSubmission<JobOutput>: Cancellable {
     typealias BackgroundJobCanceller = () -> ()
     private let outputPublisher: AnyPublisher<JobOutput, Never>
     
@@ -23,7 +23,7 @@ struct BackgroundJobSubmission<JobOutput> {
         self.canceller = canceller
     }
     
-    func cancelJob() {
+    func cancel() {
         canceller()
     }
 }

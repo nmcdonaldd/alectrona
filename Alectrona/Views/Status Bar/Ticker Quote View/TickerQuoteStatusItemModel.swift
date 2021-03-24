@@ -52,7 +52,7 @@ class TickerQuoteStatusItemModel {
     }
     
     func cancel() {
-        fundamentalsBackgroundJobSubmission.cancelJob()
-        newsBackgroundJobSubmission?.cancelJob()
+        fundamentalsBackgroundJobSubmission.cancel()
+        newsBackgroundJobSubmission?.cancel()
     }
 }

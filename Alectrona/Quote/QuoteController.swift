@@ -8,9 +8,10 @@
 import Foundation
 import Combine
 import Resolver
+import SwiftProtobuf
 
 class QuoteController {
-    private static let BASE_QUOTE = Quote(regularMarketPrice: 0.0, chartPreviousClose: 0.0)
+    private static let BASE_QUOTE = ApiQuote(regularMarketPrice: 0.0, chartPreviousClose: 0.0)
     
     private struct ChartResult: Decodable {
         var chart: ChartMetaResultContainer
@@ -19,7 +20,7 @@ class QuoteController {
         var result: [MetaResult]
     }
     private struct MetaResult: Decodable {
-        var meta: Quote
+        var meta: ApiQuote
     }
     
     @Injected private var api: API

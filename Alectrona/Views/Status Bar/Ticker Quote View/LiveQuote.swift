@@ -18,18 +18,32 @@ class LiveQuote: ObservableObject {
     let symbol: String
     
     private var cancellables: Set<AnyCancellable> = []
-    private var quoteController = QuoteController()
+    
+    @Injected private var quoteController: QuoteController
     @Injected private var backgroundJobSubmitter: BackgroundJobSumitter
+    @Injected private var quoteStreamer: QuoteStreamer
     
     @Published var currentQuote = LiveCurrentQuote()
+    
+    private var currentLiveQuoteSubject = PassthroughSubject<Quote, Never>()
+    
+    // Not sure if this is a hack or not, I couldn't get the reference to self.quoteStreamer
+    // to work in the initalizer for this field unless I did a private(set)
+    private(set) var liveQuoteStream: LiveQuoteStream!
     
     init(symbol: String) {
         self.symbol = symbol
         
-        let submission = backgroundJobSubmitter.submit(jobConfiguration: LiveQuoteBackgroundJob(symbol: symbol))
+        liveQuoteStream = quoteStreamer.streamQuote(forSymbol: symbol)
+        liveQuoteStream.publisher
+            .sink { self.currentLiveQuoteSubject.send($0) }
+            .store(in: &cancellables)
         
-        self.quoteController.guaranteedQuote(forSymbol: symbol)
-            .append(submission.publisher)
+        quoteController.guaranteedQuote(forSymbol: symbol)
+            .sink { self.currentLiveQuoteSubject.send($0) }
+            .store(in: &cancellables)
+        
+        currentLiveQuoteSubject
             .map { LiveCurrentQuote(percentageGain: $0.percentageGain, regularMarketPrice: $0.regularMarketPrice) }
             .receive(on: RunLoop.main)
             .assign(to: \.currentQuote, on: self)
