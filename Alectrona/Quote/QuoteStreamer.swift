@@ -20,7 +20,7 @@ class QuoteStreamer {
         let webSocket = WebSocket(request: URLRequest(url: Endpoint.streamQuote().url))
         let passthroughSubject = PassthroughSubject<Quote, Never>()
         
-        webSocket.onEvent = { [webSocket] event in
+        webSocket.onEvent = { event in
             switch event {
             case .connected(_):
                 // In this case, we need to now send a message saying which symbol we'd like to listen to
