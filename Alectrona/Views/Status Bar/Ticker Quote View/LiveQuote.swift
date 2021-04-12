@@ -36,17 +36,24 @@ class LiveQuote: ObservableObject {
         
         liveQuoteStream = quoteStreamer.streamQuote(forSymbol: symbol)
         liveQuoteStream.publisher
-            .sink { self.currentLiveQuoteSubject.send($0) }
+            .sink { [unowned self] in
+                self.currentLiveQuoteSubject.send($0)
+            }
             .store(in: &cancellables)
         
         quoteController.guaranteedQuote(forSymbol: symbol)
-            .sink { self.currentLiveQuoteSubject.send($0) }
+            .sink { [unowned self] in
+                self.currentLiveQuoteSubject.send($0)
+            }
             .store(in: &cancellables)
         
         currentLiveQuoteSubject
             .map { LiveCurrentQuote(percentageGain: $0.percentageGain, regularMarketPrice: $0.regularMarketPrice) }
             .receive(on: RunLoop.main)
-            .assign(to: \.currentQuote, on: self)
-            .store(in: &cancellables)
+            .assign(to: &$currentQuote)
+    }
+    
+    deinit {
+        liveQuoteStream.cancel()
     }
 }
