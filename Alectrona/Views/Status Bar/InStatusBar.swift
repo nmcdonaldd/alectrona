@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 private struct StatusBarPreferenceKey: PreferenceKey {
     static var defaultValue: CGSize = CGSize.zero

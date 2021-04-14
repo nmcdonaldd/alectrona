@@ -10,6 +10,7 @@ import SwiftUI
 import Combine
 
 class TickerQuoteStatusItem {
+    
     private var statusItem: NSStatusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private var hostingView: NSView!
     private let popover = NSPopover()
@@ -22,7 +23,10 @@ class TickerQuoteStatusItem {
         tickerQuoteStatusItemModel = TickerQuoteStatusItemModel(symbol: symbol)
         tickerQuoteStatusItemModel.repeatedLoad()
         
-        hostingView = NSHostingView(rootView: StatusBarTickerDisplay(symbol: symbol, onSizeChange: onSizeChange))
+        hostingView = NSHostingView(rootView: StatusBarTickerDisplay(symbol: symbol, onSizeChange: { size in
+            self.hostingView.setFrameSize(NSSize(width: size.width, height: NSStatusBar.system.thickness))
+            self.statusItem.length = size.width
+        }))
         
         // Set up button
         statusItem.button?.addSubview(hostingView)
@@ -54,6 +58,8 @@ class TickerQuoteStatusItem {
     
     func remove() {
         tickerQuoteStatusItemModel.cancel()
+        hostingView.removeFromSuperview()
+        hostingView = nil
         NSStatusBar.system.removeStatusItem(statusItem)
     }
 }

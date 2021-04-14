@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		AC07288E260311A900072B7C /* FundamentalsViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC07288D260311A900072B7C /* FundamentalsViewHelper.swift */; };
+		AC0728CF2606C85500072B7C /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = AC0728CE2606C85500072B7C /* SwiftProtobuf */; };
+		AC0728D42606C8ED00072B7C /* PricingData.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0728D32606C8ED00072B7C /* PricingData.pb.swift */; };
+		AC0728DC26071BC200072B7C /* QuoteStreamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0728DB26071BC200072B7C /* QuoteStreamer.swift */; };
+		AC0728E22607C92700072B7C /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = AC0728E12607C92700072B7C /* Starscream */; };
+		AC07290826086DD100072B7C /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC07290726086DD100072B7C /* Quote.swift */; };
+		AC07290D26086F3E00072B7C /* StreamedQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC07290C26086F3E00072B7C /* StreamedQuote.swift */; };
+		AC072924260B0D4300072B7C /* LiveQuoteStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC072923260B0D4300072B7C /* LiveQuoteStream.swift */; };
 		AC09EFDC25A591600091B227 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFDB25A591600091B227 /* News.swift */; };
 		AC09EFE125A5916D0091B227 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFE025A5916D0091B227 /* NewsController.swift */; };
 		AC09EFE625A5A95F0091B227 /* NewsLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFE525A5A95F0091B227 /* NewsLink.swift */; };
@@ -17,10 +24,11 @@
 		AC09EFFF25A5AF980091B227 /* HTMLScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFFE25A5AF980091B227 /* HTMLScraper.swift */; };
 		AC11CCFC25AED8F4009D9822 /* FundamentalsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11CCFB25AED8F4009D9822 /* FundamentalsController.swift */; };
 		AC11CD0C25AFE3F0009D9822 /* FundamentalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11CD0B25AFE3F0009D9822 /* FundamentalsViewModel.swift */; };
+		AC19B31926255F7900F0AA47 /* Canceller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC19B31826255F7900F0AA47 /* Canceller.swift */; };
 		AC45DA0325A01D2400A4B810 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA0225A01D2400A4B810 /* Ticker.swift */; };
 		AC45DA0825A01E9500A4B810 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA0725A01E9500A4B810 /* Endpoint.swift */; };
 		AC45DA1125A0593E00A4B810 /* TickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA1025A0593E00A4B810 /* TickerController.swift */; };
-		AC45DA1625A05A1100A4B810 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA1525A05A1100A4B810 /* Quote.swift */; };
+		AC45DA1625A05A1100A4B810 /* ApiQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA1525A05A1100A4B810 /* ApiQuote.swift */; };
 		AC45DA1C25A05A3100A4B810 /* QuoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA1B25A05A3100A4B810 /* QuoteController.swift */; };
 		AC45DA2125A068AF00A4B810 /* LiveQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA2025A068AF00A4B810 /* LiveQuote.swift */; };
 		AC48956C25C9B46800E1BF3A /* FundamentalsBackgroundJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48956B25C9B46800E1BF3A /* FundamentalsBackgroundJob.swift */; };
@@ -43,7 +51,6 @@
 		AC69F2C425FB3A1600361E8A /* ExchangeTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69F2C325FB3A1600361E8A /* ExchangeTitle.swift */; };
 		AC69F2C925FB3AA300361E8A /* TitleWithExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69F2C825FB3AA300361E8A /* TitleWithExchange.swift */; };
 		AC71D37D25C776E5005C5234 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = AC71D37C25C776E5005C5234 /* Defaults */; };
-		AC737CF325C3CE0C0026027C /* LiveQuoteBackgroundJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC737CF225C3CE0C0026027C /* LiveQuoteBackgroundJob.swift */; };
 		AC7C76A8259C06C500082025 /* TickerQuoteStatusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7C76A7259C06C500082025 /* TickerQuoteStatusItem.swift */; };
 		AC8480C125CBC6AF0061E7E4 /* TickerQuoteStatusItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8480C025CBC6AF0061E7E4 /* TickerQuoteStatusItemModel.swift */; };
 		AC8BECF425CC5E2A007AF467 /* NewsBackgroundJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8BECF325CC5E2A007AF467 /* NewsBackgroundJob.swift */; };
@@ -96,6 +103,11 @@
 
 /* Begin PBXFileReference section */
 		AC07288D260311A900072B7C /* FundamentalsViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FundamentalsViewHelper.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/Fundamentals/FundamentalsViewHelper.swift"; sourceTree = SOURCE_ROOT; };
+		AC0728D32606C8ED00072B7C /* PricingData.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PricingData.pb.swift; sourceTree = "<group>"; };
+		AC0728DB26071BC200072B7C /* QuoteStreamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteStreamer.swift; sourceTree = "<group>"; };
+		AC07290726086DD100072B7C /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		AC07290C26086F3E00072B7C /* StreamedQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamedQuote.swift; sourceTree = "<group>"; };
+		AC072923260B0D4300072B7C /* LiveQuoteStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuoteStream.swift; sourceTree = "<group>"; };
 		AC09EFDB25A591600091B227 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		AC09EFE025A5916D0091B227 /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
 		AC09EFE525A5A95F0091B227 /* NewsLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsLink.swift; sourceTree = "<group>"; };
@@ -104,10 +116,11 @@
 		AC09EFFE25A5AF980091B227 /* HTMLScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLScraper.swift; sourceTree = "<group>"; };
 		AC11CCFB25AED8F4009D9822 /* FundamentalsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentalsController.swift; sourceTree = "<group>"; };
 		AC11CD0B25AFE3F0009D9822 /* FundamentalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FundamentalsViewModel.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/FundamentalsViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		AC19B31826255F7900F0AA47 /* Canceller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canceller.swift; sourceTree = "<group>"; };
 		AC45DA0225A01D2400A4B810 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		AC45DA0725A01E9500A4B810 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		AC45DA1025A0593E00A4B810 /* TickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerController.swift; sourceTree = "<group>"; };
-		AC45DA1525A05A1100A4B810 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		AC45DA1525A05A1100A4B810 /* ApiQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiQuote.swift; sourceTree = "<group>"; };
 		AC45DA1B25A05A3100A4B810 /* QuoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteController.swift; sourceTree = "<group>"; };
 		AC45DA2025A068AF00A4B810 /* LiveQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuote.swift; sourceTree = "<group>"; };
 		AC48956B25C9B46800E1BF3A /* FundamentalsBackgroundJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentalsBackgroundJob.swift; sourceTree = "<group>"; };
@@ -129,7 +142,6 @@
 		AC69F2B825F9E45700361E8A /* FundamentalsTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FundamentalsTitle.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/Fundamentals/FundamentalsTitle.swift"; sourceTree = SOURCE_ROOT; };
 		AC69F2C325FB3A1600361E8A /* ExchangeTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExchangeTitle.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/Fundamentals/ExchangeTitle.swift"; sourceTree = SOURCE_ROOT; };
 		AC69F2C825FB3AA300361E8A /* TitleWithExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TitleWithExchange.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/Fundamentals/TitleWithExchange.swift"; sourceTree = SOURCE_ROOT; };
-		AC737CF225C3CE0C0026027C /* LiveQuoteBackgroundJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuoteBackgroundJob.swift; sourceTree = "<group>"; };
 		AC7C76A7259C06C500082025 /* TickerQuoteStatusItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerQuoteStatusItem.swift; sourceTree = "<group>"; };
 		AC8480C025CBC6AF0061E7E4 /* TickerQuoteStatusItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TickerQuoteStatusItemModel.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/TickerQuoteStatusItemModel.swift"; sourceTree = SOURCE_ROOT; };
 		AC8BECF325CC5E2A007AF467 /* NewsBackgroundJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsBackgroundJob.swift; sourceTree = "<group>"; };
@@ -176,7 +188,9 @@
 				ACCED65525D8553C00BAADBA /* Resolver in Frameworks */,
 				AC71D37D25C776E5005C5234 /* Defaults in Frameworks */,
 				ACCED67825DA292A00BAADBA /* YMFF in Frameworks */,
+				AC0728CF2606C85500072B7C /* SwiftProtobuf in Frameworks */,
 				AC09EFF625A5AF530091B227 /* SwiftSoup in Frameworks */,
+				AC0728E22607C92700072B7C /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,8 +253,13 @@
 		AC45DA1A25A05A1800A4B810 /* Quote */ = {
 			isa = PBXGroup;
 			children = (
-				AC45DA1525A05A1100A4B810 /* Quote.swift */,
+				AC0728D32606C8ED00072B7C /* PricingData.pb.swift */,
+				AC45DA1525A05A1100A4B810 /* ApiQuote.swift */,
 				AC45DA1B25A05A3100A4B810 /* QuoteController.swift */,
+				AC0728DB26071BC200072B7C /* QuoteStreamer.swift */,
+				AC07290726086DD100072B7C /* Quote.swift */,
+				AC07290C26086F3E00072B7C /* StreamedQuote.swift */,
+				AC072923260B0D4300072B7C /* LiveQuoteStream.swift */,
 			);
 			path = Quote;
 			sourceTree = "<group>";
@@ -297,7 +316,6 @@
 				ACF3295F25BFD521000299C2 /* BackgroundJobSubmitter.swift */,
 				ACF3296425BFD588000299C2 /* BackgroundJobConfiguration.swift */,
 				ACB2779025BFE606002AEEBF /* BackgroundJobSubmission.swift */,
-				AC737CF225C3CE0C0026027C /* LiveQuoteBackgroundJob.swift */,
 				AC48956B25C9B46800E1BF3A /* FundamentalsBackgroundJob.swift */,
 				AC8BECF325CC5E2A007AF467 /* NewsBackgroundJob.swift */,
 			);
@@ -438,6 +456,7 @@
 				AC646C8725A9A15900493F93 /* Constants.swift */,
 				ACCED67F25DA296A00BAADBA /* Features.swift */,
 				ACCED68925DA2AD700BAADBA /* PlistService.swift */,
+				AC19B31826255F7900F0AA47 /* Canceller.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -463,6 +482,8 @@
 				AC71D37C25C776E5005C5234 /* Defaults */,
 				ACCED65425D8553C00BAADBA /* Resolver */,
 				ACCED67725DA292A00BAADBA /* YMFF */,
+				AC0728CE2606C85500072B7C /* SwiftProtobuf */,
+				AC0728E12607C92700072B7C /* Starscream */,
 			);
 			productName = Alectrona;
 			productReference = AC92B47A2589F4B9002826F8 /* Alectrona.app */;
@@ -540,6 +561,8 @@
 				AC71D37B25C776E5005C5234 /* XCRemoteSwiftPackageReference "Defaults" */,
 				ACCED65325D8553C00BAADBA /* XCRemoteSwiftPackageReference "Resolver" */,
 				ACCED67625DA292A00BAADBA /* XCRemoteSwiftPackageReference "YMFF" */,
+				AC0728CD2606C85500072B7C /* XCRemoteSwiftPackageReference "swift-protobuf" */,
+				AC0728E02607C92700072B7C /* XCRemoteSwiftPackageReference "Starscream" */,
 			);
 			productRefGroup = AC92B47B2589F4B9002826F8 /* Products */;
 			projectDirPath = "";
@@ -585,13 +608,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC072924260B0D4300072B7C /* LiveQuoteStream.swift in Sources */,
 				AC69F29F25EB321A00361E8A /* ETFFundamentalsView.swift in Sources */,
 				AC646C8825A9A15900493F93 /* Constants.swift in Sources */,
 				AC69F2B925F9E45700361E8A /* FundamentalsTitle.swift in Sources */,
 				AC69F2C425FB3A1600361E8A /* ExchangeTitle.swift in Sources */,
 				AC7C76A8259C06C500082025 /* TickerQuoteStatusItem.swift in Sources */,
 				AC11CCFC25AED8F4009D9822 /* FundamentalsController.swift in Sources */,
-				AC737CF325C3CE0C0026027C /* LiveQuoteBackgroundJob.swift in Sources */,
 				AC11CD0C25AFE3F0009D9822 /* FundamentalsViewModel.swift in Sources */,
 				AC6771D4259FC38D00F807DB /* TickerList.swift in Sources */,
 				AC6771CF259FBFD900F807DB /* TickerRow.swift in Sources */,
@@ -599,10 +622,12 @@
 				ACCED65D25D855C300BAADBA /* AppDelegate+Injection.swift in Sources */,
 				AC8BECF425CC5E2A007AF467 /* NewsBackgroundJob.swift in Sources */,
 				ACCED62F25D3B43700BAADBA /* CombinedFundamentals.swift in Sources */,
-				AC45DA1625A05A1100A4B810 /* Quote.swift in Sources */,
+				AC45DA1625A05A1100A4B810 /* ApiQuote.swift in Sources */,
 				AC45DA0325A01D2400A4B810 /* Ticker.swift in Sources */,
 				AC69F26F25E9EB7200361E8A /* SpacedDivider.swift in Sources */,
+				AC07290826086DD100072B7C /* Quote.swift in Sources */,
 				AC8BED1B25CDB0B2007AF467 /* NewsRow.swift in Sources */,
+				AC19B31926255F7900F0AA47 /* Canceller.swift in Sources */,
 				AC45DA1C25A05A3100A4B810 /* QuoteController.swift in Sources */,
 				AC6771A3259C5D0F00F807DB /* NewTickerSelectorView.swift in Sources */,
 				AC8CA36A25E9B4FB00DD411D /* CryptocurrencyFundamentalsView.swift in Sources */,
@@ -616,6 +641,7 @@
 				AC646C5025A84C8C00493F93 /* InStatusBar.swift in Sources */,
 				AC8480C125CBC6AF0061E7E4 /* TickerQuoteStatusItemModel.swift in Sources */,
 				AC45DA2125A068AF00A4B810 /* LiveQuote.swift in Sources */,
+				AC07290D26086F3E00072B7C /* StreamedQuote.swift in Sources */,
 				AC45DA0825A01E9500A4B810 /* Endpoint.swift in Sources */,
 				AC69F2C925FB3AA300361E8A /* TitleWithExchange.swift in Sources */,
 				AC09EFFF25A5AF980091B227 /* HTMLScraper.swift in Sources */,
@@ -636,12 +662,14 @@
 				AC09EFF025A5AEC00091B227 /* NewsScraper.swift in Sources */,
 				AC61DDD125AFFAB20065FC64 /* FundamentalDataList.swift in Sources */,
 				AC07288E260311A900072B7C /* FundamentalsViewHelper.swift in Sources */,
+				AC0728DC26071BC200072B7C /* QuoteStreamer.swift in Sources */,
 				AC09EFE625A5A95F0091B227 /* NewsLink.swift in Sources */,
 				AC48956C25C9B46800E1BF3A /* FundamentalsBackgroundJob.swift in Sources */,
 				ACB0C7A425E89BFB00B905D3 /* CryptocurrencyFundamentals.swift in Sources */,
 				ACCED68025DA296A00BAADBA /* Features.swift in Sources */,
 				AC09EFE125A5916D0091B227 /* NewsController.swift in Sources */,
 				AC92B47E2589F4B9002826F8 /* AppDelegate.swift in Sources */,
+				AC0728D42606C8ED00072B7C /* PricingData.pb.swift in Sources */,
 				ACE5EA812599058900485626 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -974,6 +1002,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AC0728CD2606C85500072B7C /* XCRemoteSwiftPackageReference "swift-protobuf" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-protobuf.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.15.0;
+			};
+		};
+		AC0728E02607C92700072B7C /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.4;
+			};
+		};
 		AC09EFF425A5AF530091B227 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
@@ -1009,6 +1053,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AC0728CE2606C85500072B7C /* SwiftProtobuf */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC0728CD2606C85500072B7C /* XCRemoteSwiftPackageReference "swift-protobuf" */;
+			productName = SwiftProtobuf;
+		};
+		AC0728E12607C92700072B7C /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC0728E02607C92700072B7C /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
 		AC09EFF525A5AF530091B227 /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AC09EFF425A5AF530091B227 /* XCRemoteSwiftPackageReference "SwiftSoup" */;

@@ -9,14 +9,15 @@ import Foundation
 
 struct Endpoint {
     var host: String
-    var path: String
-    var queryItems: [URLQueryItem] = []
+    var path: String = ""
+    var queryItems: [URLQueryItem]?
+    var scheme = "https"
 }
 
 extension Endpoint {
     var url: URL {
         var components = URLComponents()
-        components.scheme = "https"
+        components.scheme = scheme
         components.host = host
         components.path = path
         components.queryItems = queryItems
@@ -67,5 +68,9 @@ extension Endpoint {
                                         URLQueryItem(name: "symbols", value: symbol),
                                         URLQueryItem(name: "fields", value: requestedFields.joined(separator:","))
                                     ])
+    }
+    
+    static func streamQuote() -> Self {
+        return Endpoint(host: "streamer.finance.yahoo.com", scheme: "wss")
     }
 }

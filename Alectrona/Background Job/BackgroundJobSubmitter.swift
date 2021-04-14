@@ -26,6 +26,8 @@ class BackgroundJobSumitter {
             jobConfiguration.doJob()
                 .sink { output in
                     outputPassthroughSubject.send(output)
+                    
+                    // Done with this iteration - tell system to continue to next iteraion
                     completionHandler(.finished)
                 }
                 .store(in: &storage)

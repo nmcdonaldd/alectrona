@@ -41,18 +41,22 @@ class TickerQuoteStatusItemModel {
             newsBackgroundJobSubmission = backgroundJobSubmitter.submit(jobConfiguration: NewsBackgroundJobConfiguration(symbol: symbol))
             stockNewsController.getStockNews(forSymbol: symbol)
                 .append(newsBackgroundJobSubmission!.publisher)
-                .sink { self.currentNewsFundamentalsValuePublisher.send($0) }
+                .sink { [unowned self] in
+                    self.currentNewsFundamentalsValuePublisher.send($0)
+                }
                 .store(in: &storage)
         }
         
         fundamentalsController.getFundamentals(forSymbol: symbol)
             .append(fundamentalsBackgroundJobSubmission.publisher)
-            .sink { self.currentFundamentalsValuePublisher.send($0) }
+            .sink { [unowned self] in
+                self.currentFundamentalsValuePublisher.send($0)
+            }
             .store(in: &storage)
     }
     
     func cancel() {
-        fundamentalsBackgroundJobSubmission.cancelJob()
-        newsBackgroundJobSubmission?.cancelJob()
+        fundamentalsBackgroundJobSubmission.cancel()
+        newsBackgroundJobSubmission?.cancel()
     }
 }

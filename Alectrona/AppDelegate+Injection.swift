@@ -19,5 +19,6 @@ extension Resolver: ResolverRegistering {
         register { API() }
         register { HTMLScraper() }
         register { PlistService() }
+        register { QuoteStreamer() }
     }
 }

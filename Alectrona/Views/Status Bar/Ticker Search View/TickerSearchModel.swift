@@ -38,7 +38,6 @@ class TickerSearchModel: ObservableObject {
     init() {
         resultsPublisher
             .receive(on: RunLoop.main)
-            .assign(to: \.searchResults, on: self)
-            .store(in: &cancellableSet)
+            .assign(to: &$searchResults)
     }
 }
