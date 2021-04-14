@@ -9,10 +9,11 @@ import Foundation
 import Combine
 
 class Canceller: Cancellable {
+    typealias CancelDelegate = () -> Void
     
-    private var cancelDelegate: () -> Void
+    private var cancelDelegate: CancelDelegate
     
-    init(cancelDelegate: @escaping () -> Void) {
+    init(cancelDelegate: @escaping CancelDelegate) {
         self.cancelDelegate = cancelDelegate
     }
     
