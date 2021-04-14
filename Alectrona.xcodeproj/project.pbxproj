@@ -24,6 +24,7 @@
 		AC09EFFF25A5AF980091B227 /* HTMLScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09EFFE25A5AF980091B227 /* HTMLScraper.swift */; };
 		AC11CCFC25AED8F4009D9822 /* FundamentalsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11CCFB25AED8F4009D9822 /* FundamentalsController.swift */; };
 		AC11CD0C25AFE3F0009D9822 /* FundamentalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11CD0B25AFE3F0009D9822 /* FundamentalsViewModel.swift */; };
+		AC19B31926255F7900F0AA47 /* Canceller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC19B31826255F7900F0AA47 /* Canceller.swift */; };
 		AC45DA0325A01D2400A4B810 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA0225A01D2400A4B810 /* Ticker.swift */; };
 		AC45DA0825A01E9500A4B810 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA0725A01E9500A4B810 /* Endpoint.swift */; };
 		AC45DA1125A0593E00A4B810 /* TickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA1025A0593E00A4B810 /* TickerController.swift */; };
@@ -115,6 +116,7 @@
 		AC09EFFE25A5AF980091B227 /* HTMLScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLScraper.swift; sourceTree = "<group>"; };
 		AC11CCFB25AED8F4009D9822 /* FundamentalsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentalsController.swift; sourceTree = "<group>"; };
 		AC11CD0B25AFE3F0009D9822 /* FundamentalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FundamentalsViewModel.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/FundamentalsViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		AC19B31826255F7900F0AA47 /* Canceller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canceller.swift; sourceTree = "<group>"; };
 		AC45DA0225A01D2400A4B810 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		AC45DA0725A01E9500A4B810 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		AC45DA1025A0593E00A4B810 /* TickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerController.swift; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 				AC646C8725A9A15900493F93 /* Constants.swift */,
 				ACCED67F25DA296A00BAADBA /* Features.swift */,
 				ACCED68925DA2AD700BAADBA /* PlistService.swift */,
+				AC19B31826255F7900F0AA47 /* Canceller.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				AC69F26F25E9EB7200361E8A /* SpacedDivider.swift in Sources */,
 				AC07290826086DD100072B7C /* Quote.swift in Sources */,
 				AC8BED1B25CDB0B2007AF467 /* NewsRow.swift in Sources */,
+				AC19B31926255F7900F0AA47 /* Canceller.swift in Sources */,
 				AC45DA1C25A05A3100A4B810 /* QuoteController.swift in Sources */,
 				AC6771A3259C5D0F00F807DB /* NewTickerSelectorView.swift in Sources */,
 				AC8CA36A25E9B4FB00DD411D /* CryptocurrencyFundamentalsView.swift in Sources */,

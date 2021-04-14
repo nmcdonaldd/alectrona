@@ -39,8 +39,8 @@ class QuoteStreamer {
         }
         
         webSocket.connect()
-        return LiveQuoteStream(quotePublisher: passthroughSubject.eraseToAnyPublisher()) {
+        return LiveQuoteStream(quotePublisher: passthroughSubject.eraseToAnyPublisher(), canceller: Canceller(cancelDelegate: {
             webSocket.disconnect()
-        }
+        }))
     }
 }

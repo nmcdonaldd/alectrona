@@ -10,18 +10,18 @@ import Combine
 
 struct LiveQuoteStream: Cancellable {
     private let quotePublisher: AnyPublisher<Quote, Never>
-    private let cancelDelegate: () -> Void
+    private let cancelDelegate: Canceller
 
     var publisher: AnyPublisher<Quote, Never> {
         quotePublisher.eraseToAnyPublisher()
     }
     
-    init(quotePublisher: AnyPublisher<Quote, Never>, canceller: @escaping () -> Void) {
+    init(quotePublisher: AnyPublisher<Quote, Never>, canceller: Canceller) {
         cancelDelegate = canceller
         self.quotePublisher = quotePublisher
     }
     
     func cancel() {
-        cancelDelegate()
+        cancelDelegate.cancel()
     }
 }
