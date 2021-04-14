@@ -16,7 +16,7 @@ class StockNewsController {
     func getStockNews(forSymbol symbol: String) -> AnyPublisher<[News], Never> {
         var storage = Set<AnyCancellable>()
         return newsLinkController.getNewsLinks(forSymbol: symbol)
-            .flatMap { (newsLinks) -> AnyPublisher<[News], Never> in
+            .flatMap { [unowned self] (newsLinks) -> AnyPublisher<[News], Never> in
                 let newsLinkDispatchGroup = DispatchGroup()
                 var outputNews = [News]()
                 for newsLink in newsLinks {

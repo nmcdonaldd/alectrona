@@ -18,7 +18,7 @@ class NewsController {
     }
     
     func getNews(fromNewsLinks newsLink: NewsLink) -> AnyPublisher<News, Never> {
-        return Future<News, Never> { promise in
+        return Future<News, Never> { [unowned self] promise in
             DispatchQueue.global(qos: .utility).async {
                 do {
                     guard let url = URL(string: newsLink.link),

@@ -36,15 +36,11 @@ class LiveQuote: ObservableObject {
         
         liveQuoteStream = quoteStreamer.streamQuote(forSymbol: symbol)
         liveQuoteStream.publisher
-            .sink { [unowned self] in
-                self.currentLiveQuoteSubject.send($0)
-            }
+            .sink { [unowned self] in self.currentLiveQuoteSubject.send($0) }
             .store(in: &cancellables)
         
         quoteController.guaranteedQuote(forSymbol: symbol)
-            .sink { [unowned self] in
-                self.currentLiveQuoteSubject.send($0)
-            }
+            .sink { [unowned self] in self.currentLiveQuoteSubject.send($0) }
             .store(in: &cancellables)
         
         currentLiveQuoteSubject
