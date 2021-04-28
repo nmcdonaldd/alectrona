@@ -10,7 +10,6 @@ import SwiftUI
 
 struct StatusBarTickerDisplay: View {
     let ticker: String
-    let onSizeChange: (CGSize) -> Void
     
     /// FIXME: this should be stateobject but I can't figure out how to do a customized init
     @ObservedObject private var liveQuote: LiveQuote
@@ -43,12 +42,10 @@ struct StatusBarTickerDisplay: View {
             Text("(\(formattedPercentageDifference)%)")
                 .foregroundColor(color)
         }.fixedSize()
-        .inStatusBar(onSizeChange: onSizeChange)
     }
     
-    init(symbol: String, onSizeChange: @escaping (CGSize) -> Void) {
+    init(symbol: String) {
         self.ticker = symbol
-        self.onSizeChange = onSizeChange
         liveQuote = LiveQuote(symbol: symbol)
     }
 }

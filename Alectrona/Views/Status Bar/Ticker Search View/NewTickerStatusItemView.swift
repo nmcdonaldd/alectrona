@@ -8,11 +8,8 @@
 import Foundation
 import SwiftUI
 
-struct NewTickerStatusItemView: View {
-    var onSizeChange: (CGSize) -> Void
-    
+struct NewTickerStatusItemView: View {    
     var body: some View {
         Image(systemName: "plus")
-            .inStatusBar(onSizeChange: onSizeChange)
     }
 }

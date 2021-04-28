@@ -32,6 +32,8 @@
 		AC45DA1C25A05A3100A4B810 /* QuoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA1B25A05A3100A4B810 /* QuoteController.swift */; };
 		AC45DA2125A068AF00A4B810 /* LiveQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC45DA2025A068AF00A4B810 /* LiveQuote.swift */; };
 		AC48956C25C9B46800E1BF3A /* FundamentalsBackgroundJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC48956B25C9B46800E1BF3A /* FundamentalsBackgroundJob.swift */; };
+		AC49EB34263938880073B829 /* StatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC49EB33263938880073B829 /* StatusBarItem.swift */; };
+		AC506D6B2635FE0A00E000F2 /* StatusBarItemBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC506D6A2635FE0A00E000F2 /* StatusBarItemBuilder.swift */; };
 		AC61DDD125AFFAB20065FC64 /* FundamentalDataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC61DDD025AFFAB20065FC64 /* FundamentalDataList.swift */; };
 		AC646C4825A83FBF00493F93 /* LiveQuotePopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C4725A83FBF00493F93 /* LiveQuotePopoverView.swift */; };
 		AC646C5025A84C8C00493F93 /* InStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC646C4F25A84C8C00493F93 /* InStatusBar.swift */; };
@@ -124,6 +126,8 @@
 		AC45DA1B25A05A3100A4B810 /* QuoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteController.swift; sourceTree = "<group>"; };
 		AC45DA2025A068AF00A4B810 /* LiveQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuote.swift; sourceTree = "<group>"; };
 		AC48956B25C9B46800E1BF3A /* FundamentalsBackgroundJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentalsBackgroundJob.swift; sourceTree = "<group>"; };
+		AC49EB33263938880073B829 /* StatusBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatusBarItem.swift; path = "Alectrona/Views/Status Bar/StatusBarItem.swift"; sourceTree = SOURCE_ROOT; };
+		AC506D6A2635FE0A00E000F2 /* StatusBarItemBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatusBarItemBuilder.swift; path = "Alectrona/VIews/Status Bar/StatusBarItemBuilder.swift"; sourceTree = SOURCE_ROOT; };
 		AC61DDD025AFFAB20065FC64 /* FundamentalDataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FundamentalDataList.swift; path = "Alectrona/Views/Status Bar/Ticker Quote View/Popover/FundamentalDataList.swift"; sourceTree = SOURCE_ROOT; };
 		AC646C4725A83FBF00493F93 /* LiveQuotePopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuotePopoverView.swift; sourceTree = "<group>"; };
 		AC646C4F25A84C8C00493F93 /* InStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InStatusBar.swift; sourceTree = "<group>"; };
@@ -325,11 +329,13 @@
 		AC7C76B7259C245B00082025 /* Status Bar */ = {
 			isa = PBXGroup;
 			children = (
+				AC506D6A2635FE0A00E000F2 /* StatusBarItemBuilder.swift */,
 				AC67719D259C56BC00F807DB /* NewTickerButton.swift */,
 				AC646C3F25A83EEF00493F93 /* Ticker Quote View */,
 				AC6771C8259DC5AF00F807DB /* Ticker Search View */,
 				AC65D0B925955822008C6C5C /* StatusBar.swift */,
 				AC646C4F25A84C8C00493F93 /* InStatusBar.swift */,
+				AC49EB33263938880073B829 /* StatusBarItem.swift */,
 			);
 			path = "Status Bar";
 			sourceTree = "<group>";
@@ -644,6 +650,7 @@
 				AC07290D26086F3E00072B7C /* StreamedQuote.swift in Sources */,
 				AC45DA0825A01E9500A4B810 /* Endpoint.swift in Sources */,
 				AC69F2C925FB3AA300361E8A /* TitleWithExchange.swift in Sources */,
+				AC506D6B2635FE0A00E000F2 /* StatusBarItemBuilder.swift in Sources */,
 				AC09EFFF25A5AF980091B227 /* HTMLScraper.swift in Sources */,
 				ACCED68A25DA2AD700BAADBA /* PlistService.swift in Sources */,
 				AC8BED0225CD0F54007AF467 /* StockNewsController.swift in Sources */,
@@ -657,6 +664,7 @@
 				AC8CA36225E9B47E00DD411D /* EquityFundamentalsView.swift in Sources */,
 				ACCED64025D5983600BAADBA /* StyleRespectingGrayText.swift in Sources */,
 				ACB2779125BFE606002AEEBF /* BackgroundJobSubmission.swift in Sources */,
+				AC49EB34263938880073B829 /* StatusBarItem.swift in Sources */,
 				ACF3296525BFD588000299C2 /* BackgroundJobConfiguration.swift in Sources */,
 				AC09EFEB25A5AA420091B227 /* NewsLinkController.swift in Sources */,
 				AC09EFF025A5AEC00091B227 /* NewsScraper.swift in Sources */,

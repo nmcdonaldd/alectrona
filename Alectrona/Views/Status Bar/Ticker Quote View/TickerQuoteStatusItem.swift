@@ -10,56 +10,22 @@ import SwiftUI
 import Combine
 
 class TickerQuoteStatusItem {
-    
-    private var statusItem: NSStatusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    private var hostingView: NSView!
-    private let popover = NSPopover()
     private let symbol: String
     private var tickerQuoteStatusItemModel: TickerQuoteStatusItemModel
+    private let statusBarItem: StatusBarItem
     
     init(symbol: String) {
         self.symbol = symbol
-        
         tickerQuoteStatusItemModel = TickerQuoteStatusItemModel(symbol: symbol)
         tickerQuoteStatusItemModel.repeatedLoad()
-        
-        hostingView = NSHostingView(rootView: StatusBarTickerDisplay(symbol: symbol, onSizeChange: { size in
-            self.hostingView.setFrameSize(NSSize(width: size.width, height: NSStatusBar.system.thickness))
-            self.statusItem.length = size.width
-        }))
-        
-        // Set up button
-        statusItem.button?.addSubview(hostingView)
-        statusItem.button?.action = #selector(onButtonClicked)
-        
-        // Necessary so AppDelegate doesn't implicitly receive the action
-        statusItem.button?.target = self
-        popover.behavior = .transient
-    }
-    
-    private func onSizeChange(_ size: CGSize) {
-        hostingView.setFrameSize(NSSize(width: size.width, height: NSStatusBar.system.thickness))
-        statusItem.length = size.width
-    }
-    
-    @objc func onButtonClicked() {
-        // For some reason, the ticker detail popover does not clear even when it's set to .transient
-        NSApplication.shared.activate(ignoringOtherApps: true)
-        if(popover.isShown) {
-            popover.close()
-        } else {
-            guard let button = statusItem.button else {
-                return
-            }
-            popover.contentViewController = NSHostingController(rootView: LiveQuotePopoverView(fundamentalsViewModel: FundamentalsViewModel(fundamentalsPublisher: tickerQuoteStatusItemModel.fundamentalsPublisher, newsPublisher: tickerQuoteStatusItemModel.newsPublisher)))
-            popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
-        }
+        statusBarItem = StatusBarItemBuilder()
+            .view(StatusBarTickerDisplay(symbol: symbol))
+            .popoverView(LiveQuotePopoverView(fundamentalsViewModel: FundamentalsViewModel(fundamentalsPublisher: tickerQuoteStatusItemModel.fundamentalsPublisher, newsPublisher: tickerQuoteStatusItemModel.newsPublisher)))
+            .build()
     }
     
     func remove() {
         tickerQuoteStatusItemModel.cancel()
-        hostingView.removeFromSuperview()
-        hostingView = nil
-        NSStatusBar.system.removeStatusItem(statusItem)
+        statusBarItem.remove()
     }
 }
