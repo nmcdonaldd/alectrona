@@ -6,12 +6,12 @@
 //
 
 import Foundation
-import Resolver
+import Factory
 import YMFF
 
 private class PlistBackedFeatureStore: FeatureFlagStoreProtocol {
     
-    @Injected private var plistService: PlistService
+    @Injected(Container.plistService) private var plistService: PlistService
     
     fileprivate static let shared = PlistBackedFeatureStore()
     

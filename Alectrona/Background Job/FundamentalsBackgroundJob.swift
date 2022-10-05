@@ -7,7 +7,7 @@
 
 import Foundation
 import Combine
-import Resolver
+import Factory
 
 class FundamentalsBackgroundJob: BackgroundJobConfiguration {
     typealias JobOutput = FundamentalsQuoteTypeResponse
@@ -17,7 +17,9 @@ class FundamentalsBackgroundJob: BackgroundJobConfiguration {
     var quality: QualityOfService = .userInitiated
     
     private let symbol: String
-    @Injected private var fundamentalsController: FundamentalsController
+    
+    @Injected(Container.fundamentalsController)
+    private var fundamentalsController: FundamentalsController
     
     init(symbol: String) {
         self.symbol = symbol

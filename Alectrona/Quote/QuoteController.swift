@@ -7,7 +7,7 @@
 
 import Foundation
 import Combine
-import Resolver
+import Factory
 import SwiftProtobuf
 
 class QuoteController {
@@ -23,7 +23,7 @@ class QuoteController {
         var meta: ApiQuote
     }
     
-    @Injected private var api: API
+    @Injected(Container.api) private var api: API
     
     func getQuote(forSymbol symbol: String) -> AnyPublisher<Quote, Error> {
         let endpoint = Endpoint.getQuote(forSymbol: symbol)

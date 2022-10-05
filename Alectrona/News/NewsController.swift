@@ -7,11 +7,11 @@
 
 import Foundation
 import Combine
-import Resolver
+import Factory
 
 class NewsController {
     
-    @Injected private var htmlScraper: HTMLScraper
+    @Injected(Container.htmlScraper) private var htmlScraper: HTMLScraper
     
     struct NewsError: Error {
         var message: String
@@ -26,11 +26,14 @@ class NewsController {
                         return
                     }
                     
-                    promise(.success(News(publishedTime: newsLink.providerPublishTime,
-                                          title: newsLink.title,
-                                          newsText: NewsScraper.getNewsText(fromDocument: document),
-                                          publisher: newsLink.publisher,
-                                          url: newsLink.link)))
+                    promise(
+                        .success(
+                            News(
+                                publishedTime: newsLink.providerPublishTime,
+                                title: newsLink.title,
+                                newsText: NewsScraper.getNewsText(fromDocument: document),
+                                publisher: newsLink.publisher,
+                                url: newsLink.link)))
                 } catch {
                     return
                 }

@@ -7,7 +7,7 @@
 
 import Foundation
 import Combine
-import Resolver
+import Factory
 
 struct LiveCurrentQuote {
     var percentageGain: Double = 0.0
@@ -19,9 +19,12 @@ class LiveQuote: ObservableObject {
     
     private var cancellables: Set<AnyCancellable> = []
     
-    @Injected private var quoteController: QuoteController
-    @Injected private var backgroundJobSubmitter: BackgroundJobSumitter
-    @Injected private var quoteStreamer: QuoteStreamer
+    @Injected(Container.quoteController) private var quoteController: QuoteController
+    
+    @Injected(Container.quoteStreamer) private var quoteStreamer: QuoteStreamer
+    
+    @Injected(Container.backgroundJobSubmitter)
+    private var backgroundJobSubmitter: BackgroundJobSumitter
     
     @Published var currentQuote = LiveCurrentQuote()
     

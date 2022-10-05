@@ -7,7 +7,7 @@
 
 import Foundation
 import Combine
-import Resolver
+import Factory
 
 class NewsBackgroundJobConfiguration: BackgroundJobConfiguration {
     typealias JobOutput = [News]
@@ -17,7 +17,7 @@ class NewsBackgroundJobConfiguration: BackgroundJobConfiguration {
     var quality: QualityOfService = .utility
     private let symbol: String
     
-    @Injected private var newsController: StockNewsController
+    @Injected(Container.stockNewsController) private var newsController: StockNewsController
     
     init(symbol: String) {
         self.symbol = symbol

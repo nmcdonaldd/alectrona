@@ -15,7 +15,10 @@ class FundamentalsViewModel: ObservableObject {
     
     private var storage = Set<AnyCancellable>()
     
-    init(fundamentalsPublisher: AnyPublisher<FundamentalsQuoteTypeResponse, Never>, newsPublisher: AnyPublisher<[News], Never>) {
+    init(
+        fundamentalsPublisher: AnyPublisher<FundamentalsQuoteTypeResponse, Never>,
+        newsPublisher: AnyPublisher<[News], Never>
+    ) {
         fundamentalsPublisher
             .receive(on: RunLoop.main)
             .sink { self.fundamentals = $0 }

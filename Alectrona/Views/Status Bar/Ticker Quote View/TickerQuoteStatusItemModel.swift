@@ -7,10 +7,9 @@
 
 import Foundation
 import Combine
-import Resolver
+import Factory
 
 class TickerQuoteStatusItemModel {
-    
     private let currentFundamentalsValuePublisher = CurrentValueSubject<FundamentalsQuoteTypeResponse, Never>(.empty)
     private let currentNewsFundamentalsValuePublisher = CurrentValueSubject<[News], Never>([News]())
     private var fundamentalsBackgroundJobSubmission: BackgroundJobSubmission<FundamentalsQuoteTypeResponse>!
@@ -18,9 +17,14 @@ class TickerQuoteStatusItemModel {
     private var storage = Set<AnyCancellable>()
     private let symbol: String
     
-    @Injected private var backgroundJobSubmitter: BackgroundJobSumitter
-    @Injected private var fundamentalsController: FundamentalsController
-    @Injected private var stockNewsController: StockNewsController
+    @Injected(Container.backgroundJobSubmitter)
+    private var backgroundJobSubmitter: BackgroundJobSumitter
+    
+    @Injected(Container.fundamentalsController)
+    private var fundamentalsController: FundamentalsController
+    
+    @Injected(Container.stockNewsController)
+    private var stockNewsController: StockNewsController
     
     var fundamentalsPublisher: AnyPublisher<FundamentalsQuoteTypeResponse, Never> {
         return currentFundamentalsValuePublisher.eraseToAnyPublisher()

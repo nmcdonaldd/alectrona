@@ -43,31 +43,31 @@ extension Endpoint {
     }
     
     static func tickerSearch(_ searchText: String?) -> Self {
-        return standardYFinanceHost(path: "/v1/finance/search",
-                                    queryItems: [
-                                        URLQueryItem(name: "q", value: searchText)
-                                    ])
+        return standardYFinanceHost(
+            path: "/v1/finance/search",
+            queryItems: [URLQueryItem(name: "q", value: searchText)])
     }
     
     static func getQuote(forSymbol symbol: String) -> Self {
-        return standardYFinanceHost(path: "/v8/finance/chart/\(symbol)",
-                                    queryItems: nil)
+        return standardYFinanceHost(path: "/v8/finance/chart/\(symbol)", queryItems: nil)
     }
     
     static func getNews(forSymbol symbol: String, newsCount: Int = 3) -> Self {
-        return standardYFinanceHost(path: "/v1/finance/search",
-                                    queryItems: [
-                                        URLQueryItem(name: "q", value: symbol),
-                                        URLQueryItem(name: "newsCount", value: String(newsCount))
-                                    ])
+        return standardYFinanceHost(
+            path: "/v1/finance/search",
+            queryItems: [
+                URLQueryItem(name: "q", value: symbol),
+                URLQueryItem(name: "newsCount", value: String(newsCount))
+            ])
     }
     
     static func getFundamentals(forSymbol symbol: String, requestedFields: [String]) -> Self {
-        return standardYFinanceHost(path: "/v7/finance/quote",
-                                    queryItems: [
-                                        URLQueryItem(name: "symbols", value: symbol),
-                                        URLQueryItem(name: "fields", value: requestedFields.joined(separator:","))
-                                    ])
+        return standardYFinanceHost(
+            path: "/v7/finance/quote",
+            queryItems: [
+                URLQueryItem(name: "symbols", value: symbol),
+                URLQueryItem(name: "fields", value: requestedFields.joined(separator:","))
+            ])
     }
     
     static func streamQuote() -> Self {

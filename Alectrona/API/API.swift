@@ -7,7 +7,6 @@
 
 import Foundation
 import Combine
-import Starscream
 
 class API {
     func get<T>(type: T.Type, url: URL) -> AnyPublisher<T, Error> where T: Decodable {

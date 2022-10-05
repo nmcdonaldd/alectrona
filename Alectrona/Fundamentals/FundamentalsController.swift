@@ -7,11 +7,11 @@
 
 import Foundation
 import Combine
-import Resolver
+import Factory
 
 class FundamentalsController {
     
-    @Injected private var api: API
+    @Injected(Container.api) private var api: API
     
     struct FundamentalsControllerError: Error {}
     

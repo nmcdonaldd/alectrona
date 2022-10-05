@@ -7,7 +7,7 @@
 
 import Foundation
 import Combine
-import Resolver
+import Factory
 
 class TickerSearchModel: ObservableObject {
     // input
@@ -17,7 +17,7 @@ class TickerSearchModel: ObservableObject {
     @Published var searchResults: [Ticker] = [Ticker]()
     
     private var cancellableSet: Set<AnyCancellable> = []
-    @Injected private var tickerController: TickerController
+    @Injected(Container.ticketController) private var tickerController: TickerController
     
     private var searchTextPublisher: AnyPublisher<String, Never> {
         $searchText

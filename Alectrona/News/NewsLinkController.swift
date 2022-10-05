@@ -7,11 +7,11 @@
 
 import Foundation
 import Combine
-import Resolver
+import Factory
 
 class NewsLinkController {
     
-    @Injected private var api: API
+    @Injected(Container.api) private var api: API
     
     private struct NewsSearchResult: Decodable {
         var news: [NewsLink]
